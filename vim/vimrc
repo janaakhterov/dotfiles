@@ -1,0 +1,72 @@
+" A must
+syntax on
+filetype plugin indent on
+
+" Setting dictionary
+set dict+=/usr/share/dict/cracklib-small
+
+" Statusline
+set laststatus=2
+set statusline=%f
+set statusline+=%=[%l:%c]\ %l/%L
+
+" Enable 256 colormode 
+let t_Co=256
+
+" Color Scheme
+colorscheme mycolors
+
+" Highlight columns past 80
+" execute "set colorcolumn=" . join(range(80, 400), ',')
+
+" Set cursor to be in middle of screen
+set so=999
+set cursorline
+
+" Vim-Latex-Live-Preview Variable
+let g:livepreview_previewer = 'mupdf'
+
+" Setting Tim Pope's commentary variable
+autocmd FileType c setlocal commentstring=//\ %s
+autocmd FileType vim setlocal commentstring=\"\ %s
+
+" Dont know how to call this
+set number
+set relativenumber 
+set tabstop=4
+set shiftwidth=4
+" set autoindent
+" set smartindent
+
+" Disable folding
+set nofoldenable
+
+" Mappings
+" Leader Mapping
+let mapleader="\<Space>"
+
+" Viewing and editting vimrc mappings
+nnoremap <leader>ve :vs $MYVIMRC<CR>
+nnoremap <leader>vs :source $MYVIMRC<CR>
+
+" Split window veritically and open integrated file explorer
+nnoremap <silent> <leader>t :Vex<CR>
+
+" Open terminal
+nnoremap <silent> <leader>s :sh<CR>
+
+" Movement remapped to visual lines
+" nnoremap j gj
+" nnoremap k gk
+
+" Mapping for ctags
+nnoremap <leader>n <C-]>
+nnoremap <leader>N <C-O>
+
+" To view hidden characters
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" set list
+
+" UTF-8 Support
+set encoding=UTF-8
+set fileencoding=UTF-8
