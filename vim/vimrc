@@ -21,7 +21,7 @@ let g:netrw_liststyle=3
 let g:netrw_fastbrowse=2
 
 " Disable auto comment insertion
-set formatoptions-=cro
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Change timeout in normal mode
 " set timeoutlen=250
