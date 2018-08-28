@@ -23,6 +23,10 @@ let g:netrw_fastbrowse=2
 " Disable auto comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+
+" Show as much of the last line as you can
+set display+=lastline
+
 " Change timeout in normal mode
 " set timeoutlen=250
 
