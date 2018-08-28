@@ -320,11 +320,11 @@
 
 ## Background color of the tab bar.
 ## Type: QtColor
-# c.colors.tabs.bar.bg = '#FFFFFF'
+# c.colors.tabs.bar.bg = '#555555'
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
-# c.colors.tabs.even.bg = '#18447F'
+# c.colors.tabs.even.bg = 'darkgrey'
 
 ## Foreground color of unselected even tabs.
 ## Type: QtColor
@@ -353,7 +353,7 @@
 
 ## Background color of unselected odd tabs.
 ## Type: QtColor
-# c.colors.tabs.odd.bg = '#1973e8'
+# c.colors.tabs.odd.bg = 'grey'
 
 ## Foreground color of unselected odd tabs.
 ## Type: QtColor
@@ -361,7 +361,7 @@
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.even.bg = 'green'
+# c.colors.tabs.selected.even.bg = 'black'
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
@@ -369,7 +369,7 @@
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.odd.bg = 'green'
+# c.colors.tabs.selected.odd.bg = 'black'
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
@@ -446,6 +446,11 @@
 ##   - never: Never show a confirmation.
 # c.confirm_quit = ['never']
 
+## Automatically start playing `<video>` elements. Note this option needs
+## a restart with QtWebEngine on Qt < 5.11.
+## Type: Bool
+# c.content.autoplay = True
+
 ## Enable support for the HTML 5 web application cache feature. An
 ## application cache acts like an HTTP cache in some sense. For documents
 ## that use the application cache via JavaScript, the loader engine will
@@ -468,12 +473,17 @@
 ## Type: Int
 # c.content.cache.size = None
 
+## Allow websites to read canvas elements. Note this is needed for some
+## websites to work properly.
+## Type: Bool
+# c.content.canvas_reading = True
+
 ## Which cookies to accept.
 ## Type: String
 ## Valid values:
 ##   - all: Accept all cookies.
 ##   - no-3rdparty: Accept cookies from the same origin only.
-##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain.
+##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 ##   - never: Don't accept cookies at all.
 # c.content.cookies.accept = 'no-3rdparty'
 
@@ -487,12 +497,14 @@
 ## Type: String
 # c.content.default_encoding = 'iso-8859-1'
 
-## Enable extra tools for Web developers. This needs to be enabled for
-## `:inspector` to work and also adds an _Inspect_ entry to the context
-## menu. For QtWebEngine, see `--enable-webengine-inspector` in
-## `qutebrowser --help` instead.
-## Type: Bool
-# c.content.developer_extras = False
+## Allow websites to share screen content. On Qt < 5.10, a dialog box is
+## always displayed, even if this is set to "true".
+## Type: BoolAsk
+## Valid values:
+##   - true
+##   - false
+##   - ask
+# c.content.desktop_capture = 'ask'
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
@@ -511,7 +523,8 @@
 ##   - ask
 # c.content.geolocation = 'ask'
 
-## Value to send in the `Accept-Language` header.
+## Value to send in the `Accept-Language` header. Note that the value
+## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.accept_language = 'en-US,en'
 
@@ -526,7 +539,7 @@
 # c.content.headers.do_not_track = True
 
 ## When to send the Referer header. The Referer header tells websites
-## from which website you were coming from when visting them.
+## from which website you were coming from when visiting them.
 ## Type: String
 ## Valid values:
 ##   - always: Always send the Referer.
@@ -534,7 +547,8 @@
 ##   - same-domain: Only send the Referer for the same domain. This will still protect your privacy, but shouldn't break any sites.
 # c.content.headers.referer = 'same-domain'
 
-## User agent to send. Unset to send the default.
+## User agent to send. Unset to send the default. Note that the value
+## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.user_agent = None
 
@@ -547,7 +561,7 @@
 ## host per line - A zip-file of any of the above, with either only one
 ## file, or a file   named `hosts` (with any extension).
 ## Type: List of Url
-# c.content.host_blocking.lists = ['https://www.malwaredomainlist.com/hostslist/hosts.txt', 'http://someonewhocares.org/hosts/hosts', 'http://winhelp2002.mvps.org/hosts.zip', 'http://malwaredomains.lehigh.edu/files/justdomains.zip', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext']
+# c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 ## List of domains that should always be loaded, despite being ad-
 ## blocked. Domains may contain * and ? wildcards and are otherwise
@@ -640,6 +654,15 @@
 ## Type: Bool
 # c.content.pdfjs = False
 
+## Allow websites to request persistent storage quota via
+## `navigator.webkitPersistentStorage.requestQuota`.
+## Type: BoolAsk
+## Valid values:
+##   - true
+##   - false
+##   - ask
+# c.content.persistent_storage = 'ask'
+
 ## Enable plugins in Web pages.
 ## Type: Bool
 # c.content.plugins = False
@@ -665,6 +688,15 @@
 ## Type: Bool
 # c.content.proxy_dns_requests = True
 
+## Allow websites to register protocol handlers via
+## `navigator.registerProtocolHandler`.
+## Type: BoolAsk
+## Valid values:
+##   - true
+##   - false
+##   - ask
+# c.content.register_protocol_handler = 'ask'
+
 ## Validate SSL handshakes.
 ## Type: BoolAsk
 ## Valid values:
@@ -675,11 +707,17 @@
 
 ## List of user stylesheet filenames to use.
 ## Type: List of File, or File
-c.content.user_stylesheets = ["~/.config/qutebrowser/styles.css"]
+# c.content.user_stylesheets = []
 
 ## Enable WebGL.
 ## Type: Bool
 # c.content.webgl = True
+
+## Only expose public interfaces via WebRTC. On Qt 5.9, this option
+## requires a restart. On Qt 5.10, this option doesn't work at all
+## because of a Qt bug. On Qt >= 5.11, no restart is required.
+## Type: Bool
+# c.content.webrtc_public_interfaces_only = False
 
 ## Limit fullscreen to the browser window (does not expand to fill the
 ## screen).
@@ -695,16 +733,16 @@ c.content.user_stylesheets = ["~/.config/qutebrowser/styles.css"]
 ## Directory to save downloads to. If unset, a sensible OS-specific
 ## default is used.
 ## Type: Directory
-c.downloads.location.directory = "~/Downloads/"
+# c.downloads.location.directory = None
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
 ## Type: Bool
-c.downloads.location.prompt = False
+# c.downloads.location.prompt = True
 
 ## Remember the last used download directory.
 ## Type: Bool
-c.downloads.location.remember = True
+# c.downloads.location.remember = True
 
 ## What to display in the download filename input.
 ## Type: String
@@ -725,12 +763,12 @@ c.downloads.location.remember = True
 ## Valid values:
 ##   - top
 ##   - bottom
-c.downloads.position = 'bottom'
+# c.downloads.position = 'top'
 
 ## Duration (in milliseconds) to wait before removing finished downloads.
 ## If set to -1, downloads are never removed.
 ## Type: Int
-c.downloads.remove_finished = 500
+# c.downloads.remove_finished = -1
 
 ## Editor (and arguments) to use for the `open-editor` command. The
 ## following placeholders are defined: * `{file}`: Filename of the file
@@ -912,6 +950,10 @@ c.downloads.remove_finished = 500
 ## Type: Int
 # c.history_gap_interval = 30
 
+## Allow Escape to quit the crash reporter.
+## Type: Bool
+# c.input.escape_quits_reporter = True
+
 ## Which unbound keys to forward to the webview in normal mode.
 ## Type: String
 ## Valid values:
@@ -919,6 +961,10 @@ c.downloads.remove_finished = 500
 ##   - auto: Forward unbound non-alphanumeric keys.
 ##   - none: Don't forward any keys.
 # c.input.forward_unbound_keys = 'auto'
+
+## Enter insert mode if an editable element is clicked.
+## Type: Bool
+# c.input.insert_mode.auto_enter = True
 
 ## Leave insert mode if a non-editable element is clicked.
 ## Type: Bool
@@ -1002,7 +1048,7 @@ c.downloads.remove_finished = 500
 
 ## Show a filebrowser in upload/download prompts.
 ## Type: Bool
-c.prompt.filebrowser = False
+# c.prompt.filebrowser = True
 
 ## Rounding radius (in pixels) for the edges of prompts.
 ## Type: Int
@@ -1022,9 +1068,15 @@ c.prompt.filebrowser = False
 # c.qt.force_platform = None
 
 ## Force software rendering for QtWebEngine. This is needed for
-## QtWebEngine to work with Nouveau drivers.
-## Type: Bool
-# c.qt.force_software_rendering = False
+## QtWebEngine to work with Nouveau drivers and can be useful in other
+## scenarios related to graphic issues.
+## Type: String
+## Valid values:
+##   - software-opengl: Tell LibGL to use a software implementation of GL (`LIBGL_ALWAYS_SOFTWARE` / `QT_XCB_FORCE_SOFTWARE_OPENGL`)
+##   - qt-quick: Tell Qt Quick to use a software renderer instead of OpenGL. (`QT_QUICK_BACKEND=software`)
+##   - chromium: Tell Chromium to disable GPU support and use Skia software rendering instead. (`--disable-gpu`)
+##   - none: Don't force software rendering.
+# c.qt.force_software_rendering = 'none'
 
 ## Turn on Qt HighDPI scaling. This is equivalent to setting
 ## QT_AUTO_SCREEN_SCALE_FACTOR=1 in the environment. It's off by default
@@ -1129,6 +1181,18 @@ c.prompt.filebrowser = False
 ##   - bottom
 # c.statusbar.position = 'bottom'
 
+## List of widgets displayed in the statusbar.
+## Type: List of String
+## Valid values:
+##   - url: Current page URL.
+##   - scroll: Percentage of the current page position like `10%`.
+##   - scroll_raw: Raw percentage of the current page position like `10`.
+##   - history: Display an arrow when possible to go back/forward in history.
+##   - tabs: Current active tab, e.g. `2`.
+##   - keypress: Display pressed keys when composing a vi command.
+##   - progress: Progress bar for the current page loading.
+# c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
+
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
 # c.tabs.background = False
@@ -1155,9 +1219,13 @@ c.prompt.filebrowser = False
 ## Type: Float
 # c.tabs.favicons.scale = 1.0
 
-## Show favicons in the tab bar.
-## Type: Bool
-# c.tabs.favicons.show = True
+## When to show favicons in the tab bar.
+## Type: String
+## Valid values:
+##   - always: Always show favicons.
+##   - never: Always hide favicons.
+##   - pinned: Show favicons only on pinned tabs.
+c.tabs.favicons.show = 'never'
 
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
@@ -1165,7 +1233,7 @@ c.prompt.filebrowser = False
 
 ## Width (in pixels) of the progress indicator (0 to disable).
 ## Type: Int
-# c.tabs.indicator.width = 3
+c.tabs.indicator.width = 0
 
 ## How to behave when the last tab is closed.
 ## Type: String
@@ -1176,6 +1244,21 @@ c.prompt.filebrowser = False
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
 # c.tabs.last_close = 'ignore'
+
+## Minimum width (in pixels) of tabs (-1 for the default minimum size
+## behavior). This setting only applies when tabs are horizontal. This
+## setting does not apply to pinned tabs, unless `tabs.pinned.shrink` is
+## False.
+## Type: Int
+# c.tabs.min_width = -1
+
+## When switching tabs, what input mode is applied.
+## Type: String
+## Valid values:
+##   - persist: Retain the current mode.
+##   - restore: Restore previously saved mode.
+##   - normal: Always revert to normal mode.
+# c.tabs.mode_on_change = 'normal'
 
 ## Switch between tabs using the mouse wheel.
 ## Type: Bool
@@ -1201,11 +1284,7 @@ c.prompt.filebrowser = False
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
-
-## Stay in insert/passthrough mode when switching tabs.
-## Type: Bool
-# c.tabs.persist_mode_on_change = False
+c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
 
 ## Shrink pinned tabs down to their contents.
 ## Type: Bool
@@ -1255,17 +1334,22 @@ c.prompt.filebrowser = False
 # c.tabs.title.alignment = 'left'
 
 ## Format to use for the tab title. The following placeholders are
-## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
-## `{perc_raw}`: Raw percentage, e.g. `10`. * `{title}`: Title of the
-## current web page. * `{title_sep}`: The string ` - ` if a title is set,
-## empty otherwise. * `{index}`: Index of this tab. * `{id}`: Internal
-## tab ID of this tab. * `{scroll_pos}`: Page scroll position. *
-## `{host}`: Host of the current web page. * `{backend}`: Either
-## ''webkit'' or ''webengine'' * `{private}`: Indicates when private mode
-## is enabled. * `{current_url}`: URL of the current web page. *
-## `{protocol}`: Protocol (http/https/...) of the current web page.
+## defined:  
+## * `{perc}`: Percentage as a string like `[10%]`. 
+## * `{perc_raw}`: Raw percentage, e.g. `10`. 
+## * `{title}`: Title of the current web page. 
+## * `{title_sep}`: The string ` - ` if a title is set, empty otherwise. 
+## * `{index}`: Index of this tab. 
+## * `{id}`: Internal tab ID of this tab. 
+## * `{scroll_pos}`: Page scroll position. 
+## * `{host}`: Host of the current web page. 
+## * `{backend}`: Either ''webkit'' or ''webengine'' 
+## * `{private}`: Indicates when private mode is enabled. 
+## * `{current_url}`: URL of the current web page. 
+## * `{protocol}`: Protocol (http/https/...) of the current web page. 
+## * `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
-# c.tabs.title.format = '{index}: {title}'
+c.tabs.title.format = '{index}: {title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
@@ -1292,17 +1376,23 @@ c.prompt.filebrowser = False
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'https://google.com/'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
 ## Type: FlagList
 ## Valid values:
 ##   - host
+##   - port
 ##   - path
 ##   - query
 ##   - anchor
 # c.url.incdec_segments = ['path', 'query']
+
+## Open base URL of the searchengine if a searchengine shortcut is
+## invoked without parameters.
+## Type: Bool
+# c.url.open_base_url = False
 
 ## Search engines which can be used via the address bar. Maps a search
 ## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -1313,7 +1403,7 @@ c.prompt.filebrowser = False
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {'gituser': 'https://github.com/{}', 'crate': 'https://docs.rs/releases/search?query={}', 'DEFAULT': 'https://google.com/search?q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
@@ -1323,9 +1413,10 @@ c.prompt.filebrowser = False
 ## Type: List of String
 # c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
 
-## Hide the window decoration when using wayland.
+## Hide the window decoration.  This setting requires a restart on
+## Wayland.
 ## Type: Bool
-# c.window.hide_wayland_decoration = False
+# c.window.hide_decoration = False
 
 ## Format to use for the window title. The same placeholders like for
 ## `tabs.title.format` are defined.
@@ -1377,6 +1468,7 @@ c.prompt.filebrowser = False
 # config.bind('<Alt-7>', 'tab-focus 7')
 # config.bind('<Alt-8>', 'tab-focus 8')
 # config.bind('<Alt-9>', 'tab-focus -1')
+# config.bind('<Alt-m>', 'tab-mute')
 # config.bind('<Ctrl-A>', 'navigate increment')
 # config.bind('<Ctrl-Alt-p>', 'print')
 # config.bind('<Ctrl-B>', 'scroll-page 0 -1')
@@ -1390,6 +1482,7 @@ c.prompt.filebrowser = False
 # config.bind('<Ctrl-Return>', 'follow-selected -t')
 # config.bind('<Ctrl-Shift-N>', 'open -p')
 # config.bind('<Ctrl-Shift-T>', 'undo')
+# config.bind('<Ctrl-Shift-Tab>', 'nop')
 # config.bind('<Ctrl-Shift-W>', 'close')
 # config.bind('<Ctrl-T>', 'open -t')
 # config.bind('<Ctrl-Tab>', 'tab-focus last')
@@ -1415,8 +1508,8 @@ c.prompt.filebrowser = False
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
 # config.bind('H', 'back')
-# config.bind('J', 'tab-next')
-# config.bind('K', 'tab-prev')
+config.bind('J', 'tab-prev')
+config.bind('K', 'tab-next')
 # config.bind('L', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
@@ -1452,6 +1545,7 @@ c.prompt.filebrowser = False
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
+# config.bind('gi', 'hint inputs --first')
 # config.bind('gl', 'tab-move -')
 # config.bind('gm', 'tab-move')
 # config.bind('go', 'set-cmd-text :open {url:pretty}')
@@ -1474,8 +1568,20 @@ c.prompt.filebrowser = False
 # config.bind('sk', 'set-cmd-text -s :bind')
 # config.bind('sl', 'set-cmd-text -s :set -t')
 # config.bind('ss', 'set-cmd-text -s :set')
+# config.bind('tPH', 'config-cycle -p -u *://*.{url:host}/* content.plugins ;; reload')
+# config.bind('tPh', 'config-cycle -p -u *://{url:host}/* content.plugins ;; reload')
+# config.bind('tPu', 'config-cycle -p -u {url} content.plugins ;; reload')
+# config.bind('tSH', 'config-cycle -p -u *://*.{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tSh', 'config-cycle -p -u *://{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tSu', 'config-cycle -p -u {url} content.javascript.enabled ;; reload')
 # config.bind('th', 'back -t')
 # config.bind('tl', 'forward -t')
+# config.bind('tpH', 'config-cycle -p -t -u *://*.{url:host}/* content.plugins ;; reload')
+# config.bind('tph', 'config-cycle -p -t -u *://{url:host}/* content.plugins ;; reload')
+# config.bind('tpu', 'config-cycle -p -t -u {url} content.plugins ;; reload')
+# config.bind('tsH', 'config-cycle -p -t -u *://*.{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tsh', 'config-cycle -p -t -u *://{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tsu', 'config-cycle -p -t -u {url} content.javascript.enabled ;; reload')
 # config.bind('u', 'undo')
 # config.bind('v', 'enter-mode caret')
 # config.bind('wB', 'set-cmd-text -s :bookmark-load -w')
@@ -1581,6 +1687,8 @@ c.prompt.filebrowser = False
 # config.bind('<Alt-Backspace>', 'rl-backward-kill-word', mode='prompt')
 # config.bind('<Alt-D>', 'rl-kill-word', mode='prompt')
 # config.bind('<Alt-F>', 'rl-forward-word', mode='prompt')
+# config.bind('<Alt-Shift-Y>', 'prompt-yank --sel', mode='prompt')
+# config.bind('<Alt-Y>', 'prompt-yank', mode='prompt')
 # config.bind('<Ctrl-?>', 'rl-delete-char', mode='prompt')
 # config.bind('<Ctrl-A>', 'rl-beginning-of-line', mode='prompt')
 # config.bind('<Ctrl-B>', 'rl-backward-char', mode='prompt')
@@ -1598,18 +1706,14 @@ c.prompt.filebrowser = False
 # config.bind('<Shift-Tab>', 'prompt-item-focus prev', mode='prompt')
 # config.bind('<Tab>', 'prompt-item-focus next', mode='prompt')
 # config.bind('<Up>', 'prompt-item-focus prev', mode='prompt')
-# config.bind('n', 'prompt-accept no', mode='prompt')
-# config.bind('y', 'prompt-accept yes', mode='prompt')
 
 ## Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
 
-
-# My Mappings
-config.bind('K', 'tab-next')
-config.bind('J', 'tab-prev')
-config.bind('M', 'quickmark-save')
-config.bind('m', 'enter-mode set_mark')
-config.bind('`', 'enter-mode jump_mark')
-
-# set ui user-stylesheet ~/.config/qutebrowser/styles.css ;; reload
+## Bindings for yesno mode
+# config.bind('<Alt-Shift-Y>', 'prompt-yank --sel', mode='yesno')
+# config.bind('<Alt-Y>', 'prompt-yank', mode='yesno')
+# config.bind('<Escape>', 'leave-mode', mode='yesno')
+# config.bind('<Return>', 'prompt-accept', mode='yesno')
+# config.bind('n', 'prompt-accept no', mode='yesno')
+# config.bind('y', 'prompt-accept yes', mode='yesno')
