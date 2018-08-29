@@ -158,7 +158,7 @@ autocmd FileType swift setlocal commentstring=//\ %s
 " Tab Settings "
 " ------------ "
 
-source tabs.vim
+source ~/.vim/tabs.vim
 
 " Tab status line
 set tabline=%!MyTabLine()
