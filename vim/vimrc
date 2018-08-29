@@ -144,6 +144,9 @@ nnoremap <silent> tn  :tabnext<Space>
 nnoremap <silent> tm  :tabm<Space>
 nnoremap <silent> td  :tabclose<CR>
 
+nnoremap <silent> <Tab>  :tabnext<CR>
+nnoremap <silent> <S-Tab>  :tabprev<CR>
+
 " Changes primary key to use to change terminal from running mode
 " to terminal mode
 " set termwinkey=<C-w>
