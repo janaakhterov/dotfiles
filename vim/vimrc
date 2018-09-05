@@ -25,8 +25,7 @@ set display+=lastline
 
 " To view hidden characters
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-" set list
-
+" set list 
 " Change timeout in normal mode
 " set timeoutlen=250
 
@@ -180,3 +179,21 @@ nnoremap <silent> <S-Tab>  :tabprev<CR>
 " ---------------- "
 " End Tab Settings "
 " ---------------- "
+
+" --------------------- "
+" Start of GUI Settings "
+" --------------------- "
+
+" No scroll/menu bars
+set guioptions=
+autocmd! GUIEnter * set vb t_vb=
+
+" Set gui font
+set guifont=Hack:h14
+
+" Set cursor to block for everything
+set guicursor=a:block-Cursor
+
+" ------------------- "
+" End of GUI Settings "
+" ------------------- "
