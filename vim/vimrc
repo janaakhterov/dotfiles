@@ -100,29 +100,10 @@ nnoremap <silent> <leader>t :Ex<CR>
 " Open terminal
 nnoremap <silent> <leader>s :sh<CR>
 
-" Mapping for ctags
-" nnoremap <leader>l <C-]>
-" nnoremap <leader>h <C-O>
-
-" Change fold bindings
-" nnoremap <leader>fo zo
-" nnoremap <leader>fc zc
-" nnoremap <leader>fa za
-" nnoremap R zR
-" nnoremap M zM
-
-" autocmd VimLeave * :mks!
-
-" UTF-8 Support
-" set encoding=UTF-8
-" set fileencoding=UTF-8
-
-" Changes primary key to use to change terminal from running mode
-" to terminal mode
-" set termwinkey=<C-w>
-
 " No more command windows!
 nnoremap q: :q
+
+let g:autofmt_autosave = 1
 
 " -------------- "
 " Netrw Settings "
@@ -197,3 +178,14 @@ set guicursor=a:block-Cursor
 " ------------------- "
 " End of GUI Settings "
 " ------------------- "
+
+" ----------------------- "
+" Start of Racer Settings "
+" ----------------------- "
+
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+" --------------------- "
+" End of Racer Settings "
+" --------------------- "
