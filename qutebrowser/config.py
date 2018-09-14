@@ -822,11 +822,11 @@
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-# c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = '"Hack"'
 
 ## Font used for prompts.
 ## Type: Font
-# c.fonts.prompts = '10pt sans-serif'
+# c.fonts.prompts = '10pt monospace'
 
 ## Font used in the statusbar.
 ## Type: Font
@@ -834,7 +834,7 @@
 
 ## Font used in the tab bar.
 ## Type: QtFont
-# c.fonts.tabs = '10pt monospace'
+c.fonts.tabs = '14pt monospace'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1284,7 +1284,7 @@ c.tabs.indicator.width = 0
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
+c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 5, 'right': 5}
 
 ## Shrink pinned tabs down to their contents.
 ## Type: Bool
