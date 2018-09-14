@@ -14,9 +14,6 @@ set backspace=indent,eol,start
 " Set path to recursively search when using the :find command
 set path+=**
 
-" Show horizontal list of values from the :find command
-set wildmenu
-
 " Disable auto comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -26,8 +23,6 @@ set display+=lastline
 " To view hidden characters
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " set list 
-" Change timeout in normal mode
-" set timeoutlen=250
 
 " Do not change window sizez upon opening/closing splits
 set noequalalways
@@ -35,21 +30,8 @@ set noequalalways
 " Setting dictionary
 set dict+=/usr/share/dict/cracklib-small
 
-" Statusline
-set laststatus=2
-set statusline=%f
-set statusline+=[%c:%l/%L]
-" set statusline+=%=%{FugitiveStatusline()}\ [%c:%l/%L]
-
 " Color Scheme
 colorscheme bee
-
-" Highlight columns past 80
-" execute "set colorcolumn=" . join(range(80, 400), ',')
-
-" Set cursor to be in middle of screen and highlight
-" set so=999
-" set cursorline
 
 " Used to make rendering faster when multiple windows are open
 set ttyfast
@@ -57,51 +39,82 @@ set ttyfast
 " Vim-Latex-Live-Preview Variable
 " let g:livepreview_previewer = 'mupdf'
 
-" Basic better of life settings
+" ---------------- "
+" Editor Settings "
+" ---------------- "
+
 set number
-" set relativenumber 
+
 set tabstop=4
-set shiftwidth=4
 set expandtab
-" set autoindent
-" set smartindent
+set shiftwidth=4
+
+set autoindent
+set smartindent
+set cindent
+
+" --------------- "
+" Search Settings "
+" --------------- "
+
 set smartcase
-
-" Folding options
-set foldenable
-set foldmethod=syntax
-
-" Incremental Search
 set incsearch
 
-" Basic mouse settings
+" ------------- "
+" Fold Settings "
+" ------------- "
+set foldenable
+set foldmethod=syntax
+set foldlevel=99
 
-" Mouse will select only what visual mode coud select in current window
+" ------------------- "
+" StatusLine Settings "
+" ------------------- "
+
+set laststatus=2
+set statusline=%f
+set statusline+=[%c:%l/%L]
+set statusline+=%=%{FugitiveStatusline()}\ [%c:%l/%L]
+
+set wildmenu
+
+" -------------- "
+" Mouse Settings "
+" -------------- "
+
 set mouse=a
 set mousefocus
 
-" Mappings
-" Leader Mapping
-let mapleader="\<Space>"
-
-" Dont want to press shift all the time because keyboard is hard to type on
-" nnoremap ; :
-
-" Open buffer list
-" nnoremap <silent> <leader>ls :ls<CR>
-
-" Viewing and editting vimrc mappings
-nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
-nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
-
-" Open file explorer
-nnoremap <silent> <leader>t :Ex<CR>
-
-" Open terminal
-nnoremap <silent> <leader>s :sh<CR>
+" -------- "
+" Mappings "
+" -------- "
 
 " No more command windows!
 nnoremap q: :q
+
+" Easy tab movement
+nnoremap <silent> <Tab>  :tabnext<CR>
+nnoremap <silent> <S-Tab>  :tabprev<CR>
+
+" --------------- "
+" Leader Mappings "
+" --------------- "
+
+let mapleader="\<Space>"
+
+" Editting and Sourcing vimrc
+nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
+nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
+
+" Open file explorer in current window
+nnoremap <silent> <leader>t :Ex<CR>
+
+" Suspend vim and open terminal
+nnoremap <silent> <leader>s :sh<CR>
+
+" ----------------- "
+" Rust-vim Settings "
+" ----------------- "
 
 let g:autofmt_autosave = 1
 
@@ -109,83 +122,44 @@ let g:autofmt_autosave = 1
 " Netrw Settings "
 " -------------- "
 
-" Netrw settings
 let g:netrw_liststyle=3
-" let g:netrw_banner=0
-" let g:netrw_winsize=15
 let g:netrw_fastbrowse=2
-
-" ------------------ "
-" End Netrw Settings "
-" ------------------ "
 
 " ------------------- "
 " Commentary Settings "
 " ------------------- "
 
-" Setting Tim Pope's commentary variable
 autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType sql setlocal commentstring=--\ %s
 autocmd FileType py setlocal commentstring=#\ %s
 autocmd FileType swift setlocal commentstring=//\ %s
 
-" ----------------------- "
-" End Commentary Settings "
-" ----------------------- "
-
 " ------------ "
 " Tab Settings "
 " ------------ "
 
+" TabLine functions
 source ~/.vim/tabs.vim
 
-" Tab status line
+" TabLine
 set tabline=%!MyTabLine()
 set showtabline=2
 
-" Tab commands
-nnoremap <silent> th  :tabfirst<CR>
-nnoremap <silent> tk  :tabnext<CR>
-nnoremap <silent> tj  :tabprev<CR>
-nnoremap <silent> tl  :tablast<CR>
-nnoremap <silent> tt  :tabfind<Space>
-nnoremap <silent> tn  :tabnext<Space>
-nnoremap <silent> tm  :tabm<Space>
-nnoremap <silent> td  :tabclose<CR>
-
-nnoremap <silent> <Tab>  :tabnext<CR>
-nnoremap <silent> <S-Tab>  :tabprev<CR>
-
-" ---------------- "
-" End Tab Settings "
-" ---------------- "
-
-" --------------------- "
-" Start of GUI Settings "
-" --------------------- "
+" ------------ "
+" GUI Settings "
+" ------------ "
 
 " No scroll/menu bars
 set guioptions=
 autocmd! GUIEnter * set vb t_vb=
 
-" Set gui font
 set guifont=Hack:h14
-
-" Set cursor to block for everything
 set guicursor=a:block-Cursor
 
-" ------------------- "
-" End of GUI Settings "
-" ------------------- "
-
-" ----------------------- "
-" Start of Racer Settings "
-" ----------------------- "
+" -------------- "
+" Racer Settings "
+" -------------- "
 
 let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
-
-" --------------------- "
-" End of Racer Settings "
-" --------------------- "
