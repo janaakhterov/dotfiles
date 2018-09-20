@@ -320,7 +320,7 @@
 
 ## Background color of the tab bar.
 ## Type: QtColor
-# c.colors.tabs.bar.bg = '#555555'
+c.colors.tabs.bar.bg = '#FFFFFF'
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
@@ -378,7 +378,7 @@
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
 ## Type: QtColor
-# c.colors.webpage.bg = 'white'
+c.colors.webpage.bg = 'white'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -465,7 +465,7 @@
 ## to _n_ pages. For more information about the feature, please refer to:
 ## http://webkit.org/blog/427/webkit-page-cache-i-the-basics/
 ## Type: Int
-# c.content.cache.maximum_pages = 0
+# c.content.cache.maximum_pages = 10
 
 ## Size (in bytes) of the HTTP network cache. Null to use the default
 ## value. With QtWebEngine, the maximum supported value is 2147483647 (~2
@@ -485,7 +485,7 @@
 ##   - no-3rdparty: Accept cookies from the same origin only.
 ##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 ##   - never: Don't accept cookies at all.
-# c.content.cookies.accept = 'no-3rdparty'
+c.content.cookies.accept = 'no-3rdparty'
 
 ## Store cookies. Note this option needs a restart with QtWebEngine on Qt
 ## < 5.9.
@@ -504,7 +504,7 @@
 ##   - true
 ##   - false
 ##   - ask
-# c.content.desktop_capture = 'ask'
+c.content.desktop_capture = False
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
@@ -521,7 +521,7 @@
 ##   - true
 ##   - false
 ##   - ask
-# c.content.geolocation = 'ask'
+c.content.geolocation = False
 
 ## Value to send in the `Accept-Language` header. Note that the value
 ## read from JavaScript is always the global value.
@@ -634,7 +634,7 @@
 ##   - true
 ##   - false
 ##   - ask
-# c.content.media_capture = 'ask'
+c.content.media_capture = False
 
 ## Netrc-file for HTTP authentication. If unset, `~/.netrc` is used.
 ## Type: File
@@ -646,7 +646,7 @@
 ##   - true
 ##   - false
 ##   - ask
-# c.content.notifications = 'ask'
+# c.content.notifications = False
 
 ## Allow pdf.js to view PDF files in the browser. Note that the files can
 ## still be downloaded by clicking the download button in the pdf.js
@@ -1021,7 +1021,7 @@ c.fonts.tabs = '14pt monospace'
 ## Duration (in milliseconds) to show messages in the statusbar for. Set
 ## to 0 to never clear messages.
 ## Type: Int
-# c.messages.timeout = 2000
+c.messages.timeout = 0
 
 ## How to open links in an existing instance if a new one is launched.
 ## This happens when e.g. opening a link from a terminal. See
