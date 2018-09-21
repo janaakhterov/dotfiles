@@ -44,8 +44,17 @@ set statusline+=[%c:%l/%L]
 " Color Scheme
 colorscheme bee
 
-" Highlight columns past 80
-" execute "set colorcolumn=" . join(range(80, 400), ',')
+" Auto read and update files if edited by another program
+set autoread
+
+" Necessary for backspace to workin insert mode on all characters
+set backspace=indent,eol,start
+
+" Set path to recursively search when using the :find command
+set path+=**
+
+" Disable auto comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set cursor to be in middle of screen and highlight
 " set so=999
@@ -60,7 +69,36 @@ set ttyfast
 " Basic better of life settings
 set number
 " set relativenumber 
+" Show as much of the last line as you can
+set display+=lastline
+
+" To view hidden characters
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" set list 
+
+" Do not change window sizez upon opening/closing splits
+set noequalalways
+
+" Setting dictionary
+set dict+=/usr/share/dict/cracklib-small
+
+" Color Scheme
+colorscheme bee
+
+" Used to make rendering faster when multiple windows are open
+set ttyfast
+
+" Vim-Latex-Live-Preview Variable
+" let g:livepreview_previewer = 'mupdf'
+
+" ---------------- "
+" Editor Settings "
+" ---------------- "
+
+set number
+
 set tabstop=4
+set expandtab
 set shiftwidth=4
 set expandtab
 " set autoindent
@@ -80,8 +118,57 @@ set incsearch
 set mouse=a
 set mousefocus
 
-" Mappings
-" Leader Mapping
+set autoindent
+set smartindent
+set cindent
+
+" --------------- "
+" Search Settings "
+" --------------- "
+
+set smartcase
+set incsearch
+
+" ------------- "
+" Fold Settings "
+" ------------- "
+set foldenable
+set foldmethod=syntax
+set foldlevel=99
+
+" ------------------- "
+" StatusLine Settings "
+" ------------------- "
+
+set laststatus=2
+set statusline=%f
+set statusline+=[%c:%l/%L]
+set statusline+=%=%{FugitiveStatusline()}\ [%c:%l/%L]
+
+set wildmenu
+
+" -------------- "
+" Mouse Settings "
+" -------------- "
+
+set mouse=a
+set mousefocus
+
+" -------- "
+" Mappings "
+" -------- "
+
+" No more command windows!
+nnoremap q: :q
+
+" Easy tab movement
+nnoremap <silent> <Tab>  :tabnext<CR>
+nnoremap <silent> <S-Tab>  :tabprev<CR>
+
+" --------------- "
+" Leader Mappings "
+" --------------- "
+
 let mapleader="\<Space>"
 
 " Dont want to press shift all the time because keyboard is hard to type on
@@ -95,9 +182,14 @@ nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
 " Open file explorer
+" Editting and Sourcing vimrc
+nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
+nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
+
+" Open file explorer in current window
 nnoremap <silent> <leader>t :Ex<CR>
 
-" Open terminal
+" Suspend vim and open terminal
 nnoremap <silent> <leader>s :sh<CR>
 
 " Mapping for ctags
@@ -137,6 +229,19 @@ let g:netrw_fastbrowse=2
 " ------------------ "
 " End Netrw Settings "
 " ------------------ "
+
+" ----------------- "
+" Rust-vim Settings "
+" ----------------- "
+
+let g:autofmt_autosave = 1
+
+" -------------- "
+" Netrw Settings "
+" -------------- "
+
+let g:netrw_liststyle=3
+let g:netrw_fastbrowse=2
 
 " ------------------- "
 " Commentary Settings "
@@ -183,6 +288,16 @@ nnoremap <silent> <S-Tab>  :tabprev<CR>
 " --------------------- "
 " Start of GUI Settings "
 " --------------------- "
+" TabLine functions
+source ~/.vim/tabs.vim
+
+" TabLine
+set tabline=%!MyTabLine()
+set showtabline=2
+
+" ------------ "
+" GUI Settings "
+" ------------ "
 
 " No scroll/menu bars
 set guioptions=
@@ -197,3 +312,40 @@ set guicursor=a:block-Cursor
 " ------------------- "
 " End of GUI Settings "
 " ------------------- "
+set guifont=Hack:h14
+set guicursor=a:block-Cursor
+
+" -------------- "
+" Racer Settings "
+" -------------- "
+
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+" function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
+"   let ft=toupper(a:filetype)
+"   let group='textGroup'.ft
+"   if exists('b:current_syntax')
+"     let s:current_syntax=b:current_syntax
+"     " Remove current syntax definition, as some syntax files (e.g. cpp.vim)
+"     " do nothing if b:current_syntax is defined.
+"     unlet b:current_syntax
+"   endif
+"   execute 'syntax include @'.group.' syntax/'.a:filetype.'.vim'
+"   try
+"     execute 'syntax include @'.group.' after/syntax/'.a:filetype.'.vim'
+"   catch
+"   endtry
+"   if exists('s:current_syntax')
+"     let b:current_syntax=s:current_syntax
+"   else
+"     unlet b:current_syntax
+"   endif
+"   execute 'syntax region textSnip'.ft.'
+"   \ matchgroup='.a:textSnipHl.'
+"   \ keepend
+"   \ start="'.a:start.'" end="'.a:end.'"
+"   \ contains=@'.group
+" endfunction
+
+" call TextEnableCodeSnip(  'css',   '<style scoped>',   '</style>', 'css')
