@@ -21,3 +21,5 @@ i3/*.png
 vim/swap
 vim/pack
 vim/.*
+
+gtk*
