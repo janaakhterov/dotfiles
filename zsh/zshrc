@@ -19,6 +19,7 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=119'
 
 # Prompt customization
 precmd() {
+    colors
     vcs_info
     PROMPT="%{$fg[cyan]%}%~%{$fg[yellow]%}${vcs_info_msg_0_}%{$fg[green]%} $%{$reset_color%} "
 }
@@ -30,13 +31,14 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # autoload -U promptinit; promptinit
 
 # Suggest command from history that fits 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/Config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Zsh Syntax Highlighting
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/Config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cc="cargo check"
 alias vims="vim -S Session.vim"
+alias ls="ls --color=auto"
 alias la="ls -a"
 alias ll="ls -l"
 

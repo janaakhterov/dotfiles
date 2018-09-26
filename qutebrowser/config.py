@@ -505,11 +505,8 @@ c.content.cookies.accept = 'no-3rdparty'
 ##   - true
 ##   - false
 ##   - ask
-<<<<<<< HEAD
 # c.content.desktop_capture = 'ask'
-=======
 c.content.desktop_capture = False
->>>>>>> cc7dc3170cfc2a1cef4b299f143ff7e8afc7f27a
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
@@ -839,7 +836,7 @@ c.fonts.monospace = '"Hack"'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '14pt monospace'
+c.fonts.tabs = '12pt monospace'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1289,11 +1286,7 @@ c.tabs.indicator.width = 0
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-<<<<<<< HEAD
 c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
-=======
-c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 5, 'right': 5}
->>>>>>> cc7dc3170cfc2a1cef4b299f143ff7e8afc7f27a
 
 ## Shrink pinned tabs down to their contents.
 ## Type: Bool
