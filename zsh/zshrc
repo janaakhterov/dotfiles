@@ -46,6 +46,7 @@ alias ll="ls -l"
 alias gs="git status"
 alias gp="git pull"
 alias ga="git add -A"
+alias gc="git commit -m "
 
 # add rust to the path
 export PATH="$HOME/.cargo/bin":$PATH
