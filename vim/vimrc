@@ -316,13 +316,6 @@ set guicursor=a:block-Cursor
 set guifont=Hack:h14
 set guicursor=a:block-Cursor
 
-" -------------- "
-" Racer Settings "
-" -------------- "
-
-let g:racer_cmd = "$HOME/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-
 " ------------ "
 " FZF Settings "
 " ------------ "
