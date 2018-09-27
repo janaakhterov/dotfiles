@@ -20,3 +20,5 @@ i3/*.png
 
 vim/swap
 vim/.*
+
+gtk*

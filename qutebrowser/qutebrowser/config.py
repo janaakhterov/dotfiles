@@ -321,7 +321,6 @@
 ## Background color of the tab bar.
 ## Type: QtColor
 # c.colors.tabs.bar.bg = '#555555'
-c.colors.tabs.bar.bg = '#FFFFFF'
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
@@ -379,7 +378,7 @@ c.colors.tabs.bar.bg = '#FFFFFF'
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
 ## Type: QtColor
-c.colors.webpage.bg = 'white'
+# c.colors.webpage.bg = 'white'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -466,7 +465,7 @@ c.colors.webpage.bg = 'white'
 ## to _n_ pages. For more information about the feature, please refer to:
 ## http://webkit.org/blog/427/webkit-page-cache-i-the-basics/
 ## Type: Int
-# c.content.cache.maximum_pages = 10
+# c.content.cache.maximum_pages = 0
 
 ## Size (in bytes) of the HTTP network cache. Null to use the default
 ## value. With QtWebEngine, the maximum supported value is 2147483647 (~2
@@ -486,7 +485,7 @@ c.colors.webpage.bg = 'white'
 ##   - no-3rdparty: Accept cookies from the same origin only.
 ##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 ##   - never: Don't accept cookies at all.
-c.content.cookies.accept = 'no-3rdparty'
+# c.content.cookies.accept = 'no-3rdparty'
 
 ## Store cookies. Note this option needs a restart with QtWebEngine on Qt
 ## < 5.9.
@@ -506,7 +505,6 @@ c.content.cookies.accept = 'no-3rdparty'
 ##   - false
 ##   - ask
 # c.content.desktop_capture = 'ask'
-c.content.desktop_capture = False
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
@@ -523,7 +521,7 @@ c.content.desktop_capture = False
 ##   - true
 ##   - false
 ##   - ask
-c.content.geolocation = False
+# c.content.geolocation = 'ask'
 
 ## Value to send in the `Accept-Language` header. Note that the value
 ## read from JavaScript is always the global value.
@@ -636,7 +634,7 @@ c.content.geolocation = False
 ##   - true
 ##   - false
 ##   - ask
-c.content.media_capture = False
+# c.content.media_capture = 'ask'
 
 ## Netrc-file for HTTP authentication. If unset, `~/.netrc` is used.
 ## Type: File
@@ -648,7 +646,7 @@ c.content.media_capture = False
 ##   - true
 ##   - false
 ##   - ask
-# c.content.notifications = False
+# c.content.notifications = 'ask'
 
 ## Allow pdf.js to view PDF files in the browser. Note that the files can
 ## still be downloaded by clicking the download button in the pdf.js
@@ -824,11 +822,11 @@ c.content.media_capture = False
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-c.fonts.monospace = '"Hack"'
+# c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 ## Font used for prompts.
 ## Type: Font
-# c.fonts.prompts = '10pt monospace'
+# c.fonts.prompts = '10pt sans-serif'
 
 ## Font used in the statusbar.
 ## Type: Font
@@ -836,7 +834,7 @@ c.fonts.monospace = '"Hack"'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '12pt monospace'
+# c.fonts.tabs = '10pt monospace'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1023,7 +1021,7 @@ c.fonts.tabs = '12pt monospace'
 ## Duration (in milliseconds) to show messages in the statusbar for. Set
 ## to 0 to never clear messages.
 ## Type: Int
-c.messages.timeout = 0
+# c.messages.timeout = 2000
 
 ## How to open links in an existing instance if a new one is launched.
 ## This happens when e.g. opening a link from a terminal. See
