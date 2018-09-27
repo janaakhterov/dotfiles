@@ -40,6 +40,11 @@ alias vims="vim -S Session.vim"
 alias la="ls -a"
 alias ll="ls -l"
 
+# Git
+alias gs="git status"
+alias gp="git pull"
+alias ga="git add -A"
+
 # add rust to the path
 export PATH="$HOME/.cargo/bin":$PATH
 export PATH="$HOME/rust-ctags":$PATH

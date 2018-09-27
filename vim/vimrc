@@ -134,6 +134,7 @@ autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType sql setlocal commentstring=--\ %s
 autocmd FileType py setlocal commentstring=#\ %s
 autocmd FileType swift setlocal commentstring=//\ %s
+autocmd FileType vue setlocal commentstring=/*\ %s\ */
 
 " ------------ "
 " Tab Settings "
