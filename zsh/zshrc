@@ -48,6 +48,9 @@ alias gp="git pull"
 alias ga="git add -A"
 alias gc="git commit -m "
 
+# Qutebrowser on ubuntu
+# alias qutebrowser="~/Documents/qutebrowser/.venv/bin/python3 -m qutebrowser"
+
 # add rust to the path
 export PATH="$HOME/.cargo/bin":$PATH
 export PATH="$HOME/rust-ctags":$PATH

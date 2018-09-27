@@ -22,3 +22,6 @@ vim/swap
 vim/.*
 
 gtk*
+
+user-*
+ibus/
