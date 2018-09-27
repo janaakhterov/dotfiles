@@ -1,0 +1,31 @@
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+
+URxvt.foreground: white
+URxvt.background: black
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+/* URxvt.scrollTtyOutput: false */
+/* URxvt.scrollWithBuffer: false */
+
+/* URxvt.tint: black */
+
+/* URxvt.background.expr: scale keep { load "~/Pictures/rainy-wallpaper.jpg" } */
+
+/* URxvt.transparent: true */
+/* URxvt.shading: 20 */
+/* URxvt.shading: 60 */
+/* URxvt.blurRadius: 40 */
+
+/* URxvt.cursorColor: white */
+
+/* URxvt.font: xft:Source Code Pro Light:size=14 */
+URxvt.font: xft:Hack-Regular:pixelsize=14:antialias=true
+URxvt.boldfont: xft:Hack-Bold:pixelsize=14:weight=bold:antialias=true
+URxvt.italicfont: xft:Hack-RegularOblique:pixelsize=14:slant=italic:antialias=true
+
+URxvt.scrollBar: false
