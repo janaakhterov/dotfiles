@@ -161,21 +161,16 @@ bar {
 	position top
 }
 
-gaps inner 10
-gaps outer 0
-smart_gaps on
 
 for_window [class="^.*"] border pixel 3
 client.focused #FF0000 #000000 #FFFFFF #000000 #0000FF
 client.unfocused #FF0000 #000000 #FFFFFF #000000 #FF8800
-hide_edge_borders smart
 
 new_window none
 new_float none
 
 # set $term --no-startup-id urxvt --background-expr 'scale keep {load ~/Pictures/rainy-wallpaper2.png}'
 
-bindsym $mod+b exec --no-startup-id qutebrowser
 bindsym $mod+n exec --no-startup-id $term -e ranger
 # bindsym $mod+x exec --no-startup-id ~/Scripts/sleepscript.sh
 # bindsym $mod+z exec --no-startup-id ~/Scripts/shutdownscript.sh

@@ -20,5 +20,9 @@ i3/*.png
 
 vim/swap
 vim/.*
+*.swp
 
 gtk*
+
+user-*
+ibus/
