@@ -48,6 +48,8 @@ alias gp="git pull"
 alias ga="git add -A"
 alias gc="git commit -m "
 
+alias pings="ping 8.8.8.8"
+
 # add rust to the path
 export PATH="$HOME/.cargo/bin":$PATH
 export PATH="$HOME/rust-ctags":$PATH
