@@ -19,7 +19,6 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=119'
 
 # Prompt customization
 precmd() {
-    colors
     vcs_info
     PROMPT="%{$fg[cyan]%}%~%{$fg[yellow]%}${vcs_info_msg_0_}%{$fg[green]%} $%{$reset_color%} "
 }
@@ -28,7 +27,7 @@ precmd() {
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-# autoload -U promptinit; promptinit
+autoload -U promptinit; promptinit
 
 # Suggest command from history that fits 
 source ~/Config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -55,7 +54,7 @@ export PATH="$HOME/rust-ctags":$PATH
 # Short error format for rust
 # export RUSTFLAGS="--error-format=short"
 
-# function widget-cd() {
+# widget-cd() {
 #     cd ..
 #     zle reset-prompt
 # }
