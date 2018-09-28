@@ -45,7 +45,7 @@ alias ll="ls -l"
 alias gs="git status"
 alias gp="git pull"
 alias ga="git add -A"
-alias gc="git commit -m "
+alias gc="git commit -m"
 
 
 # add rust to the path
@@ -55,6 +55,13 @@ export PATH="$HOME/rust-ctags":$PATH
 # Short error format for rust
 # export RUSTFLAGS="--error-format=short"
 
+# function widget-cd() {
+#     cd ..
+#     zle reset-prompt
+# }
+
+# zle -N widget-cd
+
 # Movement keys
 bindkey '^l' forward-char
 
@@ -62,6 +69,7 @@ bindkey '^w' forward-word
 bindkey '^b' backward-delete-word
 
 bindkey '^ ' autosuggest-accept
+# bindkey '^h' widget-cd
 
 # GOPATH
 export GOPATH=~/go
