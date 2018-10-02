@@ -7,9 +7,7 @@ stardict
 terminator
 vlc
 
-ranger/*.py
-ranger/*.sh
-ranger/rifle.conf
+ranger
 
 qutebrowser/bookmarks
 qutebrowser/qsettings
@@ -26,3 +24,5 @@ gtk*
 
 user-*
 ibus/
+
+htop/

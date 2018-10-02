@@ -37,6 +37,7 @@ source ~/Config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cc="cargo check"
 alias vims="vim -S Session.vim"
+alias ls="ls --color=auto" # gitignore
 alias la="ls -a"
 alias ll="ls -l"
 
@@ -48,6 +49,7 @@ alias gc="git commit -m"
 
 
 alias pings="ping 8.8.8.8"
+alias up="cd .."
 
 # add rust to the path
 export PATH="$HOME/.cargo/bin":$PATH
@@ -70,7 +72,7 @@ bindkey '^w' forward-word
 bindkey '^b' backward-delete-word
 
 bindkey '^ ' autosuggest-accept
-# bindkey '^h' widget-cd
+bindkey -v
 
 # GOPATH
 export GOPATH=~/go
