@@ -1023,7 +1023,7 @@ c.fonts.tabs = '12pt monospace'
 ## Duration (in milliseconds) to show messages in the statusbar for. Set
 ## to 0 to never clear messages.
 ## Type: Int
-c.messages.timeout = 0
+c.messages.timeout = 3000
 
 ## How to open links in an existing instance if a new one is launched.
 ## This happens when e.g. opening a link from a terminal. See
@@ -1378,7 +1378,7 @@ c.tabs.title.format = '{index}: {title}'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = 'https://google.com/'
+c.url.default_page = 'https://duckduckgo.com/'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1405,11 +1405,11 @@ c.url.default_page = 'https://google.com/'
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-c.url.searchengines = {'gituser': 'https://github.com/{}', 'crate': 'https://docs.rs/releases/search?query={}', 'DEFAULT': 'https://google.com/search?q={}'}
+c.url.searchengines = {'gituser': 'https://github.com/{}', 'crate': 'https://docs.rs/releases/search?query={}', 'google': 'https://google.com/search?q={}', 'DEFAULT': 'https://duckduckgo.com/?q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = ['https://www.google.com/']
+c.url.start_pages = ['https://www.duckduckgo.com/']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String

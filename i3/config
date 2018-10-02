@@ -175,9 +175,8 @@ bindsym $mod+n exec --no-startup-id $term -e ranger
 # bindsym $mod+x exec --no-startup-id ~/Scripts/sleepscript.sh
 # bindsym $mod+z exec --no-startup-id ~/Scripts/shutdownscript.sh
 bindsym Print exec screenshot.sh
-
 bindsym $mod+x exec i3suspend.sh
+bindsym $mod+b exec /home/family/Documents/qutebrowser/.venv/bin/python3 -m qutebrowser
 
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id background_wallpaper.sh
+exec_always --no-startup-id feh --bg-fill ~/Config/i3/rainy-weather.png # gitignore
 exec_once --no-startup-id compton
