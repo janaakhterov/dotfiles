@@ -1,0 +1,13 @@
+# turn on colors for ls command
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LS_COLORS=$LS_COLORS:'di=0;36:' 
+
+# add rust to the path
+export PATH="$HOME/.cargo/bin":$PATH
+export PATH="$HOME/rust-ctags":$PATH
+
+# GOPATH
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+export TERM=xterm-256color

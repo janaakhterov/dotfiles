@@ -1,3 +1,6 @@
+# Vim mode on escape
+bindkey -v
+
 # History
 autoload -Uz compinit && compinit -i
 HISTSIZE=500
@@ -23,10 +26,6 @@ precmd() {
     PROMPT="%{$fg[cyan]%}%~%{$fg[yellow]%}${vcs_info_msg_0_}%{$fg[green]%} $%{$reset_color%} "
 }
 
-# turn on colors for ls command
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-export LS_COLORS=$LS_COLORS:'di=0;36:' 
 
 autoload -U promptinit; promptinit
 
@@ -35,6 +34,14 @@ source ~/Config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Zsh Syntax Highlighting
 source ~/Config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Movement keys
+bindkey '^l' forward-char
+
+bindkey '^w' forward-word
+bindkey '^b' backward-delete-word
+
+bindkey '^ ' autosuggest-accept
 
 alias cc="cargo check"
 alias vims="vim -S Session.vim"
@@ -48,34 +55,5 @@ alias gp="git pull"
 alias ga="git add -A"
 alias gc="git commit -m"
 
-
 alias pings="ping 8.8.8.8"
 alias up="cd .."
-
-# add rust to the path
-export PATH="$HOME/.cargo/bin":$PATH
-export PATH="$HOME/rust-ctags":$PATH
-
-# Short error format for rust
-# export RUSTFLAGS="--error-format=short"
-
-# widget-cd() {
-#     cd ..
-#     zle reset-prompt
-# }
-
-# zle -N widget-cd
-
-# Movement keys
-bindkey '^l' forward-char
-
-bindkey '^w' forward-word
-bindkey '^b' backward-delete-word
-
-bindkey '^ ' autosuggest-accept
-bindkey -v
-
-# GOPATH
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
-export TERM=xterm-256color
