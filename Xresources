@@ -16,8 +16,8 @@ URxvt.iso14755_52: false
 
 /* URxvt.background.expr: scale keep { load "~/Pictures/rainy-wallpaper.jpg" } */
 
-/* URxvt.transparent: true */
-/* URxvt.shading: 20 */
+URxvt.transparent: true
+URxvt.shading: 20
 /* URxvt.shading: 60 */
 /* URxvt.blurRadius: 40 */
 

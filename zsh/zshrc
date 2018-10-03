@@ -26,6 +26,7 @@ precmd() {
 # turn on colors for ls command
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LS_COLORS=$LS_COLORS:'di=0;36:' 
 
 autoload -U promptinit; promptinit
 
