@@ -38,7 +38,7 @@ source ~/Config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cc="cargo check"
 alias vims="vim -S Session.vim"
-alias ls="ls --color=auto" # gitignore
+alias ls="exa --git" # gitignore
 alias la="ls -a"
 alias ll="ls -l"
 
