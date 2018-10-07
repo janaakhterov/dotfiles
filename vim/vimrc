@@ -320,4 +320,5 @@ set guicursor=a:block-Cursor
 " FZF Settings "
 " ------------ "
 
-nnoremap <leader>f :Buffers<CR>
+set rtp+=~/.fzf
+nnoremap <leader>o :Buffers<CR>
