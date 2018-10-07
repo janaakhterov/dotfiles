@@ -45,7 +45,6 @@ bindkey '^ ' autosuggest-accept
 
 alias cc="cargo check"
 alias vims="vim -S Session.vim"
-alias ls="exa --git" # gitignore
 alias la="ls -a"
 alias ll="ls -l"
 

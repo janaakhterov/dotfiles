@@ -178,5 +178,4 @@ bindsym Print exec screenshot.sh
 bindsym $mod+x exec i3suspend.sh
 bindsym $mod+b exec /home/family/Documents/qutebrowser/.venv/bin/python3 -m qutebrowser
 
-exec_always --no-startup-id feh --bg-fill ~/Config/i3/rainy-weather.png # gitignore
 exec_once --no-startup-id compton
