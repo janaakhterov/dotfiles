@@ -45,6 +45,7 @@ bindkey '^ ' autosuggest-accept
 
 alias cc="cargo check"
 alias vims="vim -S Session.vim"
+alias ls="exa"
 alias la="ls -a"
 alias ll="ls -l"
 
@@ -56,3 +57,5 @@ alias gc="git commit -m"
 
 alias pings="ping 8.8.8.8"
 alias up="cd .."
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

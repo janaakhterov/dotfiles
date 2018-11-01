@@ -176,6 +176,7 @@ bindsym $mod+n exec --no-startup-id $term -e ranger
 # bindsym $mod+z exec --no-startup-id ~/Scripts/shutdownscript.sh
 bindsym Print exec screenshot.sh
 bindsym $mod+x exec i3suspend.sh
-bindsym $mod+b exec /home/family/Documents/qutebrowser/.venv/bin/python3 -m qutebrowser
+bindsym $mod+b exec firefox 
 
-exec_once --no-startup-id compton
+exec_once --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpaper.jpg
