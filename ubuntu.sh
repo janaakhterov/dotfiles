@@ -6,6 +6,10 @@ sudo apt-get -y install grub2
 # i3
 sudo apt-get -y install i3
 
+# zsh
+sudo apt-get -y install zsh
+sudo chsh -s /usr/bin/zsh
+
 # feh
 sudo apt-get -y install feh
 
