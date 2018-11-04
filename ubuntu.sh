@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# grub
+sudo apt-get install grub2
+
 # i3
 sudo apt-get install i3
 
@@ -8,6 +11,9 @@ sudo apt-get install feh
 
 # URXVT
 sudo apt-get install rxvt-unicode-256color
+
+# git
+sudo apt-get install git
 
 # CMake
 sudo apt-get install cmake
@@ -29,3 +35,13 @@ cargo isntall exa
 
 # Cargo Edit
 cargo isntall cargo-edit
+
+# Vim
+git clone https://github.com/vim/vim.git
+cd vim
+make
+cd src
+sudo make install
+sudo mv ./vim /usr/bin/
+cd ../..
+rm -rf vim
