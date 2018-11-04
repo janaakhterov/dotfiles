@@ -3,38 +3,38 @@
 dotfiles="$HOME/.dotfiles"
 config="$HOME/Config"
 
-lnif() {
-  if [ ! -e $2 ] ; then
-    ln -s $1 $2
-  fi
-}
+# Remove all dotfiles that will be overwritten
+rm -rf ~/.config > /dev/null 2>&1
+
+rm -rf ~/.zsh > /dev/null 2>&1
+rm -rf ~/.zshrc > /dev/null 2>&1
+rm -rf ~/.zshenv > /dev/null 2>&1
+
+rm -rf ~/.vim > /dev/null 2>&1
+rm -rf ~/.vimrc > /dev/null 2>&1
+
+rm -rf ~/.Xresources > /dev/null 2>&1
+rm -rf ~/.xinit > /dev/null 2>&1
 
 # submodules
 echo "Initializing submodules..."
 git submodule update --init --recursive
 
-if [ ! "$PWD" = "$dotfiles" ]; then
-    echo "Moving dotfiles into ~/.config"
-    if [ -e $HOME/.config ]; then
-        cp -rf -n $HOME/.config/* $dotfiles
-        rm -rf $HOME/.config
-    fi
-    cp -nf $dotfiles $config
-    lnif $config $HOME/.config
-fi
+echo "Linking ~/.config -> ~/.dotfiles"
+ln -sf $dotfiles $config
 
 # zsh
 echo "Setting up zsh..."
-lnif $config/zsh $HOME/.zsh
-lnif $config/zsh/zshrc $HOME/.zshrc
-lnif $config/zsh/zshenv $HOME/.zshenv
+ln -sf $config/zsh $HOME/.zsh
+ln -sf $config/zsh/zshrc $HOME/.zshrc
+ln -sf $config/zsh/zshenv $HOME/.zshenv
 
 # vim
 echo "Setting up vim..."
-lnif $config/vim $HOME/.vim
-lnif $config/vim/vimrc $HOME/.vimrc
+ln -sf $config/vim $HOME/.vim
+ln -sf $config/vim/vimrc $HOME/.vimrc
 
 # X
 echo "Setting up X..."
-lnif $config/Xresources $HOME/.Xresources
-lnif $config/xinit $HOME/.xinit
+ln -sf $config/Xresources $HOME/.Xresources
+ln -sf $config/xinit $HOME/.xinit
