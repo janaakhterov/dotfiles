@@ -43,7 +43,6 @@ bindkey '^b' backward-delete-word
 
 bindkey '^ ' autosuggest-accept
 
-alias cc="cargo check"
 alias vims="vim -S Session.vim"
 alias ls="exa"
 alias la="ls -a"
