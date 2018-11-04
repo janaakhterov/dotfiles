@@ -3,6 +3,9 @@
 # i3
 sudo apt-get install i3
 
+# feh
+sudo apt-get install feh
+
 # URXVT
 sudo apt-get install rxvt-unicode-256color
 
