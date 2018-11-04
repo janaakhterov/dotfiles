@@ -16,10 +16,10 @@ git submodule update --init --recursive
 if [ ! "$PWD" = "$dotfiles" ]; then
     echo "Moving dotfiles into ~/.config"
     if [ -e $HOME/.config ]; then
-        mv $HOME/.config/* $dotfiles
-        rm -r $HOME/.config
+        cp -rf -n $HOME/.config/* $dotfiles
+        rm -rf $HOME/.config
     fi
-    mv $dotfiles $config
+    cp -nf $dotfiles $config
     lnif $config $HOME/.config
 fi
 
