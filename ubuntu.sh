@@ -1,31 +1,31 @@
 #!/bin/sh
 
 # grub
-sudo apt-get install grub2
+sudo apt-get -y install grub2
 
 # i3
-sudo apt-get install i3
+sudo apt-get -y install i3
 
 # feh
-sudo apt-get install feh
+sudo apt-get -y install feh
 
 # URXVT
-sudo apt-get install rxvt-unicode-256color
+sudo apt-get -y install rxvt-unicode-256color
 
 # git
-sudo apt-get install git
+sudo apt-get -y install git
 
 # CMake
-sudo apt-get install cmake
+sudo apt-get -y install cmake
 
 # Curl
-sudo apt-get install curl
+sudo apt-get -y install curl
 
 # nCurses
-sudo apt-get install libncurses5-dev libncursesw5-dev
+sudo apt-get -y install libncurses5-dev libncursesw5-dev
 
 # OpenSSL
-sudo apt-get install libssl-dev
+sudo apt-get -y install libssl-dev
 
 # Rust
 curl https://sh.rustup.rs -sSf | sh
