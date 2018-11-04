@@ -3,6 +3,9 @@
 # grub
 sudo apt-get -y install grub2
 
+# compton
+sudo apt-get -y install compton
+
 # i3
 sudo apt-get -y install i3
 
