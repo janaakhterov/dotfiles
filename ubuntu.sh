@@ -22,6 +22,10 @@ sudo apt-get -y install rxvt-unicode-256color
 # git
 sudo apt-get -y install git
 
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # CMake
 sudo apt-get -y install cmake
 
