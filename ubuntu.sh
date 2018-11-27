@@ -11,7 +11,7 @@ sudo apt-get -y install i3
 
 # zsh
 sudo apt-get -y install zsh
-sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 
 # feh
 sudo apt-get -y install feh
@@ -39,20 +39,22 @@ sudo apt-get -y install libncurses5-dev libncursesw5-dev
 sudo apt-get -y install libssl-dev
 
 # Rust
-curl https://sh.rustup.rs -sSf | sh
+sudo -H -u daniel bash -c "curl https://sh.rustup.rs -sSf | sh"
+
+export PATH=$PATH:$HOME/.cargo/bin
 
 # Exa
-cargo isntall exa
+cargo install exa
 
 # Cargo Edit
-cargo isntall cargo-edit
+cargo install cargo-edit
 
 # Vim
-git clone https://github.com/vim/vim.git
-cd vim
-make
-cd src
-sudo make install
-sudo mv ./vim /usr/bin/
-cd ../..
-rm -rf vim
+# git clone https://github.com/vim/vim.git
+# cd vim
+# make
+# cd src
+# make install
+# mv ./vim /usr/bin/
+# cd ../..
+# rm -rf vim
