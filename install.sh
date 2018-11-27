@@ -1,10 +1,12 @@
 #!/bin/sh
 
 dotfiles="$HOME/.dotfiles"
-config="$HOME/Config"
+Config="$HOME/Config"
+config="$HOME/.config"
 
 # Remove all dotfiles that will be overwritten
-rm -rf ~/.config > /dev/null 2>&1
+rm -rf $Config > /dev/null 2>&1
+rm -rf $config > /dev/null 2>&1
 
 rm -rf ~/.zsh > /dev/null 2>&1
 rm -rf ~/.zshrc > /dev/null 2>&1
@@ -20,7 +22,10 @@ rm -rf ~/.xinit > /dev/null 2>&1
 echo "Initializing submodules..."
 git submodule update --init --recursive
 
-echo "Linking ~/.config -> ~/.dotfiles"
+echo "Linking ~/Config -> ~/.dotfiles"
+ln -sf $dotfiles $Config
+
+echo "Linking ~/.config -> ~/Config"
 ln -sf $dotfiles $config
 
 # zsh
