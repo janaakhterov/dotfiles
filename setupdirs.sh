@@ -1,7 +1,5 @@
 #!/bin/sh
 
-mkdir ~/Documents
-
 mkdir ~/Documents/ComputerScience
 
 mkdir ~/Documents/ComputerScience/CSC133

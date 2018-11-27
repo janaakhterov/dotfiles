@@ -19,6 +19,9 @@ sudo apt-get -y install feh
 # URXVT
 sudo apt-get -y install rxvt-unicode-256color
 
+# hack.ttf
+sudo apt-get -y install hack.ttf
+
 # git
 sudo apt-get -y install git
 
