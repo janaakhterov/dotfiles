@@ -40,6 +40,9 @@
 [submodule "vim/pack/plugins/start/tlib"]
 	path = vim/pack/plugins/start/tlib
 	url = https://github.com/vim-scripts/tlib.git
+[submodule "vim/pack/plugins/start/typescript-vim"]
+	path = vim/pack/plugins/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git

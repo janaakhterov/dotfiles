@@ -15,10 +15,10 @@ endif
 
 let colors_name = "bee"
 
-hi Normal       ctermfg=gray ctermbg=black guifg=gray guibg=black
+hi Normal       ctermfg=white ctermbg=black guifg=white guibg=black
 hi ErrorMsg	    ctermfg=white ctermbg=lightblue guifg=white guibg=lightblue
-hi Visual       ctermfg=lightblue ctermbg=fg cterm=reverse guifg=lightblue guibg=fg gui=reverse
-hi VisualNOS    ctermfg=lightblue ctermbg=fg cterm=reverse guifg=lightblue guibg=fg gui=reverse
+hi Visual       ctermfg=lightblue ctermbg=fg cterm=reverse guifg=lightblue guibg=fg gui=reverse 
+hi VisualNOS    ctermfg=lightblue ctermbg=fg cterm=reverse guifg=lightblue guibg=fg gui=reverse 
 hi Todo	        ctermfg=red	ctermbg=darkblue guifg=red guibg=darkblue
 hi Search       ctermfg=white ctermbg=darkblue guifg=white guibg=darkblue
 hi IncSearch    ctermfg=darkblue ctermbg=gray guifg=darkblue guibg=gray
@@ -90,3 +90,6 @@ hi Todo ctermbg=black guibg=black
 
 hi Search term=bold cterm=bold ctermbg=white ctermfg=black gui=bold guibg=white guifg=black
 hi IncSearch term=bold cterm=bold ctermbg=white ctermfg=black gui=bold guibg=white guifg=black
+
+autocmd! BufEnter * syn match Braces '[{}()\[\]:;,!]'
+hi Braces ctermfg=red
