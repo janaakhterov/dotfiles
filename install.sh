@@ -25,7 +25,7 @@ git submodule update --init --recursive
 echo "Linking ~/Config -> ~/.dotfiles"
 ln -sf $dotfiles $Config
 
-echo "Linking ~/.config -> ~/Config"
+echo "Linking ~/.config -> ~/.dotfiles"
 ln -sf $dotfiles $config
 
 # zsh
@@ -42,4 +42,5 @@ ln -sf $config/vim/vimrc $HOME/.vimrc
 # X
 echo "Setting up X..."
 ln -sf $config/Xresources $HOME/.Xresources
+xrdb $HOME/.Xresources
 ln -sf $config/xinit $HOME/.xinit
