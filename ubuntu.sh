@@ -54,7 +54,8 @@ cargo install cargo-edit
 
 # Vim
 git clone https://github.com/vim/vim.git
-cd vim/src
+cd vim
+./configure --with-features=huge
 sudo make install
-cd ../..
+cd ..
 rm -rf vim
