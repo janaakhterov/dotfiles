@@ -44,3 +44,7 @@ echo "Setting up X..."
 ln -sf $config/Xresources $HOME/.Xresources
 xrdb $HOME/.Xresources
 ln -sf $config/xinit $HOME/.xinit
+
+# Profile
+echo "Setting up profile..."
+ln -sf $config/profile $HOME/.profile
