@@ -187,7 +187,7 @@ nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
 " Open file explorer in current window
-nnoremap <silent> <leader>t :Ex<CR>
+nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
 " Suspend vim and open terminal
 nnoremap <silent> <leader>s :sh<CR>
@@ -264,11 +264,11 @@ autocmd FileType cfg setlocal commentstring=#\ %s
 " Tab Settings "
 " ------------ "
 
-source ~/.vim/tabs.vim
+" source ~/.vim/tabs.vim
 
 " Tab status line
-set tabline=%!MyTabLine()
-set showtabline=2
+" set tabline=%!MyTabLine()
+" set showtabline=2
 
 " Tab commands
 nnoremap <silent> th  :tabfirst<CR>
@@ -286,16 +286,6 @@ nnoremap <silent> <S-Tab>  :tabprev<CR>
 " ---------------- "
 " End Tab Settings "
 " ---------------- "
-
-" --------------------- "
-" Start of GUI Settings "
-" --------------------- "
-" TabLine functions
-source ~/.vim/tabs.vim
-
-" TabLine
-set tabline=%!MyTabLine()
-set showtabline=2
 
 " ------------ "
 " GUI Settings "
