@@ -23,7 +23,7 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=119'
 # Prompt customization
 precmd() {
     vcs_info
-    PROMPT="%{$fg[cyan]%}%~%{$fg[yellow]%}${vcs_info_msg_0_}%{$fg[green]%} $%{$reset_color%} "
+    PROMPT="%{$fg[cyan]%}%~%{$fg[yellow]%}${vcs_info_msg_0_}%{$fg[green]%} $(vim_open) $%{$reset_color%} "
 }
 
 
@@ -56,5 +56,13 @@ alias gc="git commit -m"
 
 alias pings="ping 8.8.8.8"
 alias up="cd .."
+
+function vim_open() {
+    if [[ $(env | grep vim | wc -l) -ge 1 ]]; then
+        echo "vim"
+    else
+        echo ""
+    fi
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
