@@ -97,6 +97,9 @@ set ttyfast
 
 set number
 
+" Highlight current line
+set cursorline
+
 set tabstop=4
 set expandtab
 set shiftwidth=4

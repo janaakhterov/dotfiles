@@ -17,7 +17,7 @@ let colors_name = "bee"
 
 hi Normal       ctermfg=white ctermbg=black guifg=white guibg=black
 hi ErrorMsg	    ctermfg=white ctermbg=lightblue guifg=white guibg=lightblue
-hi Visual       ctermfg=lightblue ctermbg=fg cterm=reverse guifg=lightblue guibg=fg gui=reverse 
+hi Visual       ctermfg=white ctermbg=black cterm=reverse guifg=lightblue guibg=fg gui=reverse 
 hi VisualNOS    ctermfg=lightblue ctermbg=fg cterm=reverse guifg=lightblue guibg=fg gui=reverse 
 hi Todo	        ctermfg=red	ctermbg=darkblue guifg=red guibg=darkblue
 hi Search       ctermfg=white ctermbg=darkblue guifg=white guibg=darkblue
@@ -59,6 +59,7 @@ hi PreProc      ctermfg=magenta cterm=none guifg=magenta gui=none
 hi type         ctermfg=green cterm=none guifg=green gui=none
 hi Underlined   cterm=underline term=underline gui=underline
 hi Ignore       ctermfg=bg guifg=bg
+hi MatchParen   ctermfg=white ctermbg=black cterm=bold
 
 
 " End of the darkblue colorscheme copy
