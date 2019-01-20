@@ -57,8 +57,8 @@ set path+=**
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set cursor to be in middle of screen and highlight
-" set so=999
-" set cursorline
+set so=999
+set cursorline
 
 " Used to make rendering faster when multiple windows are open
 set ttyfast
@@ -184,12 +184,7 @@ let mapleader="\<Space>"
 nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
-" Open file explorer
-" Editting and Sourcing vimrc
-nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
-nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
-
-" Open file explorer in current window
+" Toggling nerd tree
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
 " Suspend vim and open terminal
