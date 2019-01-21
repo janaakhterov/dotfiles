@@ -106,14 +106,10 @@ set shiftwidth=4
 set expandtab
 " set autoindent
 " set smartindent
-set smartcase
 
 " Folding options
 set foldenable
 set foldmethod=syntax
-
-" Incremental Search
-set incsearch
 
 " Basic mouse settings
 
@@ -129,7 +125,10 @@ set cindent
 " Search Settings "
 " --------------- "
 
+" Needs both settings to have 'smartcase'
+set ignorecase
 set smartcase
+
 set incsearch
 
 " ------------- "
