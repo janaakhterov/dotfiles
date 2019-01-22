@@ -106,14 +106,10 @@ set shiftwidth=4
 set expandtab
 " set autoindent
 " set smartindent
-set smartcase
 
 " Folding options
 set foldenable
 set foldmethod=syntax
-
-" Incremental Search
-set incsearch
 
 " Basic mouse settings
 
@@ -129,7 +125,10 @@ set cindent
 " Search Settings "
 " --------------- "
 
+" Needs both settings to have 'smartcase'
+set ignorecase
 set smartcase
+
 set incsearch
 
 " ------------- "
@@ -184,12 +183,7 @@ let mapleader="\<Space>"
 nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
-" Open file explorer
-" Editting and Sourcing vimrc
-nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
-nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
-
-" Open file explorer in current window
+" Toggling nerd tree
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
 " Suspend vim and open terminal
