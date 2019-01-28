@@ -1,5 +1,6 @@
 " A must
 syntax on
+filetype off
 filetype plugin indent on
 
 " Fix syntax highlighting
@@ -106,14 +107,10 @@ set shiftwidth=4
 set expandtab
 " set autoindent
 " set smartindent
-set smartcase
 
 " Folding options
 set foldenable
 set foldmethod=syntax
-
-" Incremental Search
-set incsearch
 
 " Basic mouse settings
 
@@ -129,7 +126,10 @@ set cindent
 " Search Settings "
 " --------------- "
 
+" Needs both settings to have 'smartcase'
+set ignorecase
 set smartcase
+
 set incsearch
 
 " ------------- "
@@ -184,12 +184,7 @@ let mapleader="\<Space>"
 nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
-" Open file explorer
-" Editting and Sourcing vimrc
-nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
-nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
-
-" Open file explorer in current window
+" Toggling nerd tree
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
 " Suspend vim and open terminal
@@ -238,6 +233,7 @@ let g:netrw_fastbrowse=2
 " ----------------- "
 
 let g:autofmt_autosave = 1
+let g:rustfmt_autosave = 1
 
 " -------------- "
 " Netrw Settings "
@@ -316,3 +312,11 @@ set guicursor=a:block-Cursor
 
 set rtp+=~/.fzf
 nnoremap <leader>o :Buffers<CR>
+
+" --------------------------- "
+" Java Getter/Setter Settings "
+" --------------------------- "
+
+let g:javagetset_getterTemplate = "%modifiers% %type% %funcname%() { return %varname%; }" 
+let g:javagetset_setterTemplate = "%modifiers% void %funcname%(%type% %varname%) { this.%varname% = %varname%; }" 
+nnoremap <silent> <leader>j = :InsertBothGetterSetter<CR>

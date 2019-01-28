@@ -57,8 +57,10 @@ alias gc="git commit -m"
 alias pings="ping 8.8.8.8"
 alias up="cd .."
 
+export EDITOR=vim
+
 function vim_open() {
-    if [[ $(env | grep vim | wc -l) -ge 1 ]]; then
+    if [[ $(env | grep "VIMRUNTIME=*" | wc -l) -ge 1 ]]; then
         echo " vim"
     else
         echo ""
@@ -66,3 +68,7 @@ function vim_open() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/daniel/.sdkman"
+[[ -s "/home/daniel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daniel/.sdkman/bin/sdkman-init.sh"

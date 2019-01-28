@@ -41,6 +41,10 @@ sudo apt-get -y install libncurses5-dev libncursesw5-dev
 # OpenSSL
 sudo apt-get -y install libssl-dev
 
+# Xorg
+# Installed to make sure vim compiles with +clipboard
+sudo apt-get install xorg-dev
+
 # Rust
 sudo -H -u daniel bash -c "curl https://sh.rustup.rs -sSf | sh"
 
@@ -55,7 +59,7 @@ cargo install cargo-edit
 # Vim
 git clone https://github.com/vim/vim.git
 cd vim
-./configure --with-features=huge
+./configure --enable-rubyinterp=dynamic --enable-cscope --enable-gui=auto --enable-gtk2-check --enable-gnome-check --with-features=huge --with-x
 sudo make install
 cd ..
 rm -rf vim

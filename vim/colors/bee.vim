@@ -16,7 +16,7 @@ endif
 let colors_name = "bee"
 
 hi Normal       ctermfg=white ctermbg=black guifg=white guibg=black
-hi ErrorMsg	    ctermfg=white ctermbg=lightblue guifg=white guibg=lightblue
+hi ErrorMsg	    ctermfg=white ctermbg=red guifg=white guibg=red
 hi Visual       ctermfg=white ctermbg=black cterm=reverse guifg=lightblue guibg=fg gui=reverse 
 hi VisualNOS    ctermfg=lightblue ctermbg=fg cterm=reverse guifg=lightblue guibg=fg gui=reverse 
 hi Todo	        ctermfg=red	ctermbg=darkblue guifg=red guibg=darkblue
