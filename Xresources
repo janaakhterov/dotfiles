@@ -4,6 +4,8 @@ Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
 
+URxvt.saveLines: 9999
+
 URxvt.foreground: white
 URxvt.background: black
 

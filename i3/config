@@ -88,7 +88,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -162,7 +162,7 @@ bar {
 }
 
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 0
 client.focused #FF0000 #000000 #FFFFFF #000000 #0000FF
 client.unfocused #FF0000 #000000 #FFFFFF #000000 #FF8800
 
@@ -175,8 +175,9 @@ bindsym $mod+n exec --no-startup-id $term -e ranger
 # bindsym $mod+x exec --no-startup-id ~/Scripts/sleepscript.sh
 # bindsym $mod+z exec --no-startup-id ~/Scripts/shutdownscript.sh
 bindsym Print exec screenshot.sh
-bindsym $mod+x exec i3lock -c 000000
+bindsym $mod+x exec i3lock -c 000000 && systemctl suspend
 bindsym $mod+b exec firefox 
+bindsym $mod+space exec dmenu_run 
 
 exec_once --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpaper.jpg

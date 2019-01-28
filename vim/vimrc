@@ -232,6 +232,7 @@ let g:netrw_fastbrowse=2
 " ----------------- "
 
 let g:autofmt_autosave = 1
+let g:rustfmt_autosave = 1
 
 " -------------- "
 " Netrw Settings "
