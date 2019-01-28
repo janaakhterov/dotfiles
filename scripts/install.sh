@@ -22,6 +22,10 @@ rm -rf ~/.xinit > /dev/null 2>&1
 echo "Initializing submodules..."
 git submodule update --init --recursive
 
+# Scripts
+echo "Adding scripts to path"
+export PATH=$PATH:$config/scripts
+
 echo "Linking ~/Config -> ~/.dotfiles"
 ln -sf $dotfiles $Config
 

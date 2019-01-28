@@ -57,6 +57,8 @@ alias gc="git commit -m"
 alias pings="ping 8.8.8.8"
 alias up="cd .."
 
+export EDITOR=vim
+
 function vim_open() {
     if [[ $(env | grep vim | wc -l) -ge 1 ]]; then
         echo " vim"

@@ -175,8 +175,6 @@ bindsym $mod+n exec --no-startup-id $term -e ranger
 # bindsym $mod+x exec --no-startup-id ~/Scripts/sleepscript.sh
 # bindsym $mod+z exec --no-startup-id ~/Scripts/shutdownscript.sh
 bindsym Print exec screenshot.sh
-bindsym $mod+x exec i3lock -c 000000 && systemctl suspend
-bindsym $mod+b exec firefox 
 bindsym $mod+space exec dmenu_run 
 
 exec_once --no-startup-id compton --config ~/.config/compton.conf -b
