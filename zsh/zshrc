@@ -60,7 +60,7 @@ alias up="cd .."
 export EDITOR=vim
 
 function vim_open() {
-    if [[ $(env | grep vim | wc -l) -ge 1 ]]; then
+    if [[ $(env | grep "[^EDITOR=]vim" | wc -l) -ge 1 ]]; then
         echo " vim"
     else
         echo ""
