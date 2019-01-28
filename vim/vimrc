@@ -317,5 +317,5 @@ nnoremap <leader>o :Buffers<CR>
 " Java Getter/Setter Settings "
 " --------------------------- "
 
-let b:javagetset_getterTemplate = "%modifiers% %type% %funcname%() { return %varname%; }" 
-let b:javagetset_setterTemplate = "%modifiers% %type% %funcname%(%varname%) { this.%varname% = %varname%; }" 
+let g:javagetset_getterTemplate = "%modifiers% %type% %funcname%() { return %varname%; }" 
+let g:javagetset_setterTemplate = "%modifiers% %type% %funcname%(%varname%) { this.%varname% = %varname%; }" 
