@@ -1,5 +1,6 @@
 " A must
 syntax on
+filetype off
 filetype plugin indent on
 
 " Fix syntax highlighting
@@ -311,3 +312,10 @@ set guicursor=a:block-Cursor
 
 set rtp+=~/.fzf
 nnoremap <leader>o :Buffers<CR>
+
+" --------------------------- "
+" Java Getter/Setter Settings "
+" --------------------------- "
+
+let b:javagetset_getterTemplate = "%modifiers% %type% %funcname%() { return %varname%; }" 
+let b:javagetset_setterTemplate = "%modifiers% %type% %funcname%(%varname%) { this.%varname% = %varname%; }" 
