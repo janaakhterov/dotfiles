@@ -319,3 +319,4 @@ nnoremap <leader>o :Buffers<CR>
 
 let g:javagetset_getterTemplate = "%modifiers% %type% %funcname%() { return %varname%; }" 
 let g:javagetset_setterTemplate = "%modifiers% %type% %funcname%(%varname%) { this.%varname% = %varname%; }" 
+nnoremap <silent> <leader>j = :InsertBothGetterSetter<CR>
