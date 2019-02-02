@@ -57,7 +57,12 @@ alias gc="git commit -m"
 alias pings="ping 8.8.8.8"
 alias up="cd .."
 
+alias cmt="cargo make test"
+alias cm="cargo make"
+alias cc="cargo check"
+
 export EDITOR=vim
+export PATH=$PATH:$HOME/.config/scripts
 
 function vim_open() {
     if [[ $(env | grep "VIMRUNTIME=*" | wc -l) -ge 1 ]]; then
