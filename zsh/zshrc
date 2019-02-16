@@ -63,7 +63,7 @@ alias cm="cargo make"
 alias cc="cargo check"
 
 export EDITOR=vim
-export PATH=$PATH:$HOME/.config/scripts
+export PATH=$HOME/.config/scripts:$PATH
 
 function vim_open() {
     if [[ $(env | grep "VIMRUNTIME=*" | wc -l) -ge 1 ]]; then
