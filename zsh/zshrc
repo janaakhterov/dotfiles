@@ -63,12 +63,18 @@ alias cm="cargo make"
 alias cc="cargo check"
 
 export EDITOR=vim
-<<<<<<< HEAD
+
+# Custom scripts to path
 export PATH=$PATH:$HOME/.config/scripts
+# Flutter
 export PATH=$PATH:$HOME/flutter/bin
-=======
-export PATH=$HOME/.config/scripts:$PATH
->>>>>>> b672917418769cfb0c13135ea5ce4dc02e980602
+
+# NVM
+export NVM_DIR='/Users/danielakhterov/.nvm'
+
+[[ -s "/home/daniel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daniel/.sdkman/bin/sdkman-init.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 function vim_open() {
     if [[ $(env | grep "VIMRUNTIME=*" | wc -l) -ge 1 ]]; then
@@ -82,7 +88,3 @@ function vim_open() {
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/daniel/.sdkman"
-[[ -s "/home/daniel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daniel/.sdkman/bin/sdkman-init.sh"
-export NVM_DIR='/Users/danielakhterov/.nvm'
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
