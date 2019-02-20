@@ -63,8 +63,12 @@ alias cm="cargo make"
 alias cc="cargo check"
 
 export EDITOR=vim
+<<<<<<< HEAD
 export PATH=$PATH:$HOME/.config/scripts
 export PATH=$PATH:$HOME/flutter/bin
+=======
+export PATH=$HOME/.config/scripts:$PATH
+>>>>>>> b672917418769cfb0c13135ea5ce4dc02e980602
 
 function vim_open() {
     if [[ $(env | grep "VIMRUNTIME=*" | wc -l) -ge 1 ]]; then

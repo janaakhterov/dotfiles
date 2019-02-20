@@ -67,3 +67,6 @@
 [submodule "vim/pack/plugins/start/vim-colorschemes"]
 	path = vim/pack/plugins/start/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vim/pack/plugins/start/vim-eunuch"]
+	path = vim/pack/plugins/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
