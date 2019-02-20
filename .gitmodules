@@ -64,3 +64,6 @@
 [submodule "vim/pack/plugins/start/dart-vim-plugin"]
 	path = vim/pack/plugins/start/dart-vim-plugin
 	url = https://github.com/dart-lang/dart-vim-plugin.git
+[submodule "vim/pack/plugins/start/vim-colorschemes"]
+	path = vim/pack/plugins/start/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
