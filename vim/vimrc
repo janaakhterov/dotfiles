@@ -1,16 +1,14 @@
 " A must
 syntax on
+autocmd BufEnter * :syntax sync fromstart
 filetype off
-filetype plugin indent on
+filetype plugin on
 
 " Fix syntax highlighting
 " syntax sync fromstart
 
 " Auto read and update files if edited by another program
 set autoread
-
-" Necessary for backspace to workin insert mode on all characters
-set backspace=indent,eol,start
 
 " Set path to recursively search when using the :find command
 set path+=**
@@ -103,8 +101,8 @@ set mouse=a
 set mousefocus
 
 set autoindent
-set smartindent
-set cindent
+" set smartindent
+" set cindent
 
 " --------------- "
 " Search Settings "
@@ -127,10 +125,10 @@ set foldlevel=99
 " StatusLine Settings "
 " ------------------- "
 
-set laststatus=2
-set statusline=%f
-set statusline+=[%c:%l/%L]
-set statusline+=%=%{FugitiveStatusline()}\ [%c:%l/%L]
+" set laststatus=2
+" set statusline=%f
+" set statusline+=[%c:%l/%L]
+" set statusline+=%=%{FugitiveStatusline()}\ [%c:%l/%L]
 
 set wildmenu
 
@@ -305,3 +303,37 @@ nnoremap <leader>o :Buffers<CR>
 let g:javagetset_getterTemplate = "%modifiers% %type% %funcname%() { return %varname%; }" 
 let g:javagetset_setterTemplate = "%modifiers% void %funcname%(%type% %varname%) { this.%varname% = %varname%; }" 
 nnoremap <silent> <leader>j = :InsertBothGetterSetter<CR>
+
+" ------------- "
+" SCSS Settings "
+" ------------- "
+
+autocmd FileType scss set iskeyword+=-
+
+function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
+  let ft=toupper(a:filetype)
+  let group='textGroup'.ft
+  if exists('b:current_syntax')
+    let s:current_syntax=b:current_syntax
+    " Remove current syntax definition, as some syntax files (e.g. cpp.vim)
+    " do nothing if b:current_syntax is defined.
+    unlet b:current_syntax
+  endif
+  execute 'syntax include @'.group.' syntax/'.a:filetype.'.vim'
+  try
+    execute 'syntax include @'.group.' after/syntax/'.a:filetype.'.vim'
+  catch
+  endtry
+  if exists('s:current_syntax')
+    let b:current_syntax=s:current_syntax
+  else
+    unlet b:current_syntax
+  endif
+  execute 'syntax region textSnip'.ft.'
+  \ matchgroup='.a:textSnipHl.'
+  \ keepend
+  \ start="'.a:start.'" end="'.a:end.'"
+  \ contains=@'.group
+endfunction
+
+

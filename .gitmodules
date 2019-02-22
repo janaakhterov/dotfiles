@@ -64,3 +64,6 @@
 [submodule "vim/pack/plugins/start/dart-vim-plugin"]
 	path = vim/pack/plugins/start/dart-vim-plugin
 	url = https://github.com/dart-lang/dart-vim-plugin.git
+[submodule "vim/pack/plugins/start/scss-syntax.vim"]
+	path = vim/pack/plugins/start/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim.git

@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.vue set ft=vue
+au BufNewFile,BufRead *.vue set ft=html
