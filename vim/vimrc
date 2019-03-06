@@ -1,3 +1,31 @@
+" Plugins to install using vim-plug
+silent! call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'junegunn/fzf.vim'
+Plug 'udalov/kotlin-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'godlygeek/tabular'
+Plug 'vim-scripts/tlib'
+Plug 'tomtom/tlib_vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'fatih/vim-go'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-repeat'
+Plug 'garbas/vim-snipmate'
+Plug 'tpope/vim-surround'
+Plug 'posva/vim-vue'
+
+call plug#end()
+
 " A must
 syntax on
 syntax sync fromstart
