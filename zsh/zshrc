@@ -70,11 +70,11 @@ export PATH=$PATH:$HOME/.config/scripts
 export PATH=$PATH:$HOME/flutter/bin
 
 # NVM
-export NVM_DIR='/Users/danielakhterov/.nvm'
+# export NVM_DIR='/Users/danielakhterov/.nvm'
 
-[[ -s "/home/daniel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daniel/.sdkman/bin/sdkman-init.sh"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# [[ -s "/home/daniel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daniel/.sdkman/bin/sdkman-init.sh"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 function vim_open() {
     if [[ $(env | grep "VIMRUNTIME=*" | wc -l) -ge 1 ]]; then
