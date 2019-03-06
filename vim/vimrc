@@ -1,8 +1,10 @@
 " A must
 syntax on
-autocmd BufEnter * :syntax sync fromstart
+syntax sync fromstart
 filetype off
 filetype plugin on
+
+set redrawtime=10000
 
 " Fix syntax highlighting
 " syntax sync fromstart
