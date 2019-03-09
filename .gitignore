@@ -41,3 +41,6 @@ gnome*
 configstore
 vim/view
 vim/plugged
+
+QtProject.conf
+VirtualBox/
