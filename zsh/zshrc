@@ -30,10 +30,10 @@ precmd() {
 autoload -U promptinit; promptinit
 
 # Suggest command from history that fits 
-source ~/Config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Zsh Syntax Highlighting
-source ~/Config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Movement keys
 bindkey '^l' forward-char
