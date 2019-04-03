@@ -44,6 +44,7 @@ bindkey '^b' backward-delete-word
 bindkey '^ ' autosuggest-accept
 
 alias vims="vim -S Session.vim"
+alias vimjs="vim src/**/*.(js|ts|vue|json) *.(js|json|ts) test*/**/*.(js|ts)"
 alias ls="exa"
 alias la="ls -a"
 alias ll="ls -l"
