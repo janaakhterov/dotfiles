@@ -25,3 +25,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 xset r rate 150 50
 setxkbmap -option caps:escape
 xset s off -dpms
+if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
