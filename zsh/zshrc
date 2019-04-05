@@ -44,6 +44,7 @@ bindkey '^b' backward-delete-word
 bindkey '^ ' autosuggest-accept
 
 alias vims="vim -S Session.vim"
+alias vimjava="vim src/**/*.(java|proto|groovy) gen/**/*.java examples/**/*.java"
 alias ls="exa"
 alias la="ls -a"
 alias ll="ls -l"
@@ -61,6 +62,9 @@ alias up="cd .."
 alias cmt="cargo make test"
 alias cm="cargo make"
 alias cc="cargo check"
+
+alias gradlew="./gradlew"
+alias gradlew-test="(./gradlew test; firefox ./build/reports/tests/test/index.html)"
 
 export EDITOR=vim
 
