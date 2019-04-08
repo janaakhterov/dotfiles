@@ -26,11 +26,21 @@ URxvt.iso14755_52: false
 /* URxvt.cursorColor: white */
 
 /* URxvt.font: xft:Source Code Pro Light:size=14 */
-URxvt.font: xft:Hack-Regular:pixelsize=14:antialias=true
-URxvt.boldfont: xft:Hack-Bold:pixelsize=14:weight=bold:antialias=true
-URxvt.italicfont: xft:Hack-RegularOblique:pixelsize=14:slant=italic:antialias=true
+URxvt.font: xft:Hack-Regular:pixelsize=18:antialias=true
+URxvt.boldfont: xft:Hack-Bold:pixelsize=18:weight=bold:antialias=true
+URxvt.italicfont: xft:Hack-RegularOblique:pixelsize=18:slant=italic:antialias=true
 
 URxvt.scrollBar: false
 
 /* URxvt.keysym.Meta-V: eval:paste_clipboard */
 /* URxvt.keysym.Meta-C: eval:selection_to_clipboard */
+
+/* Font size changer */
+URxvt.perl-ext-common: ...,font-size
+
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-equal:  perl:font-size:reset
+URxvt.keysym.C-slash:  perl:font-size:show
