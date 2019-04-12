@@ -26,22 +26,13 @@ precmd() {
     PROMPT="%{$fg[cyan]%}%~%{$fg[yellow]%}${vcs_info_msg_0_}%{$fg[green]%}$(vim_open) $%{$reset_color%} "
 }
 
-
 autoload -U promptinit; promptinit
-
-# Suggest command from history that fits 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Zsh Syntax Highlighting
-# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Movement keys
 bindkey '^l' forward-char
 
 bindkey '^w' forward-word
 bindkey '^b' backward-delete-word
-
-bindkey '^ ' autosuggest-accept
 
 alias vims="vim -S Session.vim"
 alias vimjava="vim src/**/*.(java|proto|groovy) gen/**/*.java examples/**/*.java"
@@ -91,3 +82,5 @@ autoload -Uz _zplugin
 zplugin load zdharma/fast-syntax-highlighting
 zplugin load zsh-users/zsh-autosuggestions
 zplugin load b4b4r07/enhancd
+
+bindkey '^ ' autosuggest-accept
