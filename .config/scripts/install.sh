@@ -18,5 +18,5 @@ cd $HOME
 yadm clone https://github.com/danielakhterov/.dotfiles.git
 yadm submodule update --init
 
-# Install ZPlug
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# Install ZPlugin
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
