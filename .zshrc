@@ -66,10 +66,8 @@ function vim_open() {
     fi
 }
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/daniel/.sdkman"
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ------------------------------------ #
 # -------- ZPlugin Installation ------ #
@@ -82,5 +80,3 @@ autoload -Uz _zplugin
 zplugin load zdharma/fast-syntax-highlighting
 zplugin load zsh-users/zsh-autosuggestions
 zplugin load b4b4r07/enhancd
-
-bindkey '^ ' autosuggest-accept
