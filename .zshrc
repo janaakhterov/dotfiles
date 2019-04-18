@@ -12,6 +12,8 @@ autoload -U colors && colors
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' formats ' %b'
+
+setopt +o nomatch
     
 # Declare the variable
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -68,7 +70,10 @@ function vim_open() {
 
 export PATH=~/.config/scripts:$PATH
 
-# FZF
+# ------------------------------------ #
+# --------------- FZF ---------------- #
+# ------------------------------------ #
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ------------------------------------ #
@@ -79,6 +84,14 @@ source '/home/daniel/.zplugin/bin/zplugin.zsh'
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-zplugin load zdharma/fast-syntax-highlighting
-zplugin load zsh-users/zsh-autosuggestions
-zplugin load b4b4r07/enhancd
+ZPLGM[MUTE_WARNINGS]=1
+
+zplugin light zdharma/fast-syntax-highlighting
+zplugin light zsh-users/zsh-autosuggestions
+zplugin light b4b4r07/enhancd
+
+# ------------------------------------ #
+# --------------- NIX ---------------- #
+# ------------------------------------ #
+
+source /home/daniel/.nix-profile/etc/profile.d/nix.sh
