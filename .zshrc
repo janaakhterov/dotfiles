@@ -12,6 +12,8 @@ autoload -U colors && colors
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' formats ' %b'
+
+setopt +o nomatch
     
 # Declare the variable
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -77,6 +79,12 @@ source '/home/daniel/.zplugin/bin/zplugin.zsh'
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-zplugin load zdharma/fast-syntax-highlighting
-zplugin load zsh-users/zsh-autosuggestions
-zplugin load b4b4r07/enhancd
+ZPLGM[MUTE_WARNINGS]=1
+
+zplugin light zdharma/fast-syntax-highlighting
+zplugin light zsh-users/zsh-autosuggestions
+zplugin light b4b4r07/enhancd
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/daniel/.sdkman"
+[[ -s "/home/daniel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daniel/.sdkman/bin/sdkman-init.sh"
