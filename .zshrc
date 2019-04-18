@@ -68,7 +68,10 @@ function vim_open() {
     fi
 }
 
-# FZF
+# ------------------------------------ #
+# --------------- FZF ---------------- #
+# ------------------------------------ #
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ------------------------------------ #
@@ -85,6 +88,8 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin light zsh-users/zsh-autosuggestions
 zplugin light b4b4r07/enhancd
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/daniel/.sdkman"
-[[ -s "/home/daniel/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daniel/.sdkman/bin/sdkman-init.sh"
+# ------------------------------------ #
+# --------------- NIX ---------------- #
+# ------------------------------------ #
+
+source /home/daniel/.nix-profile/etc/profile.d/nix.sh
