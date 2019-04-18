@@ -66,6 +66,8 @@ function vim_open() {
     fi
 }
 
+export PATH=~/.config/scripts:$PATH
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
