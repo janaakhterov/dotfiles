@@ -80,7 +80,7 @@ export PATH=~/.config/scripts:$PATH
 # -------- ZPlugin Installation ------ #
 # ------------------------------------ #
 
-source '/home/daniel/.zplugin/bin/zplugin.zsh'
+source $HOME/.zplugin/bin/zplugin.zsh
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
@@ -94,4 +94,4 @@ zplugin light b4b4r07/enhancd
 # --------------- NIX ---------------- #
 # ------------------------------------ #
 
-source /home/daniel/.nix-profile/etc/profile.d/nix.sh
+source $HOME/.nix-profile/etc/profile.d/nix.sh
