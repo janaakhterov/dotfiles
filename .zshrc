@@ -49,6 +49,8 @@ alias gp="git pull"
 alias ga="git add -A"
 alias gc="git commit -m"
 alias gd="git diff"
+alias gdd="git diff --staged"
+alias gba="git branch -a"
 
 alias pings="ping 8.8.8.8"
 alias up="cd .."

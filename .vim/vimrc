@@ -23,6 +23,7 @@ Plug 'tpope/vim-repeat'
 Plug 'garbas/vim-snipmate'
 Plug 'tpope/vim-surround'
 Plug 'posva/vim-vue'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -326,6 +327,12 @@ set guicursor=a:block-Cursor
 
 set rtp+=~/.fzf
 nnoremap <leader>o :Buffers<CR>
+
+" ------------------- "
+" Easy Align Settings "
+" ------------------- "
+
+xmap ga <Plug>(EasyAlign)
 
 " --------------------------- "
 " Java Getter/Setter Settings "
