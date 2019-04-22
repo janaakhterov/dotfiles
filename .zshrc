@@ -62,6 +62,8 @@ alias cc="cargo check"
 alias gradlew="./gradlew"
 alias gradlew-test="(./gradlew test; firefox ./build/reports/tests/test/index.html)"
 
+alias xclip="xclip -selection c"
+
 function vim_open() {
     if [[ $(env | grep "VIMRUNTIME=*" | wc -l) -ge 1 ]]; then
         echo " vim"
