@@ -92,6 +92,10 @@ set ttyfast
 " Vim-Latex-Live-Preview Variable
 " let g:livepreview_previewer = 'mupdf'
 
+" Keep selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
 " Show as much of the last line as you can
 set display+=lastline
 
