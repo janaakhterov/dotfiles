@@ -24,6 +24,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'tpope/vim-surround'
 Plug 'posva/vim-vue'
 Plug 'junegunn/vim-easy-align'
+Plug 'jremmen/vim-ripgrep'
 
 call plug#end()
 
