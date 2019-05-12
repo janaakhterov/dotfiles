@@ -33,7 +33,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start program launcher
-bindsym $mod+space exec --no-startup-id dmenu_recency
+bindsym $mod+space exec --no-startup-id dmenu_run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -66,6 +66,7 @@ bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+p exec --no-startup-id i3-scrot
+bindsym $mod+Shift+p exec --no-startup-id scrot -u $HOME/Pictures/$(date +%s)-screenshot.sh
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
