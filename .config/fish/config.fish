@@ -12,8 +12,8 @@ set -gx ANDROID_SDK $HOME/Android/sdk
 set -gx PATH $HOME/.config/scripts $PATH
 set -gx PATH $HOME/go/bin $PATH
 set -gx PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
-set -gx PATH $ANDROID_SDK/emulator $PATH
-set -gx PATH $ANDROID_SDK/tools $PATH
+# set -gx PATH $ANDROID_SDK/emulator $PATH
+# set -gx PATH $ANDROID_SDK/tools $PATH
 
 # Vim
 abbr -a vimg    "vim (git ls-tree -r master --name-only)"
