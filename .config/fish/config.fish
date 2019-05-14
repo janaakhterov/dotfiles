@@ -38,6 +38,10 @@ abbr -a gcam "git commit -am"
 abbr -a gd   "git diff"
 abbr -a gds  "git diff --staged"
 abbr -a gba  "git branch -a"
+abbr -a gout "git checkout"
+abbr -a gnew "git checkout -b"
+abbr -a grh  "git reset --hard HEAD"
+abbr -a grs  "git reset --soft HEAD"
 
 abbr pings "ping 8.8.8.8"
 
@@ -58,3 +62,6 @@ abbr -a ycam "yadm commit -am"
 abbr -a yd   "yadm diff"
 abbr -a yds  "yadm diff --staged"
 abbr -a yba  "yadm branch -a"
+
+# Fish
+abbr -a reload  "source $HOME/.config/fish/config.fish"
