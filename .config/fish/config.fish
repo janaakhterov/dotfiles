@@ -16,10 +16,8 @@ set -gx PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
 # set -gx PATH $ANDROID_SDK/tools $PATH
 
 # Vim
-abbr -a vimg    "vim (git ls-tree -r master --name-only)"
-abbr -a vims    "vim -S Session.vim"
-abbr -a vimjava "vim src/**/*.(java|proto|groovy) gen/**/*.java examples/**/*.java"
-abbr -a vimjs   "vim src/**/*.(js|ts|vue|json) *.(js|json|ts) test*/**/*.(js|ts)"
+abbr -a vimg "vim (git ls-tree -r master --name-only)"
+abbr -a vims "vim -S Session.vim"
 
 # ls
 abbr -a ls "exa"
