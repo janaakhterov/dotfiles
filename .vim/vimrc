@@ -275,6 +275,7 @@ autocmd FileType py setlocal commentstring=#\ %s
 autocmd FileType swift setlocal commentstring=//\ %s
 autocmd FileType vue setlocal commentstring=/*\ %s\ */
 autocmd FileType cfg setlocal commentstring=#\ %s
+autocmd FileType dosini setlocal commentstring=;\ %s
 
 " ----------------------- "
 " End Commentary Settings "
