@@ -63,3 +63,4 @@ abbr -a yba  "yadm branch -a"
 
 # Fish
 abbr -a reload  "source $HOME/.config/fish/config.fish"
+abbr -a cffish  "$HOME/.config/fish/config.fish"
