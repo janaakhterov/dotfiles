@@ -35,239 +35,71 @@ syntax sync fromstart
 filetype off
 filetype plugin on
 
-set redrawtime=10000
-
-" Fix syntax highlighting
-" syntax sync fromstart
-
-" Auto read and update files if edited by another program
 set autoread
-
-" Set path to recursively search when using the :find command
-set path+=**
-
-" Show horizontal list of values from the :find command
 set wildmenu
-
-" Disable auto comment insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Show as much of the last line as you can
-set display+=lastline
-
-" To view hidden characters
-" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-" set list 
-" Change timeout in normal mode
-" set timeoutlen=250
-
-" Do not change window sizez upon opening/closing splits
 set noequalalways
-
-" Setting dictionary
-set dict+=/usr/share/dict/cracklib-small
-
-" Statusline
-set laststatus=2
-set statusline=%f
-set statusline+=[%c:%l/%L]
-" set statusline+=%=%{FugitiveStatusline()}\ [%c:%l/%L]
-
-" Color Scheme
-colorscheme bee
-
-" Auto read and update files if edited by another program
-set autoread
-
-" Necessary for backspace to workin insert mode on all characters
+set ttyfast
+set path+=**
+set display+=lastline
 set backspace=indent,eol,start
 
-" Set path to recursively search when using the :find command
-set path+=**
-
-" Disable auto comment insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Used to make rendering faster when multiple windows are open
-set ttyfast
-
-" Vim-Latex-Live-Preview Variable
-" let g:livepreview_previewer = 'mupdf'
-
-" Keep selection after indenting
-vnoremap < <gv
-vnoremap > >gv
-
-" Show as much of the last line as you can
-set display+=lastline
-
-" To view hidden characters
-" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-" set list 
-
-" Do not change window sizez upon opening/closing splits
-set noequalalways
-
-" Setting dictionary
-set dict+=/usr/share/dict/cracklib-small
-
-" Color Scheme
-colorscheme bee
-
-" Used to make rendering faster when multiple windows are open
-set ttyfast
-
-" Vim-Latex-Live-Preview Variable
-" let g:livepreview_previewer = 'mupdf'
-
-" ---------------- "
-" Editor Settings "
-" ---------------- "
-
-set number
-
-" Highlight current line
-set cursorline
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-" Mouse will select only what visual mode coud select in current window
-set mouse=a
-set mousefocus
-
-set autoindent
-" set smartindent
-" set cindent
-
-" --------------- "
-" Search Settings "
-" --------------- "
-
-" Needs both settings to have 'smartcase'
 set ignorecase
 set smartcase
-
 set incsearch
 
-" ------------- "
-" Fold Settings "
-" ------------- "
-set foldenable
-set foldmethod=syntax
-set foldlevel=99
-
-" ------------------- "
-" StatusLine Settings "
-" ------------------- "
-
-" set laststatus=2
-" set statusline=%f
-" set statusline+=[%c:%l/%L]
-" set statusline+=%=%{FugitiveStatusline()}\ [%c:%l/%L]
-
-set wildmenu
-
-" -------------- "
-" Mouse Settings "
-" -------------- "
-
-set mouse=a
 set mousefocus
+set mouse=a
 
-" -------- "
-" Mappings "
-" -------- "
+set number
+set expandtab
+set autoindent
+set tabstop=4
+set shiftwidth=4
 
-" No more command windows!
-nnoremap q: :q
+set guioptions=
+set guicursor=a:block-Cursor
+set guifont=Hack:h14
+autocmd! GUIEnter * set vb t_vb=
 
-" Easy tab movement
-nnoremap <silent> <Tab>  :tabnext<CR>
-nnoremap <silent> <S-Tab>  :tabprev<CR>
+colorscheme bee
 
-" --------------- "
-" Leader Mappings "
-" --------------- "
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 let mapleader="\<Space>"
 
-" Dont want to press shift all the time because keyboard is hard to type on
-" nnoremap ; :
+vnoremap < <gv
+vnoremap > >gv
 
-" Open buffer list
-" nnoremap <silent> <leader>ls :ls<CR>
+nnoremap q: :q
 
-" Viewing and editting vimrc mappings
+nnoremap <silent> <Tab>  :tabnext<CR>
+nnoremap <silent> <S-Tab>  :tabprev<CR>
+
+nnoremap <silent> <Tab>  :tabnext<CR>
+nnoremap <silent> <S-Tab>  :tabprev<CR>
+
 nnoremap <silent> <leader>ve :vs $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
-" Toggling nerd tree
+nnoremap <silent> <leader>s :sh<CR>
+
+" -------- "
+" NERDTree "
+" -------- "
+
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
-" Suspend vim and open terminal
-nnoremap <silent> <leader>s :sh<CR>
-" nnoremap <silent> <leader>s :term ++curwin<CR>
-
-" Mapping for ctags
-" nnoremap <leader>l <C-]>
-" nnoremap <leader>h <C-O>
-
-" Change fold bindings
-nnoremap <leader>fo zo
-nnoremap <leader>fc zc
-nnoremap <leader>fC zC
-nnoremap <leader>fa za
-" nnoremap R zR
-" nnoremap M zM
-
-" autocmd VimLeave * :mks!
-
-" UTF-8 Support
-" set encoding=UTF-8
-" set fileencoding=UTF-8
-
-" Changes primary key to use to change terminal from running mode
-" to terminal mode
-" set termwinkey=<C-w>
-
-" No more command windows!
-nnoremap q: :q
-
-" -------------- "
-" Netrw Settings "
-" -------------- "
-
-" Netrw settings
-let g:netrw_liststyle=3
-" let g:netrw_banner=0
-" let g:netrw_winsize=15
-let g:netrw_fastbrowse=2
-
-" ------------------ "
-" End Netrw Settings "
-" ------------------ "
-
-" ----------------- "
-" Rust-vim Settings "
-" ----------------- "
+" ---- "
+" Rust "
+" ---- "
 
 let g:autofmt_autosave = 1
 let g:rustfmt_autosave = 1
 
-" -------------- "
-" Netrw Settings "
-" -------------- "
+" ---------- "
+" Commentary "
+" ---------- "
 
-let g:netrw_liststyle=3
-let g:netrw_fastbrowse=2
-
-" ------------------- "
-" Commentary Settings "
-" ------------------- "
-
-" Setting Tim Pope's commentary variable
 autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType sql setlocal commentstring=--\ %s
@@ -277,108 +109,15 @@ autocmd FileType vue setlocal commentstring=/*\ %s\ */
 autocmd FileType cfg setlocal commentstring=#\ %s
 autocmd FileType dosini setlocal commentstring=;\ %s
 
-" ----------------------- "
-" End Commentary Settings "
-" ----------------------- "
-
-" ------------ "
-" Tab Settings "
-" ------------ "
-
-" source ~/.vim/tabs.vim
-
-" Tab status line
-" set tabline=%!MyTabLine()
-" set showtabline=2
-
-" Tab commands
-nnoremap <silent> th  :tabfirst<CR>
-nnoremap <silent> tk  :tabnext<CR>
-nnoremap <silent> tj  :tabprev<CR>
-nnoremap <silent> tl  :tablast<CR>
-nnoremap <silent> tt  :tabfind<Space>
-nnoremap <silent> tn  :tabnext<Space>
-nnoremap <silent> tm  :tabm<Space>
-nnoremap <silent> td  :tabclose<CR>
-
-nnoremap <silent> <Tab>  :tabnext<CR>
-nnoremap <silent> <S-Tab>  :tabprev<CR>
-
-" ---------------- "
-" End Tab Settings "
-" ---------------- "
-
-" ------------ "
-" GUI Settings "
-" ------------ "
-
-" No scroll/menu bars
-set guioptions=
-autocmd! GUIEnter * set vb t_vb=
-
-" Set gui font
-set guifont=Hack:h14
-
-" Set cursor to block for everything
-set guicursor=a:block-Cursor
-
-" ------------------- "
-" End of GUI Settings "
-" ------------------- "
-set guifont=Hack:h14
-set guicursor=a:block-Cursor
-
-" ------------ "
-" FZF Settings "
-" ------------ "
+" --- "
+" FZF "
+" --- "
 
 set rtp+=~/.fzf
 nnoremap <leader>o :Buffers<CR>
 
-" ------------------- "
-" Easy Align Settings "
-" ------------------- "
+" ---------- "
+" Easy Align "
+" ---------- "
 
 xmap ga <Plug>(EasyAlign)
-
-" --------------------------- "
-" Java Getter/Setter Settings "
-" --------------------------- "
-
-let g:javagetset_getterTemplate = "%modifiers% %type% %funcname%() { return %varname%; }" 
-let g:javagetset_setterTemplate = "%modifiers% void %funcname%(%type% %varname%) { this.%varname% = %varname%; }" 
-nnoremap <silent> <leader>j = :InsertBothGetterSetter<CR>
-
-" ------------- "
-" SCSS Settings "
-" ------------- "
-
-autocmd FileType scss set iskeyword+=-
-
-function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
-  let ft=toupper(a:filetype)
-  let group='textGroup'.ft
-  if exists('b:current_syntax')
-    let s:current_syntax=b:current_syntax
-    " Remove current syntax definition, as some syntax files (e.g. cpp.vim)
-    " do nothing if b:current_syntax is defined.
-    unlet b:current_syntax
-  endif
-  execute 'syntax include @'.group.' syntax/'.a:filetype.'.vim'
-  try
-    execute 'syntax include @'.group.' after/syntax/'.a:filetype.'.vim'
-  catch
-  endtry
-  if exists('s:current_syntax')
-    let b:current_syntax=s:current_syntax
-  else
-    unlet b:current_syntax
-  endif
-  execute 'syntax region textSnip'.ft.'
-  \ matchgroup='.a:textSnipHl.'
-  \ keepend
-  \ start="'.a:start.'" end="'.a:end.'"
-  \ contains=@'.group
-endfunction
-
-
