@@ -28,7 +28,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc
 go get github.com/motemen/ghq
 
 # Fisher
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish && fisher
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish && fish --command fisher
 
 # Change shell to fish
 chsh -s /usr/bin/fish
