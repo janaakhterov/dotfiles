@@ -14,6 +14,7 @@ set -gx PATH $HOME/go/bin $PATH
 set -gx PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
 # set -gx PATH $ANDROID_SDK/emulator $PATH
 # set -gx PATH $ANDROID_SDK/tools $PATH
+set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 # Vim
 abbr -a vimg "vim (git ls-tree -r HEAD --name-only)"
@@ -63,3 +64,11 @@ abbr -a yba  "yadm branch -a"
 
 # Fish
 abbr -a reload  "source $HOME/.config/fish/config.fish"
+
+# Spacefish Customization
+set SPACEFISH_RUST_COLOR green
+set SPACEFISH_PACKAGE_COLOR green
+
+if not set -q VIMRUNTIME
+    set SPACEFISH_CHAR_SYMBOL "\$"
+end
