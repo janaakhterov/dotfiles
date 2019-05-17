@@ -67,6 +67,7 @@ abbr -a reload  "source $HOME/.config/fish/config.fish"
 abbr -a cffish  "$HOME/.config/fish/config.fish"
 
 # Spacefish Customization
+set SPACEFISH_PROMPT_ORDER dir git package node docker golang rust exec_time line_sep exit_code char
 set SPACEFISH_RUST_COLOR green
 set SPACEFISH_PACKAGE_COLOR green
 
