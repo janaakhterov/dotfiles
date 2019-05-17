@@ -38,6 +38,7 @@ filetype plugin on
 set autoread
 set wildmenu
 set noequalalways
+set noshowmode
 set ttyfast
 set path+=**
 set display+=lastline
@@ -62,6 +63,8 @@ set guifont=Hack:h14
 autocmd! GUIEnter * set vb t_vb=
 
 colorscheme bee
+
+set laststatus=2
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
