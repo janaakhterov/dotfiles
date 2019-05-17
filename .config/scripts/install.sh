@@ -15,6 +15,7 @@ nix-env --install go
 nix-env --install fzf
 nix-env --install diff-so-fancy
 nix-env --install nitrogen
+nix-env --install polybar
 
 # Diff-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
