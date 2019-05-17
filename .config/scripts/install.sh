@@ -14,6 +14,7 @@ nix-env --install fish
 nix-env --install go
 nix-env --install fzf
 nix-env --install diff-so-fancy
+nix-env --install nitrogen
 
 # Diff-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
