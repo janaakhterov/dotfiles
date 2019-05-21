@@ -75,3 +75,5 @@ set SPACEFISH_CHAR_COLOR_FAILURE green
 if not set -q VIMRUNTIME
     set SPACEFISH_CHAR_SYMBOL "\$"
 end
+
+# source $HOME/.config/nix/nix.fish
