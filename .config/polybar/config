@@ -9,20 +9,15 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0}
+;background = #1B1918
 background = #FF000000
 background-alt = #444
-foreground = ${xrdb:color7}
-;foreground = #dfdfdf
+foreground = #A8A19F
 foreground-alt = #555
-primary = ${xrdb:color3}
-;primary = ${xrdb:color3}
-secondary = ${xrdb:color5}
-;secondary = #e60053
+primary = #D5911A
+secondary = #6666EA
 alert = #bd2c40
 col = #00f
-;fg = ${xrdb:color7}
-;bg = ${xrdb:color2}
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
