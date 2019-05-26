@@ -1,3 +1,0 @@
-#!/bin/bash
-
-cp $HOME/.i3/Wallpaper.png /usr/local/share/
