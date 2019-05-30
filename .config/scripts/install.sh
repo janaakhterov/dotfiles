@@ -28,6 +28,7 @@ home-manager switch
 # nix-env --install i3lock-fancy-unstable
 # nix-env --install ghq
 # nix-env --install hack-font
+# nix-env --install rustup
 
 # Diff-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"

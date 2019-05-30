@@ -16,6 +16,7 @@
     pkgs.i3
     pkgs.nitrogen
     pkgs.polybar
+    pkgs.rustup
     pkgs.yadm
   ];
 
