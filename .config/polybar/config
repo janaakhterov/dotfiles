@@ -1,15 +1,6 @@
 ; vim:ft=dosini
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
 
 [colors]
-;background = #1B1918
 background = #FF000000
 background-alt = #444
 foreground = #A8A19F
@@ -20,14 +11,9 @@ alert = #bd2c40
 col = #00f
 
 [bar/top]
-;monitor = ${env:MONITOR:HDMI-1}
-monitor = ${env:MONITOR}
-; monitor = ${env:MONITOR:LVDS-1}
+monitor = 
 width = 100%
 height = 24
-;offset-x = 1%
-;offset-y = 1%
-;radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
@@ -47,24 +33,11 @@ module-margin-right = 2
 
 font-0 = Hack:size=10
 
-#modules-left = i3
 modules-left = i3 mpd
-#modules-center = mpd
-#modules-right = volume wlan eth battery temperature date
 modules-right = filesystem volume wlan eth battery temperature date
 
 tray-position = right
 tray-padding = 0
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
