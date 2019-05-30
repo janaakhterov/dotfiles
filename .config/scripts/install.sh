@@ -17,6 +17,7 @@ nix-env --install polybar
 nix-env --install firefox
 nix-env --install i3lock-fancy-unstable
 nix-env --install ghq
+nix-env --install hack-font
 
 # Diff-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
