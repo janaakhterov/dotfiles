@@ -6,18 +6,28 @@
 # curl https://nixos.org/nix/install | sh
 # . $HOME/.nix-profile/etc/profile.d/nix.sh
 
-nix-env --install exa
-nix-env --install yadm
-nix-env --install fish
-nix-env --install go
-nix-env --install fzf
-nix-env --install diff-so-fancy
-nix-env --install nitrogen
-nix-env --install polybar
-nix-env --install firefox
-nix-env --install i3lock-fancy-unstable
-nix-env --install ghq
-nix-env --install hack-font
+# Uninstall all packages
+nix-env -e ".*"
+
+nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+
+# Install home-manager
+nix-shell '<home-manager>' -A install
+
+home-manager switch
+# nix-env --install exa
+# nix-env --install yadm
+# nix-env --install fish
+# nix-env --install go
+# nix-env --install fzf
+# nix-env --install diff-so-fancy
+# nix-env --install nitrogen
+# nix-env --install polybar
+# nix-env --install firefox
+# nix-env --install i3lock-fancy-unstable
+# nix-env --install ghq
+# nix-env --install hack-font
 
 # Diff-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
