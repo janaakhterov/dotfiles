@@ -95,7 +95,7 @@ fi
 # ZPlugin | Zsh package manager
 if ! zsh -c "command -v zsh >/dev/null 2>&1 || exit 1;"; then
     echo "Installing zplugin..."
-    # sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 fi
 
 # Fisher | Fish package manager
