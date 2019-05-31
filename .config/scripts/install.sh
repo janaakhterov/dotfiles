@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# curl https://raw.githubusercontent.com/danielakhterov/.dotfiles/master/.config/scripts/install.sh | sh
+
 UPDATE_VARIABLES=false
 
 if sysctl kernel.unprivileged_userns_clone | grep "0" > /dev/null 2>&1; then
