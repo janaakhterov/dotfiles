@@ -5,6 +5,7 @@
   programs.home-manager.enable = true;
 
   home.packages = [
+    pkgs.alacritty
     pkgs.exa
     pkgs.firefox
     pkgs.fish

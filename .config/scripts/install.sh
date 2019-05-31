@@ -115,13 +115,13 @@ if ! yadm remote show origin | grep "Fetch URL:" > /dev/null 2>&1; then
 fi
 
 # ZPlugin | Zsh package manager
-if ! zsh -c "command -v zsh > /dev/null 2>&1 || exit 1;"; then
+if command -v zsh > /dev/null 2>&1 && ! zsh -c "command -v zsh > /dev/null 2>&1 || exit 1;" > /dev/null 2>&1; then
     echo "Installing zplugin..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh > /dev/null 2>&1)" > /dev/null 2>&1
 fi
 
 # Fisher | Fish package manager
-if ! fish -c "fisher --help > /dev/null 2>&1; or exit 1"; then
+if ! fish -c "fisher --help > /dev/null 2>&1; or exit 1" > /dev/null 2>&1; then
     echo "Installing fisher..."
     curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish > /dev/null 2>&1
     echo "Running fisher..."
