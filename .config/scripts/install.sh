@@ -92,8 +92,10 @@ if command -v diff-so-fancy > /dev/null 2>&1 && ! git config --list | grep "core
     git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 fi
 
-# Initialize dotfiles
-# yadm clone --recurse-submodules -j8 https://github.com/danielakhterov/.dotfiles.git
+if ! yadm remote show origin | grep "Fetch URL:" > /dev/null 2>&1; then
+    echo "Initializing dotfiles using yadm..."
+    yadm clone --recurse-submodules -j8 https://github.com/danielakhterov/.dotfiles.git
+fi
 
 # ZPlugin | Zsh package manager
 if ! zsh -c "command -v zsh > /dev/null 2>&1 || exit 1;"; then
