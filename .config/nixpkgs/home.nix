@@ -18,6 +18,7 @@
     pkgs.polybar
     pkgs.rustup
     pkgs.yadm
+    pkgs.bat
   ];
 
   programs.firefox.enable = true;
