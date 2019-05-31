@@ -1,36 +1,36 @@
 #!/bin/sh
 # Set this just in case otherwise nix might not install 
 # sudo sysctl kernel.unprivileged_userns_clone=1
+UPDATE_VARIABLES=false
 
-# Install Nix package manager
 if ! command -v nix-env > /dev/null 2>&1; then
-    echo "Installing nix..."
+    echo "Installing nix package manager..."
     curl https://nixos.org/nix/install | sh
     . $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
 
-
-# Add nixos 19.03 channel
 if ! nix-channel --list | awk '{print $1;}' | grep "nixos" > /dev/null; then
     echo "Adding nixos channel..."
     nix-channel --add https://releases.nixos.org/nixos/19.03/nixos-19.03.172764.50d5d73e22b
+    UPDATE_VARIABLES = true
 fi
 
-# Add nixpkgs unstable channel
 if ! nix-channel --list | awk '{print $1;}' | grep "nixpkgs" > /dev/null; then
     echo "Adding nixpkgs-unstable channel..."
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+    UPDATE_VARIABLES = true
 fi
 
-# Add home-manager channel
 if ! nix-channel --list | awk '{print $1;}' | grep "home-manager" > /dev/null; then
     echo "Adding home-manager channel..."
     nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+    UPDATE_VARIABLES = true
 fi
 
-# Update channels
-echo "Updating channels..."
-nix-channel --update
+if [ "$UPDATE_VARIABLES" = true ]; then
+    echo "Updating channels..."
+    nix-channel --update
+fi
 
 # Sometimes required by home-manager especially on non NixOS machines
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
@@ -61,7 +61,7 @@ if command -v home-manager > /dev/null 2>&1; then
     nix-env --uninstall yadm
 
     echo "Running home-manager..."
-    home-manager switch
+    home-manager switch > /dev/null 2>&1
 elif command -v nix-env > /dev/null 2>&1; then
     echo "Installing packages using nix-env..."
     nix-env --install alacritty
@@ -102,7 +102,9 @@ if ! zsh -c "command -v zsh > /dev/null 2>&1 || exit 1;"; then
 fi
 
 # Fisher | Fish package manager
-if ! command -v fisher > /dev/null 2>&1; then
+if ! fish -c "fisher --help > /dev/null 2>&1; or exit 1"; then
     echo "Installing fisher..."
-    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish && fish --command fisher
+    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+    echo "Running fisher..."
+    fish -c fisher
 fi
