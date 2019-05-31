@@ -90,12 +90,14 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install polybar --arg i3Support true --arg pulseSupport true --arg mpdSupport true > /dev/null 2>&1
     nix-env --install rustup > /dev/null 2>&1
     nix-env --install yadm > /dev/null 2>&1
-
-    echo "Setting default toolchain for rustup to nightly..."
-    rustup default nightly > /dev/null 2>&1
 else
     echo "Failed to install packages because nix-env and home-manager failed to install"
     exit 1
+fi
+
+if command -v rustup > /dev/null 2>&1; then
+    echo "Setting default toolchain for rustup to nightly..."
+    rustup default nightly > /dev/null 2>&1
 fi
 
 # Runs the home-manager which installs all packages/programs from ~/.config/nixpkgs/home.nix
@@ -109,19 +111,19 @@ fi
 
 if ! yadm remote show origin | grep "Fetch URL:" > /dev/null 2>&1; then
     echo "Initializing dotfiles using yadm..."
-    yadm clone https://github.com/danielakhterov/.dotfiles.git
+    yadm clone https://github.com/danielakhterov/.dotfiles.git > /dev/null 2>&1
 fi
 
 # ZPlugin | Zsh package manager
 if ! zsh -c "command -v zsh > /dev/null 2>&1 || exit 1;"; then
     echo "Installing zplugin..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh > /dev/null 2>&1)" > /dev/null 2>&1
 fi
 
 # Fisher | Fish package manager
 if ! fish -c "fisher --help > /dev/null 2>&1; or exit 1"; then
     echo "Installing fisher..."
-    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish > /dev/null 2>&1
     echo "Running fisher..."
-    fish -c fisher
+    fish -c fisher > /dev/null 2>&1
 fi
