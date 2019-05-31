@@ -1,11 +1,11 @@
 #!/bin/sh
-# Set this just in case otherwise nix might not install 
+UPDATE_VARIABLES=false
+
 if sysctl kernel.unprivileged_userns_clone | grep "0" > /dev/null 2>&1; then
     echo "Changing kernel.unprivileged_userns_clone to 1 requires sudo permissions"
     echo "command: sudo sysctl kernel.unprivileged_userns_clone=1"
     sudo sysctl kernel.unprivileged_userns_clone=1
 fi
-UPDATE_VARIABLES=false
 
 if ! command -v nix-env > /dev/null 2>&1; then
     echo "Installing nix package manager..."
