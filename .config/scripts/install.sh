@@ -12,31 +12,31 @@ fi
 
 if ! command -v nix-env > /dev/null 2>&1; then
     echo "Installing nix package manager..."
-    curl https://nixos.org/nix/install | sh
+    curl https://nixos.org/nix/install > /dev/null 2>&1 | sh
     . $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
 
 if ! nix-channel --list | awk '{print $1;}' | grep "nixos" > /dev/null; then
     echo "Adding nixos channel..."
-    nix-channel --add https://releases.nixos.org/nixos/19.03/nixos-19.03.172764.50d5d73e22b
+    nix-channel --add https://releases.nixos.org/nixos/19.03/nixos-19.03.172764.50d5d73e22b > /dev/null 2>&1
     UPDATE_VARIABLES=true
 fi
 
 if ! nix-channel --list | awk '{print $1;}' | grep "nixpkgs" > /dev/null; then
     echo "Adding nixpkgs-unstable channel..."
-    nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+    nix-channel --add https://nixos.org/channels/nixpkgs-unstable > /dev/null 2>&1
     UPDATE_VARIABLES=true
 fi
 
 if ! nix-channel --list | awk '{print $1;}' | grep "home-manager" > /dev/null; then
     echo "Adding home-manager channel..."
-    nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+    nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager > /dev/null 2>&1
     UPDATE_VARIABLES=true
 fi
 
 if [ "$UPDATE_VARIABLES" = true ]; then
     echo "Updating channels..."
-    nix-channel --update
+    nix-channel --update > /dev/null 2>&1
 fi
 
 # Sometimes required by home-manager especially on non NixOS machines
@@ -45,7 +45,7 @@ export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 # Install home-manager
 if ! command -v home-manager > /dev/null 2>&1; then
     echo "Installing home-manager..."
-    nix-shell '<home-manager>' -A install
+    nix-shell '<home-manager>' -A install > /dev/null 2>&1
 fi
 
 if command -v home-manager > /dev/null 2>&1; then
@@ -70,7 +70,7 @@ if command -v home-manager > /dev/null 2>&1; then
     echo "Creating $HOME/.config/nixpkgs..."
     mkdir -p $HOME/.config/nixpkgs
     echo "Downloading home.nix from github..."
-    curl -o $HOME/.config/nixpkgs/home.nix https://raw.githubusercontent.com/danielakhhterov/.dotfiles/master/.config/nixpkgs/home.nix > /dev/null 2>&1
+    curl -o $HOME/.config/nixpkgs/home.nix https://raw.githubusercontent.com/danielakhterov/.dotfiles/master/.config/nixpkgs/home.nix > /dev/null 2>&1
 
     echo "Running home-manager..."
     home-manager switch > /dev/null 2>&1
