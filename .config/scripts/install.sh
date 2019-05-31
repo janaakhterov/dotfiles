@@ -3,7 +3,7 @@
 # sudo sysctl kernel.unprivileged_userns_clone=1
 
 # Install Nix package manager
-if ! command -v nix-env >/dev/null 2>&1; then
+if ! command -v nix-env > /dev/null 2>&1; then
     echo "Installing nix..."
     curl https://nixos.org/nix/install | sh
     . $HOME/.nix-profile/etc/profile.d/nix.sh
@@ -36,11 +36,14 @@ nix-channel --update
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
 # Install home-manager
-if ! command -v home-manager >/dev/null 2>&1; then
+if ! command -v home-manager > /dev/null 2>&1; then
     echo "Installing home-manager..."
     nix-shell '<home-manager>' -A install
+fi
 
+if command -v home-manager > /dev/null 2>&1; then
     # Uninstall all packages
+    echo "Insatlling packages using home-manager..."
     echo "Uninstalling packages that home-manager installs..."
     nix-env --uninstall alacritty
     nix-env --uninstall diff-so-fancy
@@ -59,7 +62,7 @@ if ! command -v home-manager >/dev/null 2>&1; then
 
     echo "Running home-manager..."
     home-manager switch
-elif ! command -v nix-env >/dev/null 2>&1; then
+elif command -v nix-env > /dev/null 2>&1; then
     echo "Installing packages using nix-env..."
     nix-env --install alacritty
     nix-env --install diff-so-fancy
@@ -84,7 +87,7 @@ fi
 
 # Diff-so-fancy
 # Updates git to use diff-so-fancy for it's pager
-if ! command -v diff-so-fancy >/dev/null 2>&1; then
+if command -v diff-so-fancy > /dev/null 2>&1 && ! git config --list | grep "core.pager" > /dev/null 2>&1; then
     echo "Updating git pager to use diff-so-fancy..."
     git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 fi
@@ -93,13 +96,13 @@ fi
 # yadm clone --recurse-submodules -j8 https://github.com/danielakhterov/.dotfiles.git
 
 # ZPlugin | Zsh package manager
-if ! zsh -c "command -v zsh >/dev/null 2>&1 || exit 1;"; then
+if ! zsh -c "command -v zsh > /dev/null 2>&1 || exit 1;"; then
     echo "Installing zplugin..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 fi
 
 # Fisher | Fish package manager
-if ! command -v fisher >/dev/null 2>&1; then
+if ! command -v fisher > /dev/null 2>&1; then
     echo "Installing fisher..."
     curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish && fish --command fisher
 fi
