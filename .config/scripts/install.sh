@@ -19,19 +19,19 @@ fi
 if ! nix-channel --list | awk '{print $1;}' | grep "nixos" > /dev/null; then
     echo "Adding nixos channel..."
     nix-channel --add https://releases.nixos.org/nixos/19.03/nixos-19.03.172764.50d5d73e22b
-    UPDATE_VARIABLES = true
+    UPDATE_VARIABLES=true
 fi
 
 if ! nix-channel --list | awk '{print $1;}' | grep "nixpkgs" > /dev/null; then
     echo "Adding nixpkgs-unstable channel..."
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-    UPDATE_VARIABLES = true
+    UPDATE_VARIABLES=true
 fi
 
 if ! nix-channel --list | awk '{print $1;}' | grep "home-manager" > /dev/null; then
     echo "Adding home-manager channel..."
     nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
-    UPDATE_VARIABLES = true
+    UPDATE_VARIABLES=true
 fi
 
 if [ "$UPDATE_VARIABLES" = true ]; then
@@ -52,39 +52,47 @@ if command -v home-manager > /dev/null 2>&1; then
     # Uninstall all packages
     echo "Insatlling packages using home-manager..."
     echo "Uninstalling packages that home-manager installs..."
-    nix-env --uninstall alacritty
-    nix-env --uninstall diff-so-fancy
-    nix-env --uninstall exa
-    nix-env --uninstall firefox
-    nix-env --uninstall fish
+    nix-env --uninstall alacritty > /dev/null 2>&1
+    nix-env --uninstall diff-so-fancy > /dev/null 2>&1
+    nix-env --uninstall exa > /dev/null 2>&1
+    nix-env --uninstall firefox > /dev/null 2>&1
+    nix-env --uninstall fish > /dev/null 2>&1
     nix-env --uninstall fzf
-    nix-env --uninstall ghq
-    nix-env --uninstall go
-    nix-env --uninstall hack-font
-    nix-env --uninstall i3lock-fancy-unstable
-    nix-env --uninstall nitrogen
-    nix-env --uninstall polybar
-    nix-env --uninstall rustup
-    nix-env --uninstall yadm
+    nix-env --uninstall ghq > /dev/null 2>&1
+    nix-env --uninstall go > /dev/null 2>&1
+    nix-env --uninstall hack-font > /dev/null 2>&1
+    nix-env --uninstall i3lock-fancy-unstable > /dev/null 2>&1
+    nix-env --uninstall nitrogen > /dev/null 2>&1
+    nix-env --uninstall polybar > /dev/null 2>&1
+    nix-env --uninstall rustup > /dev/null 2>&1
+    nix-env --uninstall yadm > /dev/null 2>&1
+
+    echo "Creating $HOME/.config/nixpkgs..."
+    mkdir -p $HOME/.config/nixpkgs
+    echo "Downloading home.nix from github..."
+    curl -o $HOME/.config/nixpkgs/home.nix https://raw.githubusercontent.com/danielakhhterov/.dotfiles/master/.config/nixpkgs/home.nix > /dev/null 2>&1
 
     echo "Running home-manager..."
     home-manager switch > /dev/null 2>&1
 elif command -v nix-env > /dev/null 2>&1; then
     echo "Installing packages using nix-env..."
-    nix-env --install alacritty
-    nix-env --install diff-so-fancy
-    nix-env --install exa
-    nix-env --install firefox
-    nix-env --install fish
-    nix-env --install fzf
-    nix-env --install ghq
-    nix-env --install go
-    nix-env --install hack-font
-    nix-env --install i3lock-fancy-unstable
-    nix-env --install nitrogen
-    nix-env --install polybar
-    nix-env --install rustup
-    nix-env --install yadm
+    nix-env --install alacritty > /dev/null 2>&1
+    nix-env --install diff-so-fancy > /dev/null 2>&1
+    nix-env --install exa > /dev/null 2>&1
+    nix-env --install firefox > /dev/null 2>&1
+    nix-env --install fish > /dev/null 2>&1
+    nix-env --install fzf > /dev/null 2>&1
+    nix-env --install ghq > /dev/null 2>&1
+    nix-env --install go > /dev/null 2>&1
+    nix-env --install hack-font > /dev/null 2>&1
+    nix-env --install i3lock-fancy-unstable > /dev/null 2>&1
+    nix-env --install nitrogen > /dev/null 2>&1
+    nix-env --install polybar --arg i3Support true --arg pulseSupport true --arg mpdSupport true > /dev/null 2>&1
+    nix-env --install rustup > /dev/null 2>&1
+    nix-env --install yadm > /dev/null 2>&1
+
+    echo "Setting default toolchain for rustup to nightly..."
+    rustup default nightly > /dev/null 2>&1
 else
     echo "Failed to install packages because nix-env and home-manager failed to install"
     exit 1
@@ -101,7 +109,7 @@ fi
 
 if ! yadm remote show origin | grep "Fetch URL:" > /dev/null 2>&1; then
     echo "Initializing dotfiles using yadm..."
-    yadm clone --recurse-submodules -j8 https://github.com/danielakhterov/.dotfiles.git
+    yadm clone https://github.com/danielakhterov/.dotfiles.git
 fi
 
 # ZPlugin | Zsh package manager
