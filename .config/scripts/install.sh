@@ -4,7 +4,7 @@
 
 UPDATE_VARIABLES=false
 
-if sysctl kernel.unprivileged_userns_clone | grep "0" > /dev/null 2>&1; then
+if sysctl kernel.unprivileged_userns_clone 2>&1 | grep "0" > /dev/null 2>&1; then
     echo "Changing kernel.unprivileged_userns_clone to 1 requires sudo permissions"
     echo "command: sudo sysctl kernel.unprivileged_userns_clone=1"
     sudo sysctl kernel.unprivileged_userns_clone=1
@@ -40,18 +40,17 @@ if [ "$UPDATE_VARIABLES" = true ]; then
 fi
 
 # Sometimes required by home-manager especially on non NixOS machines
+echo "Setting NIX_PATH env to " $HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
-# Install home-manager
 if ! command -v home-manager > /dev/null 2>&1; then
     echo "Installing home-manager..."
     nix-shell '<home-manager>' -A install > /dev/null 2>&1
 fi
 
 if command -v home-manager > /dev/null 2>&1; then
-    # Uninstall all packages
     echo "Insatlling packages using home-manager..."
-    echo "Uninstalling packages that home-manager installs..."
+    echo "Uninstalling packages that home-manager installs. This is required otherwise home-manager will fail to install..."
     nix-env --uninstall alacritty > /dev/null 2>&1
     nix-env --uninstall diff-so-fancy > /dev/null 2>&1
     nix-env --uninstall exa > /dev/null 2>&1
@@ -89,6 +88,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install nitrogen > /dev/null 2>&1
     nix-env --install polybar --arg i3Support true --arg pulseSupport true --arg mpdSupport true > /dev/null 2>&1
     nix-env --install rustup > /dev/null 2>&1
+    nix-env --install vim > /dev/null 2>&1
     nix-env --install yadm > /dev/null 2>&1
 else
     echo "Failed to install packages because nix-env and home-manager failed to install"
@@ -109,7 +109,7 @@ if command -v diff-so-fancy > /dev/null 2>&1 && ! git config --list | grep "core
     git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 fi
 
-if ! yadm remote show origin | grep "Fetch URL:" > /dev/null 2>&1; then
+if command -v yadm > /dev/null 2>&1 && ! yadm remote show origin | grep "Fetch URL:" > /dev/null 2>&1; then
     echo "Initializing dotfiles using yadm..."
     yadm clone https://github.com/danielakhterov/.dotfiles.git > /dev/null 2>&1
 fi
@@ -121,9 +121,15 @@ if command -v zsh > /dev/null 2>&1 && ! zsh -c "command -v zsh > /dev/null 2>&1 
 fi
 
 # Fisher | Fish package manager
-if ! fish -c "fisher --help > /dev/null 2>&1; or exit 1" > /dev/null 2>&1; then
+if command -v fish > /dev/null 2>&1 && ! fish -c "fisher --help > /dev/null 2>&1; or exit 1" > /dev/null 2>&1; then
     echo "Installing fisher..."
     curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish > /dev/null 2>&1
     echo "Running fisher..."
     fish -c fisher > /dev/null 2>&1
 fi
+
+
+
+echo "Restart your display manager or restart your computer to apply changes"
+echo "Run PlugInstall command from within vim to install vim plugins"
+echo "Done!"

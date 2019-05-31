@@ -6,6 +6,7 @@
 
   home.packages = [
     pkgs.alacritty
+    pkgs.bat
     pkgs.exa
     pkgs.firefox
     pkgs.fish
@@ -17,8 +18,8 @@
     pkgs.nitrogen
     pkgs.polybar
     pkgs.rustup
+    pkgs.vim
     pkgs.yadm
-    pkgs.bat
   ];
 
   programs.firefox.enable = true;
