@@ -128,8 +128,10 @@ if command -v fish > /dev/null 2>&1 && ! fish -c "fisher --help > /dev/null 2>&1
     fish -c fisher > /dev/null 2>&1
 fi
 
-
+if command -v vim > /dev/null 2>&1; then
+    echo "Installing vim plugins..."
+    vim +PlugInstall +qal! > /dev/null 2>&1
+fi
 
 echo "Restart your display manager or restart your computer to apply changes"
-echo "Run PlugInstall command from within vim to install vim plugins"
 echo "Done!"
