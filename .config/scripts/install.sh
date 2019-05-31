@@ -43,38 +43,38 @@ if ! command -v home-manager >/dev/null 2>&1; then
     # Uninstall all packages
     echo "Uninstalling packages that home-manager installs..."
     nix-env --uninstall alacritty
-    nix-env --uninstall exa
-    nix-env --uninstall yadm
-    nix-env --uninstall fish
-    nix-env --uninstall go
-    nix-env --uninstall fzf
     nix-env --uninstall diff-so-fancy
+    nix-env --uninstall exa
+    nix-env --uninstall firefox
+    nix-env --uninstall fish
+    nix-env --uninstall fzf
+    nix-env --uninstall ghq
+    nix-env --uninstall go
+    nix-env --uninstall hack-font
+    nix-env --uninstall i3lock-fancy-unstable
     nix-env --uninstall nitrogen
     nix-env --uninstall polybar
-    nix-env --uninstall firefox
-    nix-env --uninstall i3lock-fancy-unstable
-    nix-env --uninstall ghq
-    nix-env --uninstall hack-font
     nix-env --uninstall rustup
+    nix-env --uninstall yadm
 
     echo "Running home-manager..."
     home-manager switch
 elif ! command -v nix-env >/dev/null 2>&1; then
     echo "Installing packages using nix-env..."
     nix-env --install alacritty
-    nix-env --install exa
-    nix-env --install yadm
-    nix-env --install fish
-    nix-env --install go
-    nix-env --install fzf
     nix-env --install diff-so-fancy
+    nix-env --install exa
+    nix-env --install firefox
+    nix-env --install fish
+    nix-env --install fzf
+    nix-env --install ghq
+    nix-env --install go
+    nix-env --install hack-font
+    nix-env --install i3lock-fancy-unstable
     nix-env --install nitrogen
     nix-env --install polybar
-    nix-env --install firefox
-    nix-env --install i3lock-fancy-unstable
-    nix-env --install ghq
-    nix-env --install hack-font
     nix-env --install rustup
+    nix-env --install yadm
 else
     echo "Failed to install packages because nix-env and home-manager failed to install"
     exit 1
