@@ -5,6 +5,7 @@
   programs.home-manager.enable = true;
 
   home.packages = [
+    (pkgs.polybar.override { i3Support = true; pulseSupport = true; mpdSupport = true; })
     pkgs.alacritty
     pkgs.bat
     pkgs.exa
@@ -12,6 +13,7 @@
     pkgs.fish
     pkgs.fzf
     pkgs.ghq
+    pkgs.git
     pkgs.go
     pkgs.hack-font
     pkgs.i3
@@ -21,8 +23,6 @@
     pkgs.vim
     pkgs.yadm
   ];
-
-  programs.firefox.enable = true;
 
   programs.git = {
     enable = true;
