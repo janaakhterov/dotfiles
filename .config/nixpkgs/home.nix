@@ -17,7 +17,7 @@
     pkgs.go
     pkgs.hack-font
     pkgs.i3
-    pkgs.nitrogen
+    pkgs.feh
     pkgs.polybar
     pkgs.rustup
     pkgs.vim
