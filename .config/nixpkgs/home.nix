@@ -9,13 +9,14 @@ in
     (pkgs.polybar.override { i3Support = true; pulseSupport = true; mpdSupport = true; })
     pkgs.alacritty
     pkgs.bat
-    pkgs.gitAndTools.diff-so-fancy
+    pkgs.discord
     pkgs.exa
     pkgs.feh
     pkgs.firefox
     pkgs.fish
     pkgs.fzf
     pkgs.ghq
+    pkgs.gitAndTools.diff-so-fancy
     pkgs.go
     pkgs.hack-font
     pkgs.htop
@@ -23,7 +24,9 @@ in
     pkgs.i3lock-fancy
     pkgs.jetbrains.idea-community
     pkgs.openjdk8
+    pkgs.rofi-unwrapped
     pkgs.rustup
+    pkgs.steam
     pkgs.vim
     pkgs.yadm
   ];

@@ -55,6 +55,7 @@ if command -v home-manager > /dev/null 2>&1; then
     nix-env --uninstall android-studio-canary > /dev/null 2>&1
     nix-env --uninstall bat > /dev/null 2>&1
     nix-env --uninstall diff-so-fancy > /dev/null 2>&1
+    nix-env --uninstall discord > /dev/null 2>&1
     nix-env --uninstall exa > /dev/null 2>&1
     nix-env --uninstall feh > /dev/null 2>&1
     nix-env --uninstall firefox > /dev/null 2>&1
@@ -72,6 +73,7 @@ if command -v home-manager > /dev/null 2>&1; then
     nix-env --uninstall polybar > /dev/null 2>&1
     nix-env --uninstall rofi-unwrapped > /dev/null 2>&1
     nix-env --uninstall rustup > /dev/null 2>&1
+    nix-env --uninstall steam > /dev/null 2>&1
     nix-env --uninstall vim > /dev/null 2>&1
     nix-env --uninstall yadm > /dev/null 2>&1
 
@@ -88,6 +90,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install android-studio-canary > /dev/null 2>&1
     nix-env --install bat > /dev/null 2>&1
     nix-env --install diff-so-fancy > /dev/null 2>&1
+    nix-env --install discord > /dev/null 2>&1
     nix-env --install exa > /dev/null 2>&1
     nix-env --install feh > /dev/null 2>&1
     nix-env --install firefox > /dev/null 2>&1
@@ -105,6 +108,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install polybar --arg i3Support true --arg pulseSupport true --arg mpdSupport true > /dev/null 2>&1
     nix-env --install rofi-unwrapped > /dev/null 2>&1
     nix-env --install rustup > /dev/null 2>&1
+    nix-env --install steam > /dev/null 2>&1
     nix-env --install vim > /dev/null 2>&1
     nix-env --install yadm > /dev/null 2>&1
 else
