@@ -22,6 +22,7 @@
     pkgs.i3
     /* pkgs.i3lock-fancy-unstable */
     pkgs.polybar
+    /* pkgs.rofi-unwrapped */
     pkgs.rustup
     pkgs.vim
     pkgs.yadm
