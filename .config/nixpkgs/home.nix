@@ -8,7 +8,9 @@
     (pkgs.polybar.override { i3Support = true; pulseSupport = true; mpdSupport = true; })
     pkgs.alacritty
     pkgs.bat
+    /* pkgs.diff-so-fancy */
     pkgs.exa
+    pkgs.feh
     pkgs.firefox
     pkgs.fish
     pkgs.fzf
@@ -16,8 +18,9 @@
     pkgs.git
     pkgs.go
     pkgs.hack-font
+    pkgs.htop
     pkgs.i3
-    pkgs.feh
+    /* pkgs.i3lock-fancy-unstable */
     pkgs.polybar
     pkgs.rustup
     pkgs.vim
