@@ -9,7 +9,7 @@ in
     (pkgs.polybar.override { i3Support = true; pulseSupport = true; mpdSupport = true; })
     pkgs.alacritty
     pkgs.bat
-    /* pkgs.diff-so-fancy */
+    pkgs.gitAndTools.diff-so-fancy
     pkgs.exa
     pkgs.feh
     pkgs.firefox
@@ -21,8 +21,8 @@ in
     pkgs.htop
     pkgs.i3
     pkgs.i3lock-fancy
-    /* pkgs.idea-commmunity */
-    /* pkgs.openjdk-8u212-ga */
+    pkgs.jetbrains.idea-community
+    pkgs.openjdk8
     pkgs.rustup
     pkgs.vim
     pkgs.yadm
@@ -34,13 +34,6 @@ in
       enable = true;
       userName = "${name}";
       userEmail = "${email}";
-    };
-  };
-
-  xsession = {
-    enable = true;
-    windowManager.i3 = {
-      enable = true;
     };
   };
 }

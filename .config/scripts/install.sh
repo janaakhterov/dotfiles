@@ -68,7 +68,7 @@ if command -v home-manager > /dev/null 2>&1; then
     nix-env --uninstall i3 > /dev/null 2>&1
     nix-env --uninstall i3lock-fancy-unstable > /dev/null 2>&1
     nix-env --uninstall idea-community > /dev/null 2>&1
-    nix-env --uninstall openjdk-8u212 > /dev/null 2>&1
+    nix-env --uninstall openjdk8 > /dev/null 2>&1
     nix-env --uninstall polybar > /dev/null 2>&1
     nix-env --uninstall rofi-unwrapped > /dev/null 2>&1
     nix-env --uninstall rustup > /dev/null 2>&1
@@ -101,7 +101,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install i3 > /dev/null 2>&1
     nix-env --install i3lock-fancy-unstable > /dev/null 2>&1
     nix-env --install idea-community > /dev/null 2>&1
-    nix-env --install openjdk-8u212 > /dev/null 2>&1
+    nix-env --install openjdk8 > /dev/null 2>&1
     nix-env --install polybar --arg i3Support true --arg pulseSupport true --arg mpdSupport true > /dev/null 2>&1
     nix-env --install rofi-unwrapped > /dev/null 2>&1
     nix-env --install rustup > /dev/null 2>&1
