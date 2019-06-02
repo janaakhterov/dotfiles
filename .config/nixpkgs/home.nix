@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 
+let 
+  name = "Daniel Akhterov";
+  email = "akhterovd@gmail.com";
+in
 {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   home.packages = [
     (pkgs.polybar.override { i3Support = true; pulseSupport = true; mpdSupport = true; })
     pkgs.alacritty
@@ -15,25 +16,31 @@
     pkgs.fish
     pkgs.fzf
     pkgs.ghq
-    pkgs.git
     pkgs.go
     pkgs.hack-font
     pkgs.htop
     pkgs.i3
-    /* pkgs.i3lock-fancy-unstable */
-    pkgs.polybar
-    /* pkgs.rofi-unwrapped */
+    pkgs.i3lock-fancy
+    /* pkgs.idea-commmunity */
+    /* pkgs.openjdk-8u212-ga */
     pkgs.rustup
     pkgs.vim
     pkgs.yadm
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "Daniel Akhterov";
-    userEmail = "akhterovd@gmail.com";
+  programs = {
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      userName = "${name}";
+      userEmail = "${email}";
+    };
   };
 
-  xsession.enable = true;
-  xsession.windowManager.command = "i3";
+  xsession = {
+    enable = true;
+    windowManager.i3 = {
+      enable = true;
+    };
+  };
 }
