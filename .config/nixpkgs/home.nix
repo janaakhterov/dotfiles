@@ -34,6 +34,7 @@ in
     pkgs.rustup
     pkgs.steam
     pkgs.vim
+    pkgs.xautolock
     pkgs.yadm
   ];
 
