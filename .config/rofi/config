@@ -1,7 +1,8 @@
-rofi.lines:                          3
-rofi.font:                           hack 20
-rofi.bw:                             0
-rofi.show-icons:                     true
-rofi.terminal:                       Alacritty
-rofi.hide-scrollbar:                 true
-rofi.fullscreen:                     false
+rofi.combi-modi:     run,window,drun,ssh
+rofi.lines:          3
+rofi.font:           hack 20
+rofi.bw:             0
+rofi.show-icons:     true
+rofi.terminal:       Alacritty
+rofi.hide-scrollbar: true
+rofi.fullscreen:     false
