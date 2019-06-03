@@ -52,8 +52,11 @@ if command -v home-manager > /dev/null 2>&1; then
     echo "Insatlling packages using home-manager..."
     echo "Uninstalling packages that home-manager installs. This is required otherwise home-manager will fail to install..."
     nix-env --uninstall alacritty > /dev/null 2>&1
+    nix-env --uninstall alsamixer > /dev/null 2>&1
     nix-env --uninstall android-studio-canary > /dev/null 2>&1
     nix-env --uninstall bat > /dev/null 2>&1
+    nix-env --uninstall binutils > /dev/null 2>&1
+    nix-env --uninstall cargo-edit > /dev/null 2>&1
     nix-env --uninstall diff-so-fancy > /dev/null 2>&1
     nix-env --uninstall discord > /dev/null 2>&1
     nix-env --uninstall exa > /dev/null 2>&1
@@ -61,6 +64,7 @@ if command -v home-manager > /dev/null 2>&1; then
     nix-env --uninstall firefox > /dev/null 2>&1
     nix-env --uninstall fish > /dev/null 2>&1
     nix-env --uninstall fzf > /dev/null 2>&1
+    nix-env --uninstall gcc > /dev/null 2>&1
     nix-env --uninstall ghq > /dev/null 2>&1
     nix-env --uninstall git > /dev/null 2>&1
     nix-env --uninstall go > /dev/null 2>&1
@@ -70,6 +74,7 @@ if command -v home-manager > /dev/null 2>&1; then
     nix-env --uninstall i3lock-fancy-unstable > /dev/null 2>&1
     nix-env --uninstall idea-community > /dev/null 2>&1
     nix-env --uninstall openjdk8 > /dev/null 2>&1
+    nix-env --uninstall pulseaudio > /dev/null 2>&1
     nix-env --uninstall polybar > /dev/null 2>&1
     nix-env --uninstall rofi-unwrapped > /dev/null 2>&1
     nix-env --uninstall rustup > /dev/null 2>&1
@@ -87,8 +92,11 @@ if command -v home-manager > /dev/null 2>&1; then
 elif command -v nix-env > /dev/null 2>&1; then
     echo "Installing packages using nix-env..."
     nix-env --install alacritty > /dev/null 2>&1
+    nix-env --install alsamixer > /dev/null 2>&1
     nix-env --install android-studio-canary > /dev/null 2>&1
     nix-env --install bat > /dev/null 2>&1
+    nix-env --install binutils > /dev/null 2>&1
+    nix-env --install cargo-edit > /dev/null 2>&1
     nix-env --install diff-so-fancy > /dev/null 2>&1
     nix-env --install discord > /dev/null 2>&1
     nix-env --install exa > /dev/null 2>&1
@@ -96,6 +104,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install firefox > /dev/null 2>&1
     nix-env --install fish > /dev/null 2>&1
     nix-env --install fzf > /dev/null 2>&1
+    nix-env --install gcc > /dev/null 2>&1
     nix-env --install ghq > /dev/null 2>&1
     nix-env --install git > /dev/null 2>&1
     nix-env --install go > /dev/null 2>&1
@@ -105,6 +114,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install i3lock-fancy-unstable > /dev/null 2>&1
     nix-env --install idea-community > /dev/null 2>&1
     nix-env --install openjdk8 > /dev/null 2>&1
+    nix-env --install pulseaudio > /dev/null 2>&1
     nix-env --install polybar --arg i3Support true --arg pulseSupport true --arg mpdSupport true > /dev/null 2>&1
     nix-env --install rofi-unwrapped > /dev/null 2>&1
     nix-env --install rustup > /dev/null 2>&1
@@ -121,20 +131,17 @@ if command -v rustup > /dev/null 2>&1; then
     rustup default nightly > /dev/null 2>&1
 
     echo "Downloading rust-src using rustup..."
-    rustup component add rust-src
+    rustup component add rust-src > /dev/null 2>&1
 fi
 
 if command -v cargo > /dev/null 2>&1; then
     echo "Insatlling rusty-tags using cargo..."
     cargo install rusty-tags > /dev/null 2>&1
-
-    echo "Insatlling cargo-edit using cargo..."
-    cargo install cargo-edit
 fi
 
 if command -v diff-so-fancy > /dev/null 2>&1 && ! git config --list | grep "core.pager" > /dev/null 2>&1; then
     echo "Updating git pager to use diff-so-fancy..."
-    git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+    git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX" > /dev/null 2>&1
 fi
 
 if command -v yadm > /dev/null 2>&1 && ! yadm remote show origin | grep "Fetch URL:" > /dev/null 2>&1; then

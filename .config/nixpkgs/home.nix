@@ -8,13 +8,18 @@ in
   home.packages = [
     (pkgs.polybar.override { i3Support = true; pulseSupport = true; mpdSupport = true; })
     pkgs.alacritty
+    pkgs.alsaUtils
+    pkgs.androidStudioPackages.canary
     pkgs.bat
+    pkgs.binutils
+    pkgs.cargo-edit
     pkgs.discord
     pkgs.exa
     pkgs.feh
     pkgs.firefox
     pkgs.fish
     pkgs.fzf
+    pkgs.gcc
     pkgs.ghq
     pkgs.gitAndTools.diff-so-fancy
     pkgs.go
@@ -24,6 +29,7 @@ in
     pkgs.i3lock-fancy
     pkgs.jetbrains.idea-community
     pkgs.openjdk8
+    pkgs.pulseaudio
     pkgs.rofi-unwrapped
     pkgs.rustup
     pkgs.steam

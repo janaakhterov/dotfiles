@@ -26,6 +26,7 @@ Plug 'posva/vim-vue'
 Plug 'junegunn/vim-easy-align'
 Plug 'dag/vim-fish'
 Plug 'jremmen/vim-ripgrep'
+Plug 'LnL7/vim-nix'
 
 call plug#end()
 
