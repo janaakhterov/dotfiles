@@ -82,6 +82,7 @@ if command -v home-manager > /dev/null 2>&1; then
     nix-env --uninstall vim > /dev/null 2>&1
     nix-env --uninstall xautolock > /dev/null 2>&1
     nix-env --uninstall yadm > /dev/null 2>&1
+    nix-env --uninstall youtube-dl > /dev/null 2>&1
 
     echo "Creating $HOME/.config/nixpkgs..."
     mkdir -p $HOME/.config/nixpkgs
@@ -123,6 +124,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install vim > /dev/null 2>&1
     nix-env --install xautolock > /dev/null 2>&1
     nix-env --install yadm > /dev/null 2>&1
+    nix-env --install youtube-dl > /dev/null 2>&1
 else
     echo "Failed to install packages because nix-env and home-manager failed to install"
     exit 1

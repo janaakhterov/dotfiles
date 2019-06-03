@@ -36,6 +36,7 @@ in
     pkgs.vim
     pkgs.xautolock
     pkgs.yadm
+    pkgs.youtube-dl
   ];
 
   programs = {
