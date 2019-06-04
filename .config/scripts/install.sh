@@ -12,7 +12,7 @@ fi
 
 if ! command -v nix-env > /dev/null 2>&1; then
     echo "Installing nix package manager..."
-    curl https://nixos.org/nix/install > /dev/null 2>&1 | sh
+    curl https://nixos.org/nix/install | sh
     . $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
 
@@ -48,7 +48,7 @@ if ! command -v home-manager > /dev/null 2>&1; then
     nix-shell '<home-manager>' -A install > /dev/null 2>&1
 fi
 
-if command -v home-manager > /dev/null 2>&1; then
+if command -v home-manager > /dev/null 2>&1 && cat /etc/os-release | grep "^ID=" | cut -d '=' -f 2 | grep "nixos" > /dev/null 2>&1; then
     echo "Insatlling packages using home-manager..."
     echo "Uninstalling packages that home-manager installs. This is required otherwise home-manager will fail to install..."
     nix-env --uninstall alacritty > /dev/null 2>&1

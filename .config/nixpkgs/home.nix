@@ -13,7 +13,7 @@ in
     pkgs.bat
     pkgs.binutils
     pkgs.cargo-edit
-    pkgs.discord
+    /* pkgs.discord */
     pkgs.exa
     pkgs.feh
     pkgs.firefox
