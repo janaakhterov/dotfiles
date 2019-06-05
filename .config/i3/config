@@ -225,6 +225,7 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg; sleep 1; compton -b
+exec --no-startup-id slack
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray

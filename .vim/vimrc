@@ -36,6 +36,9 @@ syntax sync fromstart
 filetype off
 filetype plugin on
 
+set encoding=utf-8
+setglobal fileencoding=utf-8
+
 set autoread
 set wildmenu
 set noequalalways
