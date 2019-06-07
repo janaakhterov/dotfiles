@@ -32,6 +32,7 @@ in
     pkgs.pulseaudio
     pkgs.rofi-unwrapped
     pkgs.rustup
+    pkgs.shutter
     pkgs.steam
     pkgs.vim
     pkgs.xautolock

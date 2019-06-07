@@ -155,6 +155,7 @@ for_window [class="^.*"] border pixel 0
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
+for_window [title="Shutter"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
@@ -226,32 +227,9 @@ mode "resize" {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg; sleep 1; compton -b
 exec --no-startup-id slack
-# exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
-# exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
+exec --no-startup-id shutter
 exec --no-startup-id xautolock -time 30 -locker i3lock-fancy
-# exec_always --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
 
-# Color palette used for the alacritty ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your alacritty like this:
-# [example]
-# If you want your bar to have the same background color as your 
-# alacritty background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
-# set_from_resource $term_background background
-# set_from_resource $term_foreground foreground
 set_from_resource $term_color0     color0
 set_from_resource $term_color1     color1
 set_from_resource $term_color2     color2

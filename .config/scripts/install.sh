@@ -78,6 +78,7 @@ if command -v home-manager > /dev/null 2>&1 && cat /etc/os-release | grep "^ID="
     nix-env --uninstall polybar > /dev/null 2>&1
     nix-env --uninstall rofi-unwrapped > /dev/null 2>&1
     nix-env --uninstall rustup > /dev/null 2>&1
+    nix-env --uninstall shutter > /dev/null 2>&1
     nix-env --uninstall steam > /dev/null 2>&1
     nix-env --uninstall vim > /dev/null 2>&1
     nix-env --uninstall xautolock > /dev/null 2>&1
@@ -120,6 +121,7 @@ elif command -v nix-env > /dev/null 2>&1; then
     nix-env --install polybar --arg i3Support true --arg pulseSupport true --arg mpdSupport true > /dev/null 2>&1
     nix-env --install rofi-unwrapped > /dev/null 2>&1
     nix-env --install rustup > /dev/null 2>&1
+    nix-env --install shutter > /dev/null 2>&1
     nix-env --install steam > /dev/null 2>&1
     nix-env --install vim > /dev/null 2>&1
     nix-env --install xautolock > /dev/null 2>&1
