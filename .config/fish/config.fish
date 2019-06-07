@@ -5,20 +5,21 @@ fish_vi_key_bindings
 set fish_greeting
 
 # Environment Variables
-set -gx EDITOR vim
+set -gx EDITOR nvim
 
 set -gx ANDROID_SDK $HOME/Android/sdk
 
 set -gx PATH $HOME/.config/scripts $PATH
 set -gx PATH $HOME/go/bin $PATH
 set -gx PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
+set -gx PATH $HOME/flutter/bin $PATH
 # set -gx PATH $ANDROID_SDK/emulator $PATH
 # set -gx PATH $ANDROID_SDK/tools $PATH
 set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 
-# Vim
-abbr -a vimg "vim (git ls-tree -r HEAD --name-only)"
-abbr -a vims "vim -S Session.vim"
+# nvim
+abbr -a vimg "nvim (git ls-tree -r HEAD --name-only)"
+abbr -a vims "nvim -S Session.nvim"
 
 # ls
 abbr -a ls "exa"
@@ -72,8 +73,8 @@ set SPACEFISH_RUST_COLOR green
 set SPACEFISH_PACKAGE_COLOR green
 set SPACEFISH_CHAR_COLOR_FAILURE green
 
-if not set -q VIMRUNTIME
-    set SPACEFISH_CHAR_SYMBOL "\$"
-end
+# if not set -q VIMRUNTIME
+#     set SPACEFISH_CHAR_SYMBOL "\$"
+# end
 
 # source $HOME/.config/nix/nix.fish
