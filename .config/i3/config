@@ -151,7 +151,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="Alacritty"] $ws2
 
 # No borders
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 2
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -227,7 +227,7 @@ mode "resize" {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg; sleep 1; compton -b
 exec --no-startup-id slack
-exec --no-startup-id shutter
+exec --no-startup-id shutter --min_at_startup
 exec --no-startup-id xautolock -time 30 -locker i3lock-fancy
 
 set_from_resource $term_color0     color0
@@ -254,7 +254,7 @@ bar {
 
 # Theme colors
 # class                  border  bg      fg      indic     child
-client.focused          #999999 #666666 #FFFFFF #000000   #000000
+client.focused          #999999 #666666 #FFFFFF #000000   #407EE7
 client.focused_inactive #999999 #444444 #FFFFFF #000000   #000000
 client.unfocused        #999999 #444444 #FFFFFF #000000   #000000
 client.urgent           #999999 #900000 #FFFFFF #000000   #000000

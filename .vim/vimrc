@@ -46,6 +46,8 @@ set ttyfast
 set path+=**
 set display+=lastline
 set backspace=indent,eol,start
+set cursorline
+set nohls
 
 set ignorecase
 set smartcase

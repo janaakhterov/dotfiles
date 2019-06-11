@@ -20,6 +20,7 @@ set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 # nvim
 abbr -a vimg "nvim (git ls-tree -r HEAD --name-only)"
 abbr -a vims "nvim -S Session.nvim"
+abbr -a vim "nvim"
 
 # ls
 abbr -a ls "exa"
@@ -71,7 +72,6 @@ abbr -a cffish  "$HOME/.config/fish/config.fish"
 set SPACEFISH_PROMPT_ORDER dir git package node docker golang rust exec_time line_sep vi_mode char
 set SPACEFISH_RUST_COLOR green
 set SPACEFISH_PACKAGE_COLOR green
-set SPACEFISH_CHAR_COLOR_FAILURE green
 
 # if not set -q VIMRUNTIME
 #     set SPACEFISH_CHAR_SYMBOL "\$"
