@@ -13,7 +13,8 @@ in
     pkgs.bat
     pkgs.binutils
     pkgs.cargo-edit
-    /* pkgs.discord */
+    # pkgs.discord
+    pkgs.dunst
     pkgs.exa
     pkgs.feh
     pkgs.firefox
@@ -28,7 +29,9 @@ in
     pkgs.i3
     pkgs.i3lock-fancy
     pkgs.jetbrains.idea-community
-    pkgs.openjdk8
+    pkgs.libnotify
+    pkgs.maven
+    pkgs.openjdk11
     pkgs.pulseaudio
     pkgs.rofi-unwrapped
     pkgs.rustup
