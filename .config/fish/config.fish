@@ -42,6 +42,7 @@ abbr -a gout "git checkout"
 abbr -a gnew "git checkout -b"
 abbr -a grh  "git reset --hard HEAD"
 abbr -a grs  "git reset --soft HEAD"
+abbr -a gf   "git fetch"
 
 abbr pings "ping 8.8.8.8"
 

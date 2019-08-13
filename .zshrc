@@ -99,3 +99,6 @@ zplugin light b4b4r07/enhancd
 # ------------------------------------ #
 
 source $HOME/.nix-profile/etc/profile.d/nix.sh
+
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
