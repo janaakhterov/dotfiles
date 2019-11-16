@@ -92,5 +92,5 @@ hi Todo ctermbg=black guibg=black
 hi Search term=bold cterm=bold ctermbg=white ctermfg=black gui=bold guibg=white guifg=black
 hi IncSearch term=bold cterm=bold ctermbg=white ctermfg=black gui=bold guibg=white guifg=black
 
-autocmd! BufEnter * syn match Braces '[{}()\[\]:;,!]'
-hi Braces ctermfg=red
+" autocmd! BufEnter * syn match Braces '[{}()\[\]:;,!]'
+" hi Braces ctermfg=red

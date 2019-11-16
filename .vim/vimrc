@@ -26,6 +26,8 @@ Plug 'posva/vim-vue'
 Plug 'junegunn/vim-easy-align'
 Plug 'dag/vim-fish'
 Plug 'LnL7/vim-nix'
+Plug 'agude/vim-eldar'
+Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 
 call plug#end()
 
@@ -68,6 +70,7 @@ set guifont=Hack:h14
 autocmd! GUIEnter * set vb t_vb=
 
 colorscheme bee
+colorscheme 256-jungle
 
 set laststatus=2
 
