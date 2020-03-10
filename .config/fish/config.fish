@@ -17,8 +17,6 @@ set -gx PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
 set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 # nvim
-abbr -a vimg "nvim (git ls-tree -r HEAD --name-only)"
-abbr -a vims "nvim -S Session.nvim"
 abbr -a vim "nvim"
 
 # ls
@@ -43,6 +41,7 @@ abbr -a gnew "git checkout -b"
 abbr -a grh  "git reset --hard HEAD"
 abbr -a grs  "git reset --soft HEAD"
 abbr -a gf   "git fetch"
+abbr -a gss  "git switch"
 
 abbr pings "ping 8.8.8.8"
 
@@ -66,15 +65,8 @@ abbr -a yba  "yadm branch -a"
 
 # Fish
 abbr -a reload  "source $HOME/.config/fish/config.fish"
-abbr -a cffish  "$HOME/.config/fish/config.fish"
 
 # Spacefish Customization
 set SPACEFISH_PROMPT_ORDER dir git package node docker golang rust exec_time line_sep vi_mode char
 set SPACEFISH_RUST_COLOR green
 set SPACEFISH_PACKAGE_COLOR green
-
-# if not set -q VIMRUNTIME
-#     set SPACEFISH_CHAR_SYMBOL "\$"
-# end
-
-# source $HOME/.config/nix/nix.fish

@@ -51,3 +51,11 @@
 ;;(package! builtin-package :recipe (:branch "develop"))
 
 (package! typescript-mode)
+
+(package! evil)
+(package! evil-args)
+(package! evil-commentary)
+(package! evil-numbers)
+(package! evil-surround)
+
+(package! vue-mode)

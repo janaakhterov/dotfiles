@@ -28,6 +28,10 @@ Plug 'dag/vim-fish'
 Plug 'LnL7/vim-nix'
 Plug 'agude/vim-eldar'
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 call plug#end()
 
@@ -83,6 +87,8 @@ vnoremap > >gv
 
 nnoremap q: :q
 
+nnoremap <leader>w <C-w>
+
 nnoremap <silent> <Tab>  :tabnext<CR>
 nnoremap <silent> <S-Tab>  :tabprev<CR>
 
@@ -125,7 +131,7 @@ autocmd FileType dosini setlocal commentstring=;\ %s
 " --- "
 
 set rtp+=~/.fzf
-nnoremap <leader>o :Buffers<CR>
+nnoremap <leader>pf :Buffers<CR>
 
 " ---------- "
 " Easy Align "
@@ -134,4 +140,13 @@ nnoremap <leader>o :Buffers<CR>
 xmap ga <Plug>(EasyAlign)
 
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
-autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand("%:p:h") . "&" | redraw!
+
+let g:LanguageClient_serverCommands = {
+    \ "rust": ["~/.cargo/bin/rust-analyzer"],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
