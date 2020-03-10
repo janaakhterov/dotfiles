@@ -53,6 +53,31 @@
 ;; they are implemented.
 
 (setq rustic-lsp-server 'rust-analyzer)
-;; (add-hook! rustic-mode #'lsp-ui-mode)
 
-;; (add-hook rust-mode-hook #'lsp)
+(after! treemacs
+  (treemacs-load-theme "Default"))
+
+(after! doom-themes
+  (remove-hook 'doom-load-theme-hook #'doom-themes-treemacs-config))
+
+(after! doom-themes
+  (remove-hook 'doom-load-theme-hook #'doom-themes-neotree-config))
+
+(map! :map evil-treemacs-state-map
+      :n "ma" 'treemacs--create-file/dir
+      :n "mm" 'treemacs-move-file
+      :n "md" 'treemacs-delete
+      :n "r" 'treemacs-refresh)
+
+(map! :map neotree-mode-map
+      :n "ma" 'neotree-create-node
+      :n "mm" 'neotree-rename-node
+      :n "md" 'neotree-delete-node
+      :n "r" 'neotree-refresh)
+
+(map! :leader
+      :n "cs" 'evil-surround-change
+      :n "ds" 'evil-surround-delete)
+
+(after! evil-snipe
+  (evil-snipe-mode -1))
