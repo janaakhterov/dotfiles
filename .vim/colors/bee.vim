@@ -1,3 +1,4 @@
+hi Directory    ctermbg=none
 hi Cursor       ctermfg=black ctermbg=white guifg=black guibg=white
 hi lCursor      ctermfg=black ctermbg=white guifg=black guibg=white
 hi ColorColumn  ctermbg=233 guibg=233
