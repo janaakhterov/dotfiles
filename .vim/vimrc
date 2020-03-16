@@ -73,8 +73,8 @@ set guicursor=a:block-Cursor
 set guifont=Hack:h14
 autocmd! GUIEnter * set vb t_vb=
 
-colorscheme bee
 colorscheme 256-jungle
+colorscheme bee
 
 set laststatus=2
 
@@ -104,7 +104,7 @@ nnoremap <silent> <leader>s :sh<CR>
 " NERDTree "
 " -------- "
 
-nnoremap <silent> <leader>t :NERDTreeToggle<CR>
+nnoremap <silent> <leader>pt :NERDTreeToggle<CR>
 
 " ---- "
 " Rust "
