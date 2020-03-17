@@ -29,3 +29,5 @@ colors:
     magenta: '0xff00ff'
     cyan:    '0x00ffff'
     white:   '0xffffff'
+
+dynamic_title: false

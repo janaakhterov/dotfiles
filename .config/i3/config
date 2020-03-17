@@ -8,11 +8,11 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel
+new_window pixel 2
 new_float normal
 
 # Hide borders
-hide_edge_borders both
+# hide_edge_borders none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -30,25 +30,10 @@ bindsym $mod+q kill
 # start program launcher
 bindsym $mod+space exec --no-startup-id "rofi -show combi"
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-# exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec alacritty -t 'alsamixer' -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
 
-################################################################################################
-
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
-
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+p exec --no-startup-id scrot $HOME/Pictures/$(date +%s)-screenshot.png
-bindsym $mod+Shift+p exec --no-startup-id scrot -u $HOME/Pictures/$(date +%s)-screenshot.png
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send -u low -t 1000 'restart dunst'"
+bindsym $mod+p exec --no-startup-id maim -s | xclip -selection clipboard -t image/png 
 
 # change focus
 bindsym $mod+h focus left
@@ -80,8 +65,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+Shift+v split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+Shift+v split h
+bindsym $mod+v split v
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -104,10 +89,6 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-# Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -117,7 +98,6 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
-# switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -127,17 +107,6 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
-# Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-
-# Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -149,36 +118,15 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # No borders
 # for_window [class="^.*"] border pixel 2
+for_window [title=".*"] title_format "%title"
+title_align center
 
 # Open specific applications in floating mode
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [title="Shutter"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -222,29 +170,11 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg; sleep 1; compton -b
 exec --no-startup-id slack
 exec --no-startup-id clockify
 exec --no-startup-id shutter --min_at_startup
 exec --no-startup-id xautolock -time 30 -locker i3lock-fancy
-
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
@@ -253,10 +183,10 @@ bar {
 
 # Theme colors
 # class                  border  bg      fg      indic     child
-client.focused          #999999 #666666 #FFFFFF #000000   #407EE7
-client.focused_inactive #999999 #444444 #FFFFFF #000000   #000000
-client.unfocused        #999999 #444444 #FFFFFF #000000   #000000
-client.urgent           #999999 #900000 #FFFFFF #000000   #000000
+client.focused          #333333 #333333 #FFFFFF #000000   #407EE7
+client.focused_inactive #555555 #555555 #FFFFFF #000000   #000000
+client.unfocused        #555555 #555555 #FFFFFF #000000   #000000
+client.urgent           #555555 #900000 #FFFFFF #000000   #000000
 client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
 
 client.background       #FFFFFF

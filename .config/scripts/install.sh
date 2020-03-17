@@ -29,6 +29,7 @@ PKGS=(
     "xautolock"
     "yadm"
     "youtube-dl"
+    "maim"
 )
 SPECIAL_PKGS=(
     "binutils"

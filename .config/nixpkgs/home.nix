@@ -56,6 +56,7 @@ in
     pkgs.xclip
     pkgs.yadm
     pkgs.youtube-dl
+    pkgs.maim
   ];
 
   programs = {
