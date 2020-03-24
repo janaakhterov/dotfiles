@@ -6,7 +6,13 @@ let
 in
 {
   home.packages = [
-    (pkgs.polybar.override { i3Support = true; pulseSupport = true; mpdSupport = true; })
+    (pkgs.polybar.override {
+      i3Support = true;
+      alsaSupport = true;
+      pulseSupport = true;
+      nlSupport = true;
+      githubSupport = true;
+    })
     pkgs._1password
     pkgs.alacritty
     pkgs.alsaUtils
@@ -14,10 +20,13 @@ in
     pkgs.bat
     pkgs.binutils
     pkgs.cargo-edit
+    pkgs.comfortaa
     pkgs.ctags
     pkgs.discord
     pkgs.dunst
+    pkgs.emacs
     pkgs.exa
+    pkgs.fantasque-sans-mono
     pkgs.feh
     pkgs.firefox
     pkgs.fish
@@ -28,15 +37,18 @@ in
     pkgs.ghq
     pkgs.gitAndTools.diff-so-fancy
     pkgs.gitlab-runner
-    pkgs.go
     pkgs.gnumake
+    pkgs.go
     pkgs.hack-font
     pkgs.htop
     pkgs.i3
     pkgs.i3lock-fancy
+    pkgs.iosevka
     pkgs.jetbrains.idea-community
     pkgs.jq
     pkgs.libnotify
+    pkgs.lxappearance
+    pkgs.maim
     pkgs.maven
     pkgs.mpv
     pkgs.neovim
@@ -56,7 +68,6 @@ in
     pkgs.xclip
     pkgs.yadm
     pkgs.youtube-dl
-    pkgs.maim
   ];
 
   programs = {

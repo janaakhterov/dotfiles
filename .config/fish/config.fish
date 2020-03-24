@@ -10,6 +10,7 @@ set -gx EDITOR nvim
 set -gx ANDROID_SDK $HOME/Android/sdk
 
 set -gx PATH $HOME/.cargo/bin $PATH
+set -gx PATH $HOME/.yarn/bin $PATH
 set -gx PATH $HOME/.config/scripts $PATH
 set -gx PATH $HOME/go/bin $PATH
 set -gx PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
