@@ -45,3 +45,9 @@ vim/plugged
 QtProject.conf
 VirtualBox/
 xi/
+
+shell.nix
+.envrc
+
+.idea/
+Dockerfile

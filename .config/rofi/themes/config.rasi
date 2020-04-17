@@ -3,7 +3,7 @@
 configuration {
   show-icons:         true;
   icon-theme:         "Papirus";
-  location: 1;
+  location: 3;
   yoffset: 50;
-  xoffset: 20;
+  xoffset: -20;
 }

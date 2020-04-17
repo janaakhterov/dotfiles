@@ -22,7 +22,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'tpope/vim-surround'
 Plug 'posva/vim-vue'
 Plug 'junegunn/vim-easy-align'
-Plug 'dag/vim-fish'
+" Plug 'dag/vim-fish'
 Plug 'LnL7/vim-nix'
 Plug 'agude/vim-eldar'
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
@@ -88,7 +88,7 @@ let mapleader="\<Space>"
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap q: :q
+" nnoremap q: :q
 
 nnoremap <leader>w <C-w>
 

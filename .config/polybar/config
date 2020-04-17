@@ -25,8 +25,8 @@ line-size = 3
 module-margin-left = 1
 module-margin-right = 0
 modules-center = time
-modules-left = powermenu i3
-modules-right = cpu memory volume date
+modules-left = i3
+modules-right = cpu memory volume date powermenu
 monitor = 
 padding-left = 0
 padding-right = 0
@@ -121,7 +121,7 @@ label-volume-foreground = ${root.foreground}
 
 [module/powermenu]
 type = custom/text
-content = "%{F#FFFFFFFF}%{B#ffeb4034} "
+content = "%{F#FFFFFFFF}%{B#ffeb4034}  "
 content-background = 
 content-foreground = #00ff00
 click-left = "bash $HOME/.config/rofi/scripts/powermenu.sh"
