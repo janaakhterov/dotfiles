@@ -1,4 +1,4 @@
-rofi.combi-modi:     run,window,drun
+! rofi.combi-modi:     run,window,drun
 rofi.lines:          5
 rofi.font:           hack 20
 rofi.bw:             0

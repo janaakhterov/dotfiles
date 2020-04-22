@@ -13,17 +13,21 @@ in
       nlSupport = true;
       githubSupport = true;
     })
+    # pkgs.androidStudioPackages.canary
+    # pkgs.gitlab-runner
+    # pkgs.ntfs3g
+    # pkgs.openjdk11
+    # pkgs.shutter
     pkgs._1password
     pkgs.alacritty
     pkgs.alsaUtils
-    # pkgs.androidStudioPackages.canary
     pkgs.bat
     pkgs.binutils
     pkgs.cargo-edit
     pkgs.comfortaa
     pkgs.ctags
-    pkgs.discord
     pkgs.direnv
+    pkgs.discord
     pkgs.dunst
     pkgs.emacs
     pkgs.exa
@@ -37,7 +41,6 @@ in
     pkgs.gcc
     pkgs.ghq
     pkgs.gitAndTools.diff-so-fancy
-    # pkgs.gitlab-runner
     pkgs.gnumake
     pkgs.go
     pkgs.hack-font
@@ -46,28 +49,30 @@ in
     pkgs.i3lock-fancy
     pkgs.iosevka
     pkgs.jq
+    pkgs.keychain
     pkgs.libnotify
     pkgs.lxappearance
     pkgs.maim
     pkgs.maven
     pkgs.neovim
-    # pkgs.ntfs3g
-    # pkgs.openjdk11
     pkgs.pulseaudio
     pkgs.python
     pkgs.python3
     pkgs.rofi-unwrapped
     pkgs.rustup
-    # pkgs.shutter
     pkgs.slack
     pkgs.spotify
+    pkgs.starship
     pkgs.steam
-    pkgs.neovim
     pkgs.xautolock
     pkgs.xclip
     pkgs.yadm
     pkgs.youtube-dl
   ];
+
+  services.lorri.enable = true;
+
+  programs.gpg.enable = true;
 
   programs = {
     git = {

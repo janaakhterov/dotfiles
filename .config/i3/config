@@ -171,8 +171,11 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg; sleep 1; compton -b
 exec --no-startup-id slack
+exec --no-startup-id Discord
+exec --no-startup-id spotify
 exec --no-startup-id clockify
-exec --no-startup-id shutter --min_at_startup
+exec --no-startup-id lorri daemon
+exec --no-startup-id firefox
 exec --no-startup-id xautolock -time 30 -locker i3lock-fancy
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)

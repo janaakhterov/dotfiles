@@ -51,3 +51,9 @@ shell.nix
 
 .idea/
 Dockerfile
+
+.dart_tool/
+.packages
+build/
+pubspec.lock
+doc/api/
