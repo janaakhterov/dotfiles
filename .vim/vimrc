@@ -147,7 +147,8 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 let g:LanguageClient_serverCommands = {
     \ "rust": ["~/.cargo/bin/rust-analyzer"],
     \ "javascript": ["~/.yarn/bin/javascript-typescript-stdio"],
-    \ "typescript": ["~/.yarn/bin/typescript-language-server", "--stdio"]
+    \ "typescript": ["~/.yarn/bin/typescript-language-server", "--stdio"],
+    \ "python": ["~/.cache/pypoetry/virtualenvs/hedera-b5UeXtfR-py3.8/bin/pyls"]
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>

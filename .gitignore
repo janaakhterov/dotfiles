@@ -57,3 +57,6 @@ Dockerfile
 build/
 pubspec.lock
 doc/api/
+
+.cache
+dist/
