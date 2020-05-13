@@ -13,11 +13,6 @@ in
       nlSupport = true;
       githubSupport = true;
     })
-    # pkgs.androidStudioPackages.canary
-    # pkgs.gitlab-runner
-    # pkgs.ntfs3g
-    # pkgs.openjdk11
-    # pkgs.shutter
     pkgs._1password
     pkgs.alacritty
     pkgs.alsaUtils
@@ -44,7 +39,7 @@ in
     pkgs.gnumake
     pkgs.go
     pkgs.hack-font
-    pkgs.htop
+    pkgs.ytop
     pkgs.i3
     pkgs.i3lock-fancy
     pkgs.iosevka

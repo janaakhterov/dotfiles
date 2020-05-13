@@ -60,3 +60,5 @@ doc/api/
 
 .cache
 dist/
+
+*.log

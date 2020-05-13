@@ -10,10 +10,11 @@ set -gx EDITOR nvim
 set -gx ANDROID_SDK $HOME/Android/sdk
 
 set -gx PATH $HOME/.cargo/bin $PATH
+set -gx PATH $HOME/.pub-cache/bin $PATH
 set -gx PATH $HOME/.yarn/bin $PATH
 set -gx PATH $HOME/.config/scripts $PATH
 set -gx PATH $HOME/go/bin $PATH
-set -gx PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
+set -gx PATH $HOME/ghq/github.com/flutter/flutter/bin $PATH
 
 if type -f rustc > /dev/null 2>&1
     set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
