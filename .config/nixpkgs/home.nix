@@ -39,7 +39,6 @@ in
     pkgs.gnumake
     pkgs.go
     pkgs.hack-font
-    pkgs.ytop
     pkgs.i3
     pkgs.i3lock-fancy
     pkgs.iosevka
@@ -51,7 +50,7 @@ in
     pkgs.maven
     pkgs.neovim
     pkgs.pulseaudio
-    pkgs.python
+    pkgs.python3
     pkgs.python3
     pkgs.rofi-unwrapped
     pkgs.rustup
@@ -63,6 +62,7 @@ in
     pkgs.xclip
     pkgs.yadm
     pkgs.youtube-dl
+    pkgs.ytop
   ];
 
   services.lorri.enable = true;
