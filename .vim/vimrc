@@ -31,9 +31,12 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'udalov/kotlin-vim'
+" Plug 'udalov/kotlin-vim'
 Plug 'vim-scripts/tlib'
-Plug 'vmchale/ion-vim'
+" Plug 'vmchale/ion-vim'
+" Plug 'ycm-core/YouCompleteMe'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'lotabout/skim'
 
 call plug#end()
 
@@ -160,7 +163,7 @@ let g:LanguageClient_serverCommands = {
     \ "rust": ["~/.cargo/bin/rust-analyzer"],
     \ "javascript": ["~/.yarn/bin/typescript-language-server", "--stdio"],
     \ "typescript": ["~/.yarn/bin/typescript-language-server", "--stdio"],
-    \ "python": ["~/.cache/pypoetry/virtualenvs/hedera-b5UeXtfR-py3.8/bin/pyls"]
+    \ "python": ["pyls"]
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>

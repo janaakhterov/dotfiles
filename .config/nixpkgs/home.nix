@@ -50,8 +50,7 @@ in
     pkgs.maven
     pkgs.neovim
     pkgs.pulseaudio
-    pkgs.python3
-    pkgs.python3
+    # pkgs.python3
     pkgs.rofi-unwrapped
     pkgs.rustup
     pkgs.slack

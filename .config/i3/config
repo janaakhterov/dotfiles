@@ -22,7 +22,7 @@ font xft:Hack 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id python3 ~/.config/scripts/ghq_project_picker.py
 
 # kill focused window
 bindsym $mod+q kill
@@ -170,13 +170,13 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg; sleep 1; compton -b
-exec --no-startup-id slack
-exec --no-startup-id Discord
 exec --no-startup-id spotify
+exec --no-startup-id Discord
+exec --no-startup-id slack
 exec --no-startup-id clockify
 exec --no-startup-id lorri daemon
-exec --no-startup-id firefox
 exec --no-startup-id xautolock -time 30 -locker i3lock-fancy
+exec --no-startup-id firefox
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
