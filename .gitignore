@@ -64,3 +64,6 @@ dist/
 *.log
 
 hedera.egg-info/
+
+dump.rdb
+hedera-portal_api

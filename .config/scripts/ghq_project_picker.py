@@ -1,35 +1,37 @@
+#!/bin/python3
+
 import subprocess
 import os
+import sys
 from pathlib import Path
 
-try:
-    paths = subprocess.check_output([
-            "ghq",
-            "list",
-            "--full-path"
-        ]).decode("ASCII").split("\n")
+def directory(project):
+    dirs = project.split("/")
+    return f"{dirs[-2]}/{dirs[-1]}"
 
-    projects = list(map(
-        lambda project:
-            project.split("/")[-1],
-        paths))
+paths = subprocess.check_output([
+        "ghq",
+        "list",
+        "--full-path"
+        ]).decode("ASCII").split("\n")[0:-1]
 
-    projects.insert(0, "Alacritty")
+projects = ["Alacritty"] + list(map(lambda project: directory(project), paths))
+serialized = "\n".join(projects)
 
-    projects_str = "\n".join(projects)
+output, error = subprocess.Popen(
+        f"echo -e \"{serialized}\" | rofi -dmenu",
+        shell=True,
+        executable="bash",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE
+    ).communicate()
 
-    output, error = subprocess.Popen(
-            f"echo -e \"{projects_str}\" | rofi -dmenu",
-            shell=True,
-            executable="bash",
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
-        ).communicate()
+project = output.decode("ASCII").strip()
 
-    project = output.decode("ASCII").strip()
-    index = projects.index(project)
-    path = str(Path.home()) if index == 0 else paths[index-1]
+if project == "":
+    sys.exit()
 
-    os.system(f"alacritty --title {project} --working-directory {path}")
-except:
-    os.system(f"alacritty")
+index = projects.index(project)
+path = str(Path.home()) if index == 0 else paths[index-1]
+
+os.system(f"alacritty --title {project} --working-directory {path}")

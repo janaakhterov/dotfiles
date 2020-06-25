@@ -22,7 +22,7 @@ font xft:Hack 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id python3 ~/.config/scripts/ghq_project_picker.py
+bindsym $mod+Return exec --no-startup-id "env GHQ_ROOT=/home/daniel/.ghq /home/daniel/.config/scripts/ghq_project_picker.py"
 
 # kill focused window
 bindsym $mod+q kill
@@ -157,11 +157,11 @@ mode "$mode_system" {
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym j resize shrink height 1 px
-        bindsym k resize grow height 1 px
+        bindsym j resize shrink height 5 px
+        bindsym k resize grow height 5 px
 
-        bindsym h resize shrink width 1 px
-        bindsym l resize grow width 1 px
+        bindsym h resize shrink width 5 px
+        bindsym l resize grow width 5 px
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"

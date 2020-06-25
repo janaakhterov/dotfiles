@@ -16,6 +16,12 @@ set -gx PATH $HOME/.config/scripts $PATH
 set -gx PATH $HOME/go/bin $PATH
 set -gx PATH $HOME/ghq/github.com/flutter/flutter/bin $PATH
 
+set -gx ANDROID_HOME $HOME/Android/Sdk
+set -gx PATH $ANDROID_HOME/emulator $PATH
+set -gx PATH $ANDROID_HOME/tools $PATH
+set -gx PATH $ANDROID_HOME/tools/bin $PATH
+set -gx PATH $ANDROID_HOME/platform-tools $PATH
+
 if type -f rustc > /dev/null 2>&1
     set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 end
@@ -71,10 +77,5 @@ abbr -a yba  "yadm branch -a"
 abbr -a reload  "source $HOME/.config/fish/config.fish"
 
 abbr -a pf "nvim (fd --type f)"
-
-# Spacefish Customization
-set SPACEFISH_PROMPT_ORDER dir git package node docker golang rust exec_time line_sep vi_mode char
-set SPACEFISH_RUST_COLOR green
-set SPACEFISH_PACKAGE_COLOR green
 
 starship init fish | source
