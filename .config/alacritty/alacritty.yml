@@ -5,17 +5,17 @@ font:
 
 colors:
   primary:
-    background: '0x000000'
+    background: '0x1a1a1a'
     foreground: '0xeaeaea'
 
   normal:
-    black:   '0x000000'
-    red:     '0xaa0000'
-    green:   '0x00aa00'
-    yellow:  '0xaaaa00'
-    blue:    '0x0000aa'
+    black:   '0x1a1a1a'
+    red:     '0xf92672'
+    green:   '0xa6e22e'
+    yellow:  '0xd7d787'
+    blue:    '0x5fd7ff'
     magenta: '0xaa00aa'
-    cyan:    '0x00aaaa'
+    cyan:    '0x52afce'
     white:   '0xaaaaaa'
 
   bright:
@@ -28,4 +28,4 @@ colors:
     cyan:    '0x00ffff'
     white:   '0xffffff'
 
-dynamic_title: false
+window.dynamic_title: false
