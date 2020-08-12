@@ -11,21 +11,21 @@ colors:
   normal:
     black:   '0x1a1a1a'
     red:     '0xf92672'
-    green:   '0xa6e22e'
+    green:   '0x7eac23'
     yellow:  '0xd7d787'
     blue:    '0x5fd7ff'
     magenta: '0xaa00aa'
     cyan:    '0x52afce'
-    white:   '0xaaaaaa'
+    white:   '0xc2c2c2'
 
   bright:
-    black:   '0x333333'
-    red:     '0xff0000'
-    green:   '0x00ff00'
-    yellow:  '0xffff00'
-    blue:    '0x0000ff'
-    magenta: '0xff00ff'
-    cyan:    '0x00ffff'
+    black:   '0x746b6b'
+    red:     '0xff4a44'
+    green:   '0xa6e22e'
+    yellow:  '0xe6db74'
+    blue:    '0x547496'
+    magenta: '0xef8f1f'
+    cyan:    '0x66d9ef'
     white:   '0xffffff'
 
 window.dynamic_title: false

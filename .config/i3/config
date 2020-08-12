@@ -186,9 +186,9 @@ bar {
 
 # Theme colors
 # class                  border  bg      fg      indic     child
-client.focused          #555555 #555555 #FFFFFF #000000   #407EE7
+client.focused          #1a1a1a #1a1a1a #5fd7ff #000000   #407EE7
 client.focused_inactive #333333 #333333 #FFFFFF #000000   #000000
-client.unfocused        #333333 #333333 #FFFFFF #000000   #000000
+client.unfocused        #262626 #262626 #54a4cc #000000   #000000
 client.urgent           #333333 #900000 #FFFFFF #000000   #000000
 client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
 

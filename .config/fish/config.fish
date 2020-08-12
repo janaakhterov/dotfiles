@@ -15,6 +15,7 @@ set -gx PATH $HOME/.yarn/bin $PATH
 set -gx PATH $HOME/.config/scripts $PATH
 set -gx PATH $HOME/go/bin $PATH
 set -gx PATH $HOME/ghq/github.com/flutter/flutter/bin $PATH
+set -gx PATH $HOME/.local/bin $PATH
 
 set -gx ANDROID_HOME $HOME/Android/Sdk
 set -gx PATH $ANDROID_HOME/emulator $PATH
