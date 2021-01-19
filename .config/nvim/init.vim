@@ -44,13 +44,6 @@ Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
-lua << END
-  require'lspconfig'.tsserver.setup{}
-  require'lspconfig'.rust_analyzer.setup{}
-  require'lspconfig'.gopls.setup{}
-  require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-END
-
 function! s:build_quickfix_list(lines)
   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
   copen
@@ -64,42 +57,6 @@ filetype off
 filetype plugin on
 
 colorscheme gruvbox
-
-setglobal fileencoding=utf-8
-
-set autoindent
-set autoread
-set backspace=indent,eol,start
-set cmdheight=2
-set cursorline
-set display+=lastline
-set encoding=utf-8
-set expandtab
-set hidden
-set ignorecase
-set incsearch
-set laststatus=2
-set mouse=a
-set mousefocus
-set nobackup
-set noequalalways
-set nohls
-set noshowmode
-set nowritebackup
-set relativenumber
-set number
-set path+=**
-set rtp+=~/.fzf
-set shiftwidth=4
-set shortmess+=c
-set signcolumn=yes
-set smartcase
-set tabstop=4
-set ttyfast
-set updatetime=300
-set wildmenu
-set guifont=Hack\ Nerd\ Font:h16
-set termguicolors
 
 let mapleader="\<Space>"
 
@@ -116,9 +73,6 @@ let g:rustfmt_autosave = 1
 let g:vim_markdown_folding_disabled = 1
 let g:rehash256 = 1
 let g:molokai_original = 1
-
-nnoremap <silent>gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent>K <cmd>lua vim.lsp.buf.hover()<CR>
 
 nnoremap <leader>pf :Buffers<CR>
 nnoremap <leader>w <C-w>
