@@ -6,8 +6,7 @@ import sys
 from pathlib import Path
 
 def directory(project):
-    dirs = project.split("/")
-    return f"{dirs[-2]}/{dirs[-1]}"
+    return "/".join(project.split("/")[5:])
 
 paths = subprocess.check_output([
         "ghq",
@@ -19,7 +18,7 @@ projects = ["Alacritty"] + list(map(lambda project: directory(project), paths))
 serialized = "\n".join(projects)
 
 output, error = subprocess.Popen(
-        f"echo -e \"{serialized}\" | rofi -dmenu",
+        f"echo -e \"{serialized}\" | rofi -dmenu -theme $HOME/.config/rofi/launchers/text/style_3",
         shell=True,
         executable="bash",
         stdout=subprocess.PIPE,

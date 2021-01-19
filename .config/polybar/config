@@ -15,7 +15,7 @@ background = ${colors.background}
 border-color = #00000000
 border-size = 0
 fixed-center = true
-font-0 = Hack:size=12;1
+font-0 = Hack Nerd Font:size=12;1
 ; font-0 = "Fantasque Sans Mono:pixelsize=12;2"
 font-1 = "Material Icons:size=13;4"
 foreground = ${colors.foreground}
@@ -40,7 +40,7 @@ width = 100%
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
-label-focused = %name%
+label-focused = "%{F#FFFFFF}%name%%{F#A8A19F}"
 label-focused-background = #2C2A29
 label-focused-padding = 2
 label-focused-underline = #FFA500
@@ -61,16 +61,9 @@ wrapping-scroll = false
 
 [module/cpu]
 type = internal/cpu
-format = "%{F#C50000}<ramp-coreload>"
+label = "%{F#FFFFFF}%percentage%%"
 interval = .5
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
+format-underline = #FFA500
 
 [module/memory]
 type = internal/memory
@@ -78,13 +71,13 @@ format = " <label> "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #00AD9C
 interval = 2
-label = "%gb_used%"
+label = "%{F#FFFFFF}%gb_used%"
 
 [module/time]
 type = internal/date
 format-underline = #407EE7
 interval = 5
-label = "%time%"
+label = "%{F#FFFFFF}%time%"
 time = "%I:%M%p"
 
 [module/date]
@@ -92,37 +85,19 @@ type = internal/date
 date = "%a, %b %d, %Y"
 format-underline = #407EE7
 interval = 5
-label = "%date%"
+label = "%{F#FFFFFF}%date%"
 time = "%I:%M%p"
 
 [module/volume]
-type = internal/pulseaudio
-bar-volume-empty = =
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-bar-volume-fill = =
-bar-volume-fill-font = 2
-bar-volume-foreground-0 = #5AB738
-bar-volume-foreground-1 = #5AB738
-bar-volume-foreground-2 = #5AB738
-bar-volume-foreground-3 = #5AB738
-bar-volume-foreground-4 = #5AB738
-bar-volume-foreground-5 = #5AB738
-bar-volume-foreground-6 = #F22C40
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-width = 10
-format-muted-foreground = ${colors.foreground-alt}
-format-muted-prefix = " "
-format-volume = "VOL <bar-volume>"
-label-muted = sound muted
-label-volume-foreground = ${root.foreground}
+type = custom/text
+content = "墳"
+content-background = 
+content-foreground = #ffffff
+click-left= $HOME/.config/rofi/bin/menu_volume
 
 [module/powermenu]
 type = custom/text
-content = "%{F#FFFFFFFF}%{B#ffeb4034}  "
+content = "%{F#FFFFFFFF}%{B#ffeb4034} ⏻ "
 content-background = 
 content-foreground = #00ff00
-click-left = "bash $HOME/.config/rofi/scripts/powermenu.sh"
-click-right = "bash $HOME/.config/rofi/scripts/powermenu.sh"
+click-left= $HOME/.config/rofi/bin/applet_powermenu

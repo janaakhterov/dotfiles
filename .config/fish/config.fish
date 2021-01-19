@@ -23,6 +23,8 @@ set -gx PATH $ANDROID_HOME/tools $PATH
 set -gx PATH $ANDROID_HOME/tools/bin $PATH
 set -gx PATH $ANDROID_HOME/platform-tools $PATH
 
+set -gx LS_COLORS (vivid generate molokai)
+
 if type -f rustc > /dev/null 2>&1
     set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 end
@@ -78,5 +80,8 @@ abbr -a yba  "yadm branch -a"
 abbr -a reload  "source $HOME/.config/fish/config.fish"
 
 abbr -a pf "nvim (fd --type f)"
+
+# Jabba
+[ -s "/home/daniel/.jabba/jabba.fish" ]; and source "/home/daniel/.jabba/jabba.fish"
 
 starship init fish | source

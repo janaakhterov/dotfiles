@@ -75,3 +75,9 @@ bin/
 
 generated.bin
 .env
+
+client-config.json
+target/
+
+exploit.js
+.vim/plugged
