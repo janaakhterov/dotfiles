@@ -1,14 +1,15 @@
 ; vim:ft=dosini
 
 [colors]
-alert = #bd2c40
+alert = #FFBD2C40
 background = #FF111111
-background-alt = #444444
-col = #0000ff
-foreground = #A8A19F
-foreground-alt = #555555
-primary = #D5911A
-secondary = #6666EA
+background-alt = #FF444444
+col = #FF0000ff
+foreground = #FFA8A19F
+foreground-alt = #FF555555
+primary = #FFD5911A
+secondary = #FF6666EA
+red = #FFEB4034
 
 [bar/top]
 background = ${colors.background}
@@ -89,11 +90,27 @@ label = "%{F#FFFFFF}%date%"
 time = "%I:%M%p"
 
 [module/volume]
-type = custom/text
-content = "墳"
-content-background = 
-content-foreground = #ffffff
-click-left= $HOME/.config/rofi/bin/menu_volume
+type = internal/pulseaudio
+bar-volume-empty = =
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-fill = =
+bar-volume-fill-font = 2
+bar-volume-foreground-0 = #5AB738
+bar-volume-foreground-1 = #5AB738
+bar-volume-foreground-2 = #5AB738
+bar-volume-foreground-3 = #5AB738
+bar-volume-foreground-4 = #5AB738
+bar-volume-foreground-5 = #5AB738
+bar-volume-foreground-6 = #F22C40
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-width = 10
+format-muted-foreground = ${colors.red}
+format-volume = "墳 <bar-volume>"
+label-muted = "婢"
+label-volume-foreground = ${root.foreground}
 
 [module/powermenu]
 type = custom/text

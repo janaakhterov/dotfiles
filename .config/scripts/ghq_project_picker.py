@@ -18,7 +18,7 @@ projects = ["Alacritty"] + list(map(lambda project: directory(project), paths))
 serialized = "\n".join(projects)
 
 output, error = subprocess.Popen(
-        f"echo -e \"{serialized}\" | rofi -dmenu -theme $HOME/.config/rofi/launchers/text/style_3",
+        f"echo -e \"{serialized}\" | rofi -dmenu -theme $HOME/.config/rofi/launchers/text/style_3 -p ' '",
         shell=True,
         executable="bash",
         stdout=subprocess.PIPE,

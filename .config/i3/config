@@ -13,12 +13,13 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec --no-startup-id "env GHQ_ROOT=/home/daniel/.ghq /home/daniel/.config/scripts/ghq_project_picker.py"
 bindsym $mod+Ctrl+Return exec --no-startup-id "alacritty"
+bindsym $mod+Shift+Return exec --no-startup-id "/home/daniel/.config/scripts/op_walker.py"
 
 bindsym $mod+q kill
 
 bindsym $mod+space exec --no-startup-id "~/.config/rofi/bin/launcher_colorful"
 
-bindsym $mod+Ctrl+m exec alacritty -t 'alsamixer' -e 'alsamixer'
+bindsym $mod+Ctrl+m exec alacritty -t 'pulsemixer' -e 'pulsemixer'
 
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send -u low -t 1000 'restart dunst'"
 bindsym $mod+p exec --no-startup-id shotgun $(hacksaw -f "-i %i -g %g") - | xclip -t 'image/png' -selection clipboard
@@ -109,7 +110,7 @@ title_align center
 
 # Open specific applications in floating mode
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
-for_window [title="alsamixer"] floating enable border pixel 1
+for_window [title="pulsemixer"] floating enable border pixel 1
 for_window [title="Shutter"] floating enable border pixel 1
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
@@ -128,7 +129,8 @@ bindsym $mod+0 exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
 
 # Autostart applications
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg
-exec --no-startup-id firefox
+# exec --no-startup-id firefox
+exec --no-startup-id google-chrome-stable
 exec --no-startup-id slack
 exec --no-startup-id Discord
 exec --no-startup-id spotify
@@ -136,17 +138,18 @@ exec --no-startup-id clockify
 exec --no-startup-id picom -b
 exec --no-startup-id lorri daemon
 exec --no-startup-id xautolock -time 30 -locker i3lock-fancy
+exec --no-startup-id i3-msg 'workspace 2; alacritty -e tmux
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command "polybar -r top"
+	i3bar_command ~/.config/polybar/launch.sh
 }
 
 # Theme colors
 # class                  border  bg      fg      indic     child
-client.focused          #1a1a1a #1a1a1a #5fd7ff #000000   #407EE7
+client.focused          #1a1a1a #1a1a1a #FFFFFF #000000   #407EE7
 client.focused_inactive #333333 #333333 #FFFFFF #000000   #000000
-client.unfocused        #262626 #262626 #54a4cc #000000   #000000
+client.unfocused        #262626 #262626 #C0C0C0 #000000   #000000
 client.urgent           #333333 #900000 #FFFFFF #000000   #000000
 client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
 
