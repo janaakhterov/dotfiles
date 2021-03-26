@@ -85,4 +85,6 @@ abbr -a pf "nvim (fd --type f)"
 # Jabba
 [ -s "/home/daniel/.jabba/jabba.fish" ]; and source "/home/daniel/.jabba/jabba.fish"
 
+# navi widget fish | source
+
 starship init fish | source

@@ -46,6 +46,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'PProvost/vim-ps1'
 
 call plug#end()
 
