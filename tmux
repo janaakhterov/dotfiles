@@ -37,6 +37,9 @@ tmux split-window -t kabuto:api -h -l '85%' -c ~/.ghq/gitlab.com/launchbadge/kab
 tmux new-window -c ~/.ghq/gitlab.com/launchbadge/kabuto/kabuto -n 'v5'
 tmux send-keys -t kabuto:v5 'git fetch' C-m
 tmux split-window -t kabuto:v5 -h -l '85%' -c ~/.ghq/gitlab.com/launchbadge/kabuto/kabuto 'nvim' 
+tmux new-window -c ~/.ghq/github.com/danielakhterov/kabuto-app -n 'app'
+tmux send-keys -t kabuto:app 'git fetch' C-m
+tmux split-window -t kabuto:app -h -l '85%' -c ~/.ghq/github.com/danielakhterov/kabuto-app 'nvim' 
 
 # SQLx
 tmux new-session -s sqlx -d -c ~/.ghq/github.com/launchbadge/sqlx -n 'sqlx'
@@ -50,5 +53,10 @@ tmux split-window -h -t 'protobufs:hashgraph' -l '85%' -c ~/.ghq/github.com/hash
 tmux new-window -c ~/.ghq/github.com/danielakhterov/hedera-protobufs -n 'mine'
 tmux send-keys -t proto:mine 'git fetch' C-m
 tmux split-window -t proto:mine -h -l '85%' -c ~/.ghq/github.com/danielakhterov/hedera-protobufs 'nvim' 
+
+# Services
+tmux new-session -s services -d -c ~/.ghq/github.com/hashgraph/hedera-services -n 'hashgraph'
+tmux send-keys -t 'services:hashgraph' 'git fetch' C-m
+tmux split-window -h -t 'services:hashgraph' -l '85%' -c ~/.ghq/github.com/hashgraph/hedera-services 'nvim' 
 
 tmux attach -t java
