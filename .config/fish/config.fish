@@ -7,7 +7,7 @@ set fish_greeting
 # Environment Variables
 set -gx EDITOR nvim
 
-set -gx ANDROID_SDK $HOME/Android/sdk
+set -gx ANDROID_SDK $HOME/Android/Sdk
 
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH $HOME/.pub-cache/bin $PATH
@@ -24,6 +24,8 @@ set -gx PATH $ANDROID_HOME/emulator $PATH
 set -gx PATH $ANDROID_HOME/tools $PATH
 set -gx PATH $ANDROID_HOME/tools/bin $PATH
 set -gx PATH $ANDROID_HOME/platform-tools $PATH
+
+set -gx N_PREFIX "$HOME/.node"
 
 set -gx LS_COLORS (vivid generate molokai)
 
@@ -77,6 +79,8 @@ abbr -a ycam "yadm commit -am"
 abbr -a yd   "yadm diff"
 abbr -a yds  "yadm diff --staged"
 abbr -a yba  "yadm branch -a"
+
+abbr -a npm "pnpm"
 
 # Fish
 abbr -a reload  "source $HOME/.config/fish/config.fish"
