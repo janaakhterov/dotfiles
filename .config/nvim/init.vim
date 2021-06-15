@@ -18,6 +18,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'ThePrimeagen/harpoon'
 
 Plug 'terryma/vim-multiple-cursors'
 
@@ -30,11 +31,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 
 " GruuUUVBbboo00X!
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'junegunn/vim-easy-align'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 
 " Lang plugins
@@ -48,6 +48,12 @@ Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'PProvost/vim-ps1'
 
+Plug 'onsails/lspkind-nvim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
+Plug 'kyazdani42/nvim-web-devicons'
+
 call plug#end()
 
 syntax on
@@ -56,7 +62,7 @@ syntax sync fromstart
 filetype off
 filetype plugin on
 
-colorscheme molokai
+colorscheme gruvbox
 
 let mapleader="\<Space>"
 
@@ -69,6 +75,15 @@ let g:vim_markdown_folding_disabled = 1
 let g:rehash256 = 1
 let g:molokai_original = 1
 let g:vim_markdown_follow_anchor = 1
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+  \ }
 
 nnoremap <leader>pf <cmd>Telescope find_files<cr>
 nnoremap <leader>pb <cmd>Telescope buffers<cr>
@@ -78,6 +93,8 @@ nnoremap <leader>w <C-w>
 nnoremap <silent> <leader>pt <cmd>CHADopen<cr>
 vnoremap < <gv
 vnoremap > >gv
+nnoremap <leader>hm <cmd>lua require("harpoon.mark").add_file()<cr>
+nnoremap <leader>hu <cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>
 
 xmap ga <Plug>(EasyAlign)
 map <Leader> <Plug>(easymotion-prefix)

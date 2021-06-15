@@ -17,7 +17,7 @@ bindsym $mod+Shift+Return exec --no-startup-id "/home/daniel/.config/scripts/op_
 
 bindsym $mod+q kill
 
-bindsym $mod+space exec --no-startup-id "~/.config/rofi/bin/launcher_colorful"
+bindsym $mod+space exec --no-startup-id "~/.config/rofi/launchers/colorful/launcher.sh"
 
 bindsym $mod+Ctrl+m exec alacritty -t 'pulsemixer' -e 'pulsemixer'
 
