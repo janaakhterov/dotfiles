@@ -10,6 +10,8 @@ vim.cmd [[packadd packer.nvim]]
 return require"packer".startup(function()
     use "wbthomason/packer.nvim"
     use "morhetz/gruvbox"
+    use "tpope/vim-abolish"
+    use "tpope/vim-fugitive"
 
     use {
         "nvim-telescope/telescope.nvim",

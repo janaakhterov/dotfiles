@@ -1,3 +1,10 @@
+vim.g.mapleader = " "
+vim.g.auto_save = false
+vim.g.autofmt_autosave = false
+
+require "plugins.init"
+require "mappings"
+
 vim.cmd([[
 syntax on
 syntax sync fromstart
@@ -45,10 +52,3 @@ set cmdheight=2
 set updatetime=50
 set shortmess+=c
 ]])
-
-vim.g.mapleader = " "
-vim.g.auto_save = false
-vim.g.autofmt_autosave = false
-
-require "plugins.init"
-require "mappings"
