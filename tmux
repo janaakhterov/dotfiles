@@ -93,6 +93,4 @@ tmux new-window -c $HOME/.config/hedera -n 'hedera'
 tmux new-window -c $HOME/.config/i3 -n 'i3'
 tmux new-window -c $HOME/.config/scripts -n 'scripts'
 
-sleep 2
-
 tmux attach -t java

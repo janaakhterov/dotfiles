@@ -14,6 +14,16 @@ return require"packer".startup(function()
     use "tpope/vim-fugitive"
 
     use {
+        'ms-jpq/coq_nvim',
+        branch = 'coq'
+    }
+
+    use {
+        'ms-jpq/coq.artifacts',
+        branch= 'artifacts'
+    }
+
+    use {
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } }
     }
