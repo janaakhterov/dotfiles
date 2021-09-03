@@ -22,7 +22,8 @@ bindsym $mod+space exec --no-startup-id "~/.config/rofi/launchers/colorful/launc
 bindsym $mod+Ctrl+m exec alacritty -t 'pulsemixer' -e 'pulsemixer'
 
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send -u low -t 1000 'restart dunst'"
-bindsym $mod+p exec --no-startup-id shotgun $(hacksaw -f "-i %i -g %g") - | xclip -t 'image/png' -selection clipboard
+# bindsym $mod+p exec --no-startup-id shotgun $(hacksaw -f "-i %i -g %g") - | xclip -t 'image/png' -selection clipboard
+bindsym $mod+p exec --no-startup-id maim -s | xclip -selection clipboard -t image/png 
 
 # change focus
 bindsym $mod+h focus left
@@ -129,8 +130,8 @@ bindsym $mod+0 exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
 
 # Autostart applications
 exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg
-# exec --no-startup-id firefox
-exec --no-startup-id google-chrome-stable
+exec --no-startup-id firefox
+# exec --no-startup-id google-chrome-stable
 exec --no-startup-id slack
 exec --no-startup-id Discord
 exec --no-startup-id spotify

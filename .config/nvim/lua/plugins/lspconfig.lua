@@ -38,13 +38,13 @@ M.config = function()
 
         for _, lang in pairs(servers) do
             if lang ~= "lua" then
-                require"lspconfig"[lang].setup {
+                require"lspconfig"[lang].setup(require"coq".lsp_ensure_capabilities({
                     on_attach = on_attach,
                     capabilities = capabilities,
                     root_dir = vim.loop.cwd
-                }
+                }))
             elseif lang == "lua" then
-                require"lspconfig"[lang].setup {
+                require"lspconfig"[lang].setup(require"coq".lsp_ensure_capabilities({
                     root_dir = vim.loop.cwd,
                     settings = {
                         Lua = {
@@ -60,7 +60,7 @@ M.config = function()
                             telemetry = { enable = false }
                         }
                     }
-                }
+                }))
             end
         end
     end

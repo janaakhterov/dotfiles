@@ -48,10 +48,12 @@
 -- nvimtree
 -- vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
 -- Telescope
-vim.api.nvim_set_keymap("n", "<Leader>gs", [[<Cmd> Telescope git_status <CR>]], {})
-vim.api.nvim_set_keymap("n", "<Leader>gc", [[<Cmd> Telescope git_commits <CR>]], {})
-vim.api.nvim_set_keymap("n", "<Leader>pf", [[<Cmd> Telescope find_files <CR>]], {})
-vim.api.nvim_set_keymap("n", "<Leader>pb", [[<Cmd> Telescope buffers<CR>]], {})
+vim.api.nvim_set_keymap("n", "<Leader>gs", [[ <Cmd> Telescope git_status <CR> ]], {})
+vim.api.nvim_set_keymap("n", "<Leader>gc", [[ <Cmd> Telescope git_commits <CR> ]], {})
+vim.api.nvim_set_keymap("n", "<Leader>pf", [[ <Cmd> Telescope find_files <CR> ]], {})
+vim.api.nvim_set_keymap("n", "<Leader>ps", [[ <Cmd> Telescope live_grep <CR> ]], {})
+vim.api.nvim_set_keymap("n", "<Leader>pb", [[ <Cmd> Telescope buffers <CR> ]], {})
+vim.api.nvim_set_keymap("n", "<Leader>sh", [[ <Cmd> Telescope find_files({ search_dirs = {'$HOME/.config/hedera'} }) <CR> ]], {})
 
 -- bufferline tab stuff
 -- vim.api.nvim_set_keymap("n", "<S-t>", ":tabnew<CR>", opt) -- new tab

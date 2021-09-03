@@ -18,6 +18,7 @@ set -gx PATH $HOME/ghq/github.com/flutter/flutter/bin $PATH
 set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH $HOME/.dotnet/tools $PATH
 set -gx PATH $HOME/.node/bin $PATH
+set -gx PATH $HOME/.deno/bin $PATH
 
 set -gx ANDROID_HOME $HOME/Android/Sdk
 set -gx PATH $ANDROID_HOME/emulator $PATH

@@ -2,10 +2,8 @@ vim.g.mapleader = " "
 vim.g.auto_save = false
 vim.g.autofmt_autosave = false
 
-require "plugins.init"
-require "mappings"
-
 vim.cmd([[
+let g:coq_settings = { 'auto_start': v:true }
 syntax on
 syntax sync fromstart
 
@@ -51,4 +49,17 @@ set wildmenu
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
+]])
+
+require "plugins.init"
+require "mappings"
+
+vim.cmd([[
+nnoremap <leader>gs :Telescope git_status<CR>
+nnoremap <leader>gc :Telescope git_commits<CR>
+nnoremap <leader>pf :Telescope find_files<CR>
+nnoremap <leader>ps :Telescope live_grep<CR>
+nnoremap <leader>pb :Telescope buffers<CR>
+nnoremap <leader>sh :lua require('telescope.builtin').find_files({ search_dirs = {'$HOME/.config/hedera'} })<CR>
+nnoremap <leader>pt :CHADopen<CR>
 ]])
