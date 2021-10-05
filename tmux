@@ -36,6 +36,11 @@ tmux new-session -s go -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgraph/s
 tmux send-keys -t go:v2 'git fetch' C-m
 tmux split-window -t go:v2 -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/go/v2 'nvim' 
 
+# References
+tmux new-session -s reference -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgraph/sdk/reference -n 'main'
+tmux send-keys -t reference:main 'git fetch' C-m
+tmux split-window -t reference:main -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/reference 'nvim' 
+
 # Portal
 tmux new-session -s portal -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgraph/portal/portal -n 'portal'
 tmux send-keys -t portal:portal 'git fetch' C-m
@@ -65,18 +70,9 @@ tmux send-keys -t hedera:docs 'git fetch' C-m
 tmux split-window -t hedera:docs -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/docs 'nvim' 
 
 # Kabuto
-# tmux new-session -s kabuto -d -x $COLS -y $LINES -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/mirror-schema -n 'schema'
-# tmux send-keys -t kabuto:schema 'git fetch' C-m
-# tmux split-window -t kabuto:schema -h -l '65%' -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/mirror-schema 'nvim' 
-# tmux new-window -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/mirror -n 'mirror'
-# tmux send-keys -t kabuto:mirror 'git fetch' C-m
-# tmux split-window -t kabuto:mirror -h -l '65%' -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/mirror 'nvim' 
-# tmux new-window -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/mirror-api -n 'api'
-# tmux send-keys -t kabuto:api 'git fetch' C-m
-# tmux split-window -t kabuto:api -h -l '65%' -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/mirror-api 'nvim' 
-tmux new-session -s kabuto -d -x $COLS -y $LINES -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/kabuto -n 'v5'
+tmux new-session -s kabuto -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto -n 'v5'
 tmux send-keys -t kabuto:v5 'git fetch' C-m
-tmux split-window -t kabuto:v5 -h -l '65%' -c $GHQ_ROOT/gitlab.com/launchbadge/kabuto/kabuto 'nvim' 
+tmux split-window -t kabuto:v5 -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto 'nvim' 
 tmux new-window -c $GHQ_ROOT/github.com/launchbadge/kabuto/app -n 'app'
 tmux send-keys -t kabuto:app 'git fetch' C-m
 tmux split-window -t kabuto:app -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/kabuto/app 'nvim' 
@@ -87,10 +83,7 @@ tmux send-keys -t 'sqlx:sqlx' 'git fetch' C-m
 tmux split-window -t 'sqlx:sqlx' -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/sqlx 'nvim' 
 
 # Configs
-tmux new-session -s config -d -x $COLS -y $LINES -c $HOME/.config/nvim -n 'neovim'
-tmux new-window -c $HOME/.config/fish -n 'fish'
-tmux new-window -c $HOME/.config/hedera -n 'hedera'
-tmux new-window -c $HOME/.config/i3 -n 'i3'
-tmux new-window -c $HOME/.config/scripts -n 'scripts'
+tmux new-session -s config -d -x $COLS -y $LINES -c $HOME/.config -n 'config'
+tmux send-keys -t 'config:config' 'nvim' C-m
 
 tmux attach -t java

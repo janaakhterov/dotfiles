@@ -2,13 +2,12 @@ local M = {}
 
 M.config = function()
     require"nvim-treesitter.configs".setup {
-         indent = {
-           enable = true
-         },
-        ensure_installed = {
-            "html", "css", "bash", "lua", "json", "python", "rust", "go"
+        highlight = {
+            enable = true,
         },
-        highlight = { enable = true, use_languagetree = true }
+        indent = {
+            enable = true,
+        },
     }
 end
 

@@ -3,6 +3,7 @@
 # curl https://raw.githubusercontent.com/danielakhterov/.dotfiles/master/.config/scripts/install.sh | sh
 
 UPDATE_VARIABLES=false
+
 PKGS=(
     "alacritty"
     "alsamixer"
@@ -31,6 +32,7 @@ PKGS=(
     "youtube-dl"
     "maim"
 )
+
 SPECIAL_PKGS=(
     "binutils"
     "cargo-edit"
@@ -39,6 +41,7 @@ SPECIAL_PKGS=(
     "openjdk8"
     "rofi-unwrapped"
 )
+
 FONT_PKGS=(
     "hack-font"
 )

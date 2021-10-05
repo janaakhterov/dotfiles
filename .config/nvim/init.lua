@@ -4,17 +4,19 @@ vim.g.autofmt_autosave = false
 
 vim.cmd([[
 let g:coq_settings = { 'auto_start': v:true }
-syntax on
-syntax sync fromstart
 
-filetype off
+syntax on
+filetype on
+filetype indent off
 filetype plugin on
 
 setglobal fileencoding=utf-8
 
 colorscheme gruvbox
 
-set autoindent
+set noautoindent
+set nosmartindent
+
 set autoread
 set backspace=indent,eol,start
 set display+=lastline
@@ -51,15 +53,17 @@ set updatetime=50
 set shortmess+=c
 ]])
 
-require "plugins.init"
-require "mappings"
+require("plugins.init")
+-- require("mappings")
 
-vim.cmd([[
-nnoremap <leader>gs :Telescope git_status<CR>
-nnoremap <leader>gc :Telescope git_commits<CR>
-nnoremap <leader>pf :Telescope find_files<CR>
-nnoremap <leader>ps :Telescope live_grep<CR>
-nnoremap <leader>pb :Telescope buffers<CR>
-nnoremap <leader>sh :lua require('telescope.builtin').find_files({ search_dirs = {'$HOME/.config/hedera'} })<CR>
-nnoremap <leader>pt :CHADopen<CR>
-]])
+local options = { noremap = true }
+
+vim.api.nvim_set_keymap("n", "<leader>g", [[<Cmd> lua require('telescope.builtin').git_status(require('telescope.themes').get_dropdown())<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>o", [[<Cmd> lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown())<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>p", [[<Cmd> lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown())<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>s", [[<Cmd> lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown())<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>b", [[<Cmd> lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown())<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>c", [[<Cmd> lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ search_dirs = {'$HOME/.config'}}))<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>a", [[<Cmd> lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_dropdown())<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>r", [[<Cmd> lua require('telescope.builtin').lsp_references(require('telescope.themes').get_dropdown())<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>t", [[<Cmd> CHADopen<CR>]], options)

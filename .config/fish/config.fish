@@ -19,6 +19,7 @@ set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH $HOME/.dotnet/tools $PATH
 set -gx PATH $HOME/.node/bin $PATH
 set -gx PATH $HOME/.deno/bin $PATH
+set -gx PATH $HOME/.local/share/bin $PATH
 
 set -gx ANDROID_HOME $HOME/Android/Sdk
 set -gx PATH $ANDROID_HOME/emulator $PATH
@@ -88,9 +89,7 @@ abbr -a reload  "source $HOME/.config/fish/config.fish"
 
 abbr -a pf "nvim (fd --type f)"
 
-# Jabba
-[ -s "/home/daniel/.jabba/jabba.fish" ]; and source "/home/daniel/.jabba/jabba.fish"
-
-# navi widget fish | source
-
 starship init fish | source
+
+# Jabba
+[ -s "/home/danielakhterov/.jabba/jabba.fish" ]; and source "/home/danielakhterov/.jabba/jabba.fish"
