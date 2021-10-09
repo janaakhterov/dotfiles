@@ -2,6 +2,7 @@ local M = {}
 
 M.config = function()
     require"telescope".setup {
+        shorten_path = true,
         defaults = {
             vimgrep_arguments = {
                 "rg", "--color=never", "--no-heading", "--with-filename", "--line-number",
