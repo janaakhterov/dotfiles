@@ -5,6 +5,14 @@ let
   email = "akhterovd@gmail.com";
 in
 {
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
+  fonts.fontconfig.enable = true;
+
   home.packages = [
     (pkgs.polybar.override {
       i3Support = true;
@@ -38,7 +46,7 @@ in
     pkgs.gitAndTools.diff-so-fancy
     pkgs.gnumake
     pkgs.go
-    pkgs.hack-font
+    pkgs.nerdfonts
     pkgs.i3
     pkgs.i3lock-fancy
     pkgs.iosevka
@@ -48,7 +56,6 @@ in
     pkgs.lxappearance
     pkgs.maim
     pkgs.maven
-    pkgs.neovim
     pkgs.pulseaudio
     # pkgs.python3
     pkgs.rofi-unwrapped
@@ -61,7 +68,8 @@ in
     pkgs.xclip
     pkgs.yadm
     pkgs.youtube-dl
-    pkgs.ytop
+    pkgs.vivid
+    pkgs.starship
   ];
 
   services.lorri.enable = true;
@@ -74,5 +82,15 @@ in
       userName = "${name}";
       userEmail = "${email}";
     };
+  };
+
+  programs.home-manager = {
+    enable = true;
+    path = "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz";
+  };
+  
+  programs.neovim = {
+    enable = true;
+    package = pkgs.neovim-nightly;
   };
 }

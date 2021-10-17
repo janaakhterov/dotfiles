@@ -24,10 +24,10 @@ return require"packer".startup(function()
         "tpope/vim-fugitive",
     }
 
-    use {
-        "ellisonleao/glow.nvim",
-        run = "GlowInstall"
-    }
+    -- use {
+    --     "ellisonleao/glow.nvim",
+    --     run = "GlowInstall"
+    -- }
 
     use {
         "ms-jpq/chadtree",
