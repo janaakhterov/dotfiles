@@ -36,6 +36,12 @@ M.config = function()
         require"lspinstall".setup()
         local servers = require"lspinstall".installed_servers()
 
+        require"lspconfig".sourcekit.setup(require"coq".lsp_ensure_capabilities({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            root_dir = vim.loop.cwd
+        }))
+
         for _, lang in pairs(servers) do
             if lang ~= "lua" then
                 require"lspconfig"[lang].setup(require"coq".lsp_ensure_capabilities({

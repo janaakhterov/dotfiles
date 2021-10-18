@@ -48,6 +48,8 @@ set termguicolors
 set ttyfast
 set updatetime=50
 set wildmenu
+
+autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 ]])
 
 require "plugins.init"
