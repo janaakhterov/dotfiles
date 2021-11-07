@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 let 
   name = "Daniel Akhterov";
   email = "akhterovd@gmail.com";
@@ -61,7 +60,7 @@ in
     pkgs.rofi-unwrapped
     pkgs.rustup
     pkgs.slack
-    pkgs.spotify
+    # pkgs.spotify
     pkgs.starship
     pkgs.steam
     pkgs.xautolock
@@ -70,6 +69,7 @@ in
     pkgs.youtube-dl
     pkgs.vivid
     pkgs.starship
+    pkgs.tmux
   ];
 
   services.lorri.enable = true;
@@ -81,12 +81,27 @@ in
       enable = true;
       userName = "${name}";
       userEmail = "${email}";
+      ignores = [
+	".idea/"
+	".cache"
+	"*.log"
+	".settings"
+	".classpath"
+	".project"
+	"!.github/"
+	".envrc"
+      ];
     };
   };
 
   programs.home-manager = {
     enable = true;
     path = "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz";
+  };
+
+  xdg.configFile."nvim" = {
+    source = /home/danielakhterov/.config/nvim;
+    recursive = true;
   };
   
   programs.neovim = {

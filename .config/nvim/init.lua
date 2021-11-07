@@ -11,7 +11,7 @@ filetype plugin on
 
 setglobal fileencoding=utf-8
 
-colorscheme gruvbox
+" colorscheme gruvbox
 
 set noautoindent
 set nosmartindent

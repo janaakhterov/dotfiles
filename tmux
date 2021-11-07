@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if ! command -v ghq &> /dev/null; then
     echo "`ghq` is not installed"
@@ -75,17 +75,20 @@ tmux send-keys -t hedera:docs 'git fetch' C-m
 tmux split-window -t hedera:docs -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/docs 'nvim' 
 
 # Kabuto
-tmux new-session -s kabuto -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto -n 'v5'
+tmux new-session -s kabuto -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto/v5 -n 'v5'
 tmux send-keys -t kabuto:v5 'git fetch' C-m
-tmux split-window -t kabuto:v5 -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto 'nvim' 
+tmux split-window -t kabuto:v5 -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto/v5 'nvim' 
 tmux new-window -c $GHQ_ROOT/github.com/launchbadge/kabuto/app -n 'app'
 tmux send-keys -t kabuto:app 'git fetch' C-m
 tmux split-window -t kabuto:app -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/kabuto/app 'nvim' 
 
-# SQLx
-tmux new-session -s sqlx -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/launchbadge/sqlx -n 'sqlx'
-tmux send-keys -t 'sqlx:sqlx' 'git fetch' C-m
-tmux split-window -t 'sqlx:sqlx' -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/sqlx 'nvim' 
+# Side Projects
+tmux new-session -s side -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/launchbadge/sqlx -n 'sqlx'
+tmux send-keys -t 'side:sqlx' 'git fetch' C-m
+tmux split-window -t 'side:sqlx' -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/sqlx 'nvim' 
+tmux new-window -c $GHQ_ROOT/github.com/launchbadge/rho -n 'rho'
+tmux send-keys -t side:rho 'git fetch' C-m
+tmux split-window -t side:rho -h -l '65%' -c $GHQ_ROOT/github.com/launchbadge/rho 'nvim' 
 
 # Configs
 tmux new-session -s config -d -x $COLS -y $LINES -c $HOME/.config -n 'config'

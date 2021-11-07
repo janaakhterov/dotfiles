@@ -6,3 +6,4 @@
 .project
 
 !.github/
+.envrc
