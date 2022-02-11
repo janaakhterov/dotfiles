@@ -55,13 +55,8 @@ return require"packer".startup(function()
     }
 
     use {
-        "kabouzeid/nvim-lspinstall",
-        event = "BufRead",
-    }
-
-    use {
         "neovim/nvim-lspconfig",
-        after = "nvim-lspinstall",
+        after = "coq_nvim",
         config = function() require"plugins.lspconfig".config() end,
     }
 
@@ -81,5 +76,14 @@ return require"packer".startup(function()
         "onsails/lspkind-nvim",
         event = "BufRead",
         config = function() require("lspkind").init() end,
+    }
+
+    use {
+        "sidebar-nvim/sidebar.nvim",
+        config = function() require("sidebar-nvim").setup() end,
+    }
+
+    use {
+        "mfussenegger/nvim-jdtls",
     }
 end)

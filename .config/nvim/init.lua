@@ -1,6 +1,43 @@
+vim.g.coq_settings = { auto_start = true }
+
 vim.g.mapleader = " "
 vim.g.auto_save = false
 vim.g.autofmt_autosave = false
+
+vim.o.autoindent = false
+vim.o.autoread = true
+vim.o.backspace = "indent,eol,start"
+vim.o.backup = false
+vim.o.cmdheight = 2
+vim.o.encoding = "utf-8"
+vim.o.equalalways = false
+vim.o.expandtab = true
+vim.o.hidden = true
+vim.o.hlsearch = false
+vim.o.ignorecase = true
+vim.o.incsearch = true
+vim.o.laststatus = 2
+vim.o.lazyredraw = true
+vim.o.mouse = "a"
+vim.o.mousefocus = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.shiftwidth = 4
+vim.o.showmode = false
+vim.o.signcolumn = "yes"
+vim.o.smartcase = true
+vim.o.smartindent = false
+vim.o.swapfile = false
+vim.o.termguicolors = true
+vim.o.ttyfast = true
+vim.o.updatetime = 50
+vim.o.wildmenu = true
+vim.o.writebackup = false
+vim.opt.display = vim.opt.display + "lastline"
+vim.opt.path = vim.opt.path + ",**"
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
+
+vim.go.fileencoding = "utf-8"
 
 vim.cmd([[
 syntax on
@@ -9,45 +46,7 @@ filetype on
 filetype indent off
 filetype plugin on
 
-setglobal fileencoding=utf-8
-
-" colorscheme gruvbox
-
-set noautoindent
-set nosmartindent
-
-set autoread
-set backspace=indent,eol,start
-set cmdheight=2
-set display+=lastline
-set encoding=utf-8
-set expandtab
-set hidden
-set ignorecase
-set incsearch
-set laststatus=2
-set lazyredraw
-set mouse=a
-set mousefocus
-set nobackup
-set noequalalways
-set nohlsearch
-set noshowmode
-set noswapfile
-set nowritebackup
-set number
-set path+=**
-set relativenumber
-set shiftwidth=4
-set shortmess+=c
-set shortmess+=c
-set signcolumn=yes
-set smartcase
-set tabstop=4
-set termguicolors
-set ttyfast
-set updatetime=50
-set wildmenu
+colorscheme gruvbox
 
 autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 ]])

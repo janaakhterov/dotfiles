@@ -9,23 +9,24 @@ set -gx EDITOR nvim
 
 set -gx ANDROID_SDK $HOME/Android/Sdk
 
-set -gx PATH $HOME/.cargo/bin $PATH
-set -gx PATH $HOME/.pub-cache/bin $PATH
-set -gx PATH $HOME/.yarn/bin $PATH
-set -gx PATH $HOME/.config/scripts $PATH
-set -gx PATH $HOME/go/bin $PATH
-set -gx PATH $HOME/ghq/github.com/flutter/flutter/bin $PATH
-set -gx PATH $HOME/.local/bin $PATH
-set -gx PATH $HOME/.dotnet/tools $PATH
-set -gx PATH $HOME/.node/bin $PATH
-set -gx PATH $HOME/.deno/bin $PATH
-set -gx PATH $HOME/.local/share/bin $PATH
+fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.pub-cache/bin
+fish_add_path $HOME/.yarn/bin
+fish_add_path $HOME/.config/scripts
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/ghq/github.com/flutter/flutter/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.dotnet/tools
+fish_add_path $HOME/.node/bin
+fish_add_path $HOME/.deno/bin
+fish_add_path $HOME/.local/share/bin
+fish_add_path $HOME/.krew/bin
+fish_add_path $ANDROID_HOME/emulator
+fish_add_path $ANDROID_HOME/tools
+fish_add_path $ANDROID_HOME/tools/bin
+fish_add_path $ANDROID_HOME/platform-tools
 
 set -gx ANDROID_HOME $HOME/Android/Sdk
-set -gx PATH $ANDROID_HOME/emulator $PATH
-set -gx PATH $ANDROID_HOME/tools $PATH
-set -gx PATH $ANDROID_HOME/tools/bin $PATH
-set -gx PATH $ANDROID_HOME/platform-tools $PATH
 
 set -gx N_PREFIX "$HOME/.node"
 
@@ -82,14 +83,16 @@ abbr -a yd   "yadm diff"
 abbr -a yds  "yadm diff --staged"
 abbr -a yba  "yadm branch -a"
 
-abbr -a npm "pnpm"
-
 # Fish
 abbr -a reload  "source $HOME/.config/fish/config.fish"
 
+abbr -a gen-ed25519 "openssl genpkey -algorithm ed25519 -outform der | xxd -p -c 256"
+
 abbr -a pf "nvim (fd --type f)"
 
-starship init fish | source
+abbr -a kbl "kubectl logs -f (kubectl get pods | tail -n +2 | sed \"s#^\(\S\+\)\s.*\\\$#\1#\" | fzf)"
 
 # Jabba
-[ -s "/home/danielakhterov/.jabba/jabba.fish" ]; and source "/home/danielakhterov/.jabba/jabba.fish"
+[ -s "$HOME/.jabba/jabba.fish" ]; and source "$HOME/.jabba/jabba.fish"
+
+starship init fish | source

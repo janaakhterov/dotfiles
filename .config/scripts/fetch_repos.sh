@@ -25,6 +25,9 @@ mkdir -p $GHQ_ROOT/github.com/hashgraph/sdk/go
 git clone git@github.com:hashgraph/hedera-sdk-go.git $GHQ_ROOT/github.com/hashgraph/sdk/go/v1 && cd "$_" && git checkout release/1.x && cd -
 git clone git@github.com:hashgraph/hedera-sdk-go.git $GHQ_ROOT/github.com/hashgraph/sdk/go/v2
 
+# References
+git clone git@github.com:hashgraph/hedera-sdk.git $GHQ_ROOT/github.com/hashgraph/sdk/reference
+
 # Portal
 mkdir -p $GHQ_ROOT/github.com/hashgraph/portal
 

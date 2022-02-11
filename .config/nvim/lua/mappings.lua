@@ -9,3 +9,4 @@ vim.api.nvim_set_keymap("n", "<leader>c", [[<Cmd> lua require('telescope.builtin
 vim.api.nvim_set_keymap("n", "<leader>a", [[<Cmd> lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_dropdown())<CR>]], options)
 vim.api.nvim_set_keymap("n", "<leader>r", [[<Cmd> lua require('telescope.builtin').lsp_references(require('telescope.themes').get_dropdown())<CR>]], options)
 vim.api.nvim_set_keymap("n", "<leader>t", [[<Cmd> CHADopen<CR>]], options)
+vim.api.nvim_set_keymap("n", "<leader>y", [[<Cmd> SidebarNvimToggle<CR>]], options)
