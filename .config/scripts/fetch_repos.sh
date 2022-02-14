@@ -25,6 +25,13 @@ mkdir -p $GHQ_ROOT/github.com/hashgraph/sdk/go
 git clone git@github.com:hashgraph/hedera-sdk-go.git $GHQ_ROOT/github.com/hashgraph/sdk/go/v1 && cd "$_" && git checkout release/1.x && cd -
 git clone git@github.com:hashgraph/hedera-sdk-go.git $GHQ_ROOT/github.com/hashgraph/sdk/go/v2
 
+# Swift
+mkdir -p $GHQ_ROOT/github.com/hashgraph/sdk/swift
+
+git clone git@github.com:hashgraph/hedera-sdk-swift.git $GHQ_ROOT/github.com/hashgraph/sdk/swift/v1
+git clone git@github.com:hashgraph/hedera-protobufs-swift.git $GHQ_ROOT/github.com/hashgraph/sdk/swift/proto
+git clone git@github.com:hashgraph/hedera-crypto-swift.git $GHQ_ROOT/github.com/hashgraph/sdk/swift/crypto
+
 # References
 git clone git@github.com:hashgraph/hedera-sdk.git $GHQ_ROOT/github.com/hashgraph/sdk/reference
 

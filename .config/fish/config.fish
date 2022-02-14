@@ -36,6 +36,9 @@ if type -f rustc > /dev/null 2>&1
     set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 end
 
+abbr -a kb "kubectl"
+abbr -a kbl "kubectl logs -f (kubectl get pods | tail -n +2 | sed \"s#^\(\S\+\)\s.*\\\$#\1#\" | fzf)"
+
 # nvim
 abbr -a vim "nvim"
 

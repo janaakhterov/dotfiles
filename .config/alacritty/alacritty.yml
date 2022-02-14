@@ -3,29 +3,48 @@ font:
     family: Hack Nerd Font
   size: 12.0
 
+# Base16 Gruvbox light, medium 256 - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 colors:
+  # Default colors
   primary:
-    background: '0x1a1a1a'
-    foreground: '0xeaeaea'
+    background: '0xfbf1c7'
+    foreground: '0x504945'
 
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfbf1c7'
+    cursor: '0x504945'
+
+  # Normal colors
   normal:
-    black:   '0x1a1a1a'
-    red:     '0xf92672'
-    green:   '0x7eac23'
-    yellow:  '0xd7d787'
-    blue:    '0x5fd7ff'
-    magenta: '0xaa00aa'
-    cyan:    '0x52afce'
-    white:   '0xc2c2c2'
+    black:   '0xfbf1c7'
+    red:     '0x9d0006'
+    green:   '0x79740e'
+    yellow:  '0xb57614'
+    blue:    '0x076678'
+    magenta: '0x8f3f71'
+    cyan:    '0x427b58'
+    white:   '0x504945'
 
+  # Bright colors
   bright:
-    black:   '0x746b6b'
-    red:     '0xff4a44'
-    green:   '0xa6e22e'
-    yellow:  '0xe6db74'
-    blue:    '0x547496'
-    magenta: '0xef8f1f'
-    cyan:    '0x66d9ef'
-    white:   '0xffffff'
+    black:   '0xbdae93'
+    red:     '0x9d0006'
+    green:   '0x79740e'
+    yellow:  '0xb57614'
+    blue:    '0x076678'
+    magenta: '0x8f3f71'
+    cyan:    '0x427b58'
+    white:   '0x282828'
+
+  indexed_colors:
+    - { index: 16, color: '0xaf3a03' }
+    - { index: 17, color: '0xd65d0e' }
+    - { index: 18, color: '0xebdbb2' }
+    - { index: 19, color: '0xd5c4a1' }
+    - { index: 20, color: '0x665c54' }
+    - { index: 21, color: '0x3c3836' }
+
 
 window.dynamic_title: false

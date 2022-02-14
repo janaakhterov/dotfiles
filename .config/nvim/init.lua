@@ -36,8 +36,12 @@ vim.o.writebackup = false
 vim.opt.display = vim.opt.display + "lastline"
 vim.opt.path = vim.opt.path + ",**"
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
+vim.o.bg = "light"
 
 vim.go.fileencoding = "utf-8"
+
+require "plugins.init"
+require "mappings"
 
 vim.cmd([[
 syntax on
@@ -50,6 +54,3 @@ colorscheme gruvbox
 
 autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 ]])
-
-require "plugins.init"
-require "mappings"
