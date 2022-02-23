@@ -25,6 +25,8 @@ mkdir -p $GHQ_ROOT/github.com/hashgraph/sdk/go
 git clone git@github.com:hashgraph/hedera-sdk-go.git $GHQ_ROOT/github.com/hashgraph/sdk/go/v1 && cd "$_" && git checkout release/1.x && cd -
 git clone git@github.com:hashgraph/hedera-sdk-go.git $GHQ_ROOT/github.com/hashgraph/sdk/go/v2
 
+git clone git@github.com:danielakhterov/kernel.git $GHQ_ROOT/github.com/hashgraph/sdk/go/kernel
+
 # Swift
 mkdir -p $GHQ_ROOT/github.com/hashgraph/sdk/swift
 
@@ -55,7 +57,6 @@ git clone git@github.com:hashgraph/hedera-docs.git $GHQ_ROOT/github.com/hashgrap
 mkdir -p $GHQ_ROOT/github.com/launchbadge/kabuto
 
 git clone git@github.com:launchbadge/kabuto.git $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto/v5
-git clone git@gitlab.com:launchbadge/kabuto/mirror-api.git $GHQ_ROOT/github.com/launchbadge/kabuto/kabuto/v4
 git clone git@github.com:danielakhterov/kabuto-app.git $GHQ_ROOT/github.com/launchbadge/kabuto/app
 
 # SQLx

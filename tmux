@@ -35,6 +35,9 @@ tmux split-window -t javascript:v2 -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph
 tmux new-session -s go -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgraph/sdk/go/v2 -n 'v2'
 tmux send-keys -t go:v2 'git fetch' C-m
 tmux split-window -t go:v2 -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/go/v2 'nvim' 
+tmux new-window -c $GHQ_ROOT/github.com/hashgraph/sdk/go/kernel -n 'kernel'
+tmux send-keys -t go:kernel 'git fetch' C-m
+tmux split-window -t go:kernel -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/go/kernel 'nvim' 
 
 # Swift
 tmux new-session -s swift -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgraph/sdk/swift/v1 -n 'v1'
