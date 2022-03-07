@@ -44,7 +44,12 @@ M.config = function()
     lspconfig.rust_analyzer.setup(setup)
     lspconfig.jdtls.setup(setup)
     lspconfig.sourcekit.setup(setup)
-    lspconfig.gopls.setup(setup)
+    lspconfig.gopls.setup(require"coq".lsp_ensure_capabilities({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        root_dir = vim.loop.cwd,
+        settings = { gopls = { buildFlags = {"-tags=all"}}}
+    }))
 
     lspconfig.sumneko_lua.setup(require"coq".lsp_ensure_capabilities({
         root_dir = vim.loop.cwd,
