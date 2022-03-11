@@ -12,7 +12,7 @@ font xft:Hack Nerd Font 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id "env GHQ_ROOT=/home/daniel/.ghq /home/daniel/.config/scripts/ghq_project_picker.py"
+bindsym $mod+BackSpace exec --no-startup-id "env GHQ_ROOT=/home/daniel/.ghq /home/daniel/.config/scripts/ghq_project_picker.py"
 bindsym $mod+Ctrl+Return exec --no-startup-id "alacritty"
 bindsym $mod+Shift+Return exec --no-startup-id "/home/daniel/.config/scripts/op_walker.py"
 
