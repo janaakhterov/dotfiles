@@ -27,21 +27,21 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send -u low -t 1
 bindsym $mod+p exec --no-startup-id maim -s | xclip -selection clipboard -t image/png 
 
 # change focus
-bindsym $mod+y focus left
-bindsym $mod+n focus down
-bindsym $mod+e focus up
-bindsym $mod+o focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-bindsym $mod+Ctrl+y focus parent focus left
-bindsym $mod+Ctrl+n focus parent focus down
-bindsym $mod+Ctrl+e focus parent focus up
-bindsym $mod+Ctrl+o focus parent focus right
+bindsym $mod+Ctrl+h focus parent focus left
+bindsym $mod+Ctrl+j focus parent focus down
+bindsym $mod+Ctrl+k focus parent focus up
+bindsym $mod+Ctrl+l focus parent focus right
 
 # move focused window
-bindsym $mod+Shift+y move left
-bindsym $mod+Shift+n move down
-bindsym $mod+Shift+e move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -64,7 +64,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+h layout toggle split
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
