@@ -44,6 +44,17 @@ tmux new-session -s swift -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgrap
 tmux send-keys -t swift:v1 'git fetch' C-m
 tmux split-window -t swift:v1 -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/swift/v1 'nvim' 
 
+# Rust
+tmux new-session -s rust -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgraph/sdk/rust/v1 -n 'v1'
+tmux send-keys -t rust:v1 'git fetch' C-m
+tmux split-window -t rust:v1 -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/rust/v1 'nvim' 
+tmux new-window -c $GHQ_ROOT/github.com/hashgraph/sdk/rust/proto -n 'proto'
+tmux send-keys -t rust:proto 'git fetch' C-m
+tmux split-window -t rust:proto -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/rust/proto 'nvim' 
+tmux new-window -c $GHQ_ROOT/github.com/hashgraph/sdk/rust/next -n 'next'
+tmux send-keys -t rust:next 'git fetch' C-m
+tmux split-window -t rust:next -h -l '65%' -c $GHQ_ROOT/github.com/hashgraph/sdk/rust/next 'nvim' 
+
 # References
 tmux new-session -s reference -d -x $COLS -y $LINES -c $GHQ_ROOT/github.com/hashgraph/sdk/reference -n 'main'
 tmux send-keys -t reference:main 'git fetch' C-m

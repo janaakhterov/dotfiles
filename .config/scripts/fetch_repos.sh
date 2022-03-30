@@ -34,6 +34,13 @@ git clone git@github.com:hashgraph/hedera-sdk-swift.git $GHQ_ROOT/github.com/has
 git clone git@github.com:hashgraph/hedera-protobufs-swift.git $GHQ_ROOT/github.com/hashgraph/sdk/swift/proto
 git clone git@github.com:hashgraph/hedera-crypto-swift.git $GHQ_ROOT/github.com/hashgraph/sdk/swift/crypto
 
+# Rust
+mkdir -p $GHQ_ROOT/github.com/hashgraph/sdk/rust
+
+git clone git@github.com:launchbadge/hedera-sdk-rust.git $GHQ_ROOT/github.com/hashgraph/sdk/rust/v1
+git clone git@github.com:launchbadge/hedera-protobufs-rust.git $GHQ_ROOT/github.com/hashgraph/sdk/rust/proto
+git clone ssh://git@git.jetbrains.space/launchbadge/hedera-sdks/hedera-sdk-next.git $GHQ_ROOT/github.com/hashgraph/sdk/rust/next
+
 # References
 git clone git@github.com:hashgraph/hedera-sdk.git $GHQ_ROOT/github.com/hashgraph/sdk/reference
 
