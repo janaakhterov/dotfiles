@@ -48,11 +48,11 @@ return require"packer".startup(function()
         requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
     }
 
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        event = "BufRead",
-        config = function() require"plugins.treesitter".config() end,
-    }
+    -- use {
+    --     "nvim-treesitter/nvim-treesitter",
+    --     event = "BufRead",
+    --     config = function() require"plugins.treesitter".config() end,
+    -- }
 
     use {
         "neovim/nvim-lspconfig",
@@ -76,14 +76,5 @@ return require"packer".startup(function()
         "onsails/lspkind-nvim",
         event = "BufRead",
         config = function() require("lspkind").init() end,
-    }
-
-    use {
-        "sidebar-nvim/sidebar.nvim",
-        config = function() require("sidebar-nvim").setup() end,
-    }
-
-    use {
-        "mfussenegger/nvim-jdtls",
     }
 end)

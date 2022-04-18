@@ -1,0 +1,8 @@
+- key:
+    Char: G
+  modifiers:
+    CTRL:
+  binding:
+    Insert:
+      repeat: 1
+      string: "cd (build-string $grm_config.trees.root.0 \"/\" (($grm_config.trees.repos.0 | select name | to csv -n | fzf) | str trim))"
