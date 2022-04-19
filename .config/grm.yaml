@@ -1,0 +1,166 @@
+---
+trees:
+  - root: ~/repos
+    repos:
+      - name: github.com/launchbadge/sqlx
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:launchbadge/sqlx.git"
+            type: ssh
+      - name: github.com/launchbadge/kabuto/kabuto
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:launchbadge/kabuto.git"
+            type: ssh
+      - name: github.com/hashgraph/hip
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:danielakhterov/hedera-improvement-proposal.git"
+            type: ssh
+      - name: github.com/hashgraph/services
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "ssh://git@github.com/hashgraph/hedera-services.git"
+            type: ssh
+      - name: github.com/hashgraph/protobufs
+        worktree_setup: false
+        remotes:
+          - name: danielakhterov
+            url: "git@github.com:danielakhterov/hedera-protobufs.git"
+            type: ssh
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-protobufs.git"
+            type: ssh
+      - name: github.com/hashgraph/portal/api
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-portal-api.git"
+            type: ssh
+      - name: github.com/hashgraph/portal/netki
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-portal-netki.git"
+            type: ssh
+      - name: github.com/hashgraph/portal/admin
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-portal-admin.git"
+            type: ssh
+      - name: github.com/hashgraph/portal/portal
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-portal.git"
+            type: ssh
+      - name: github.com/hashgraph/portal/worker
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-portal-worker.git"
+            type: ssh
+      - name: github.com/hashgraph/docs
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-docs.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/rust/proto
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:launchbadge/hedera-protobufs-rust.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/rust/next
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "ssh://git@git.jetbrains.space/launchbadge/hedera-sdks/hedera-sdk-next.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/rust/v1
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:launchbadge/hedera-sdk-rust.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/go/v1
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-sdk-go.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/go/v2
+        worktree_setup: false
+        remotes:
+          - name: LimeChain
+            url: "git@github.com:LimeChain/hedera-sdk-go.git"
+            type: ssh
+          - name: origin
+            url: "ssh://git@github.com/hashgraph/hedera-sdk-go.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/reference
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-sdk.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/swift/proto
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "ssh://git@github.com/hashgraph/hedera-protobufs-swift.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/swift/v1
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-sdk-swift.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/swift/crypto
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:launchbadge/hedera-crypto-swift.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/java/v1
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-sdk-java.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/java/v2
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "ssh://git@github.com/hashgraph/hedera-sdk-java.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/javascript/v1
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "git@github.com:hashgraph/hedera-sdk-js.git"
+            type: ssh
+      - name: github.com/hashgraph/sdk/javascript/v2
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "ssh://git@github.com/hashgraph/hedera-sdk-js.git"
+            type: ssh
+      - name: github.com/helix-editor/helix.git
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "ssh://git@github.com/helix-editor/helix.git"
+            type: ssh
+      - name: github.com/neovim/neovim.git
+        worktree_setup: false
+        remotes:
+          - name: origin
+            url: "ssh://git@github.com/neovim/neovim.git"
+            type: ssh
