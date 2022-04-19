@@ -152,13 +152,13 @@ trees:
           - name: origin
             url: "ssh://git@github.com/hashgraph/hedera-sdk-js.git"
             type: ssh
-      - name: github.com/helix-editor/helix.git
+      - name: github.com/helix-editor/helix
         worktree_setup: false
         remotes:
           - name: origin
             url: "ssh://git@github.com/helix-editor/helix.git"
             type: ssh
-      - name: github.com/neovim/neovim.git
+      - name: github.com/neovim/neovim
         worktree_setup: false
         remotes:
           - name: origin
