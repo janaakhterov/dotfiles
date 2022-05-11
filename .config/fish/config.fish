@@ -96,3 +96,5 @@ abbr -a kbl "kubectl logs -f (kubectl get pods | tail -n +2 | sed \"s#^\(\S\+\)\
 [ -s "$HOME/.jabba/jabba.fish" ]; and source "$HOME/.jabba/jabba.fish"
 
 starship init fish | source
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH

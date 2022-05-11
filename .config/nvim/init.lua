@@ -36,7 +36,7 @@ vim.o.writebackup = false
 vim.opt.display = vim.opt.display + "lastline"
 vim.opt.path = vim.opt.path + ",**"
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
-vim.o.bg = "light"
+vim.o.bg = "dark"
 
 vim.go.fileencoding = "utf-8"
 
