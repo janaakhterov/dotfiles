@@ -32,6 +32,8 @@ set -gx N_PREFIX "$HOME/.node"
 
 set -gx LS_COLORS (vivid generate molokai)
 
+set -gx HELIX_RUNTIME $HOME/repos/github.com/helix-editor/helix/runtime
+
 if type -f rustc > /dev/null 2>&1
     set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src/
 end
@@ -96,15 +98,17 @@ abbr -a kbl "kubectl logs -f (kubectl get pods | tail -n +2 | sed \"s#^\(\S\+\)\
 [ -s "$HOME/.jabba/jabba.fish" ]; and source "$HOME/.jabba/jabba.fish"
 
 starship init fish | source
+
+# Volta
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
 bash $HOME/.config/scripts/tmux.sh
 
-function __switch_tmux_window -d "Switch tmux window"
-    tmux list-windows -F "#{session_name}:#{window_name}" | fzf | read -l result; and tmux select-window -t "$result"
-end
-
+# function __switch_tmux_window -d "Switch tmux window"
+#     tmux list-windows -F "#{session_name}:#{window_name}" | fzf | read -l result; and tmux select-window -t "$result"
+# end
+# 
 # bind -M insert \cj '__switch_tmux_window'
 
 # pnpm
@@ -118,3 +122,8 @@ set -gx GPG_TTY (tty)
 if type -q jabba
     jabba install openjdk@1.17.0
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/daniel/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end

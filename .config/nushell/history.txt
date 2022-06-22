@@ -1,0 +1,645 @@
+ls
+nvim (config path)
+nu --version
+version
+config
+help
+ls
+ls -la
+nvim ~/.config/nu/config.toml
+ls
+ls -la
+ls
+ls -la
+config
+to
+to json
+cargo doc --open
+cargo doc --features=extra --open
+config
+clear
+move up
+moveup
+move
+move --after
+move --after ""
+move --help
+help
+commands
+path
+env
+prompt
+startup
+xset r rate 150 50
+path
+rg .config
+rg \.config
+rg \.config/nu
+set
+nvim ~/.config/nu/config.toml
+starship init nu
+$(starship init nu)
+(starship init nu)
+let-env STARSHIP_SHELL = "nu"
+let-env STARSHIP_SESSION_KEY = (random chars -l 16)
+def starship_prompt [] { ^/usr/local/bin/starship prompt --cmd-duration $nu.env.CMD_DURATION_MS }
+nu
+nvim ~/.config/nu/config.toml
+nu
+nvim ~/.config/nu/config.toml
+source ~/.cache/starship/init.nu
+nu
+nvim ~/.cache/starship/init.nu
+startup
+config
+nvim ~/.config/nu/config.toml
+nu
+open ./Cargo.toml
+open ./Cargo.toml | select features
+open ./Cargo.toml | get featuers
+open ./Cargo.toml | get features
+open ./Cargo.toml | get features.default
+which
+line_edtiro
+line_editor
+set
+get
+all?
+help
+help --find 
+help --find s
+help --find 
+help 
+help commands
+help commands | bat
+help commands | bat -p
+help commands
+env
+nvim ~/.config/nu/config.nu
+ls
+nvim ~/.config/nu/config.nu
+mv ~/.config/nu/config.nu ~/.config/nushell/
+nvim ~/.config/nu/config.nu
+nvim ~/.config/nushell/config.nu
+ls
+echo $env.LS_COLORS
+ls
+ls -la
+echo $env.LS_COLORS
+mkdir
+starship
+save
+source
+source ~/.cache/starship/init.nu
+starship_prompt
+nvim ~/.cache/starship/init.nu
+starship_prompt
+nvim ~/.cache/starship/init.nu
+source ~/.cache/starship/init.nu
+nvim ~/.cache/starship/init.nu
+starship_prompt
+nvim ~/.config/nushell/config.nu
+nvim ~/.cache/starship/init.nu
+echo $env.CMD_DURATION
+echo $env.CMD_DURATION_MS
+# fsdf
+echo $env.CMD_DURATION_MS
+$env
+j
+ls
+l
+ls
+ls -la
+ls
+nu
+let-env --help
+ls
+which starship
+starship prompt
+echo $env.STARSHIP_SHELL
+ls
+ls -la
+nvim ~/.cache/starship/init.nu
+cargo install starship
+starship prompt
+which starship
+starship prompt
+ls
+randint
+nu
+ls
+ls -la
+ls
+nvim ~/.cache/starship/init.nu
+ls
+nvim ~/.cache/starship/init.nu
+hide PROMPT_COMMAND_RIGHT
+ls
+ls -la
+nvim ~/.config/nushell/keybindings.yml
+ls
+./tmux
+tmux kill-server
+shutdown now
+pwd
+ls
+ls -la
+git
+ls --help
+ls -d
+nu --version
+cd ./ghq/github.com/hashgraph/sdk/core/go.mod
+cd ./ghq/github.com/hashgraph/sdk/core/
+ls
+cd ..
+ls
+cd ./java/hedera-sdk-next/
+ls
+gs
+git status
+cd ..
+ls
+cd ..
+ls
+cd ./rust/
+ls
+cd ./next/
+ls
+gs
+git status
+echo $config
+let $config = ($config | upsert "gs" "git status")
+let $config = ($config | insert "gs" "git status")
+let $config = ($config | upsert "gs" "git status")
+let $config = ($config | insert "gs" "git status")
+echo $config
+gs
+let $config = ($config | remove "gs")
+let $config = ($config | rm "gs")
+nvim ~/.config/nushell/keybindings.yml
+let $config = {}
+echo $config
+nvim ~/.config/nushell/keybindings.yml
+open ~/.config/grm.config.yaml
+open ~/.config/grm.config.yaml | select trees
+open ~/.config/grm.config.yaml | get trees
+open ~/.config/grm.config.yaml | get trees.repos
+open ~/.config/grm.config.yaml | get trees | get repos
+open ~/.config/grm.config.yaml | get trees.repos
+open ~/.config/grm.config.yaml | get trees.repos.0
+open ~/.config/grm.config.toml | get trees.repos.0
+open ~/.config/grm.config.yaml | get trees.repos.0
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name }
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name } | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name }
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name } | fzf
+open ~/.config/grm.config.yaml | get trees
+open ~/.config/grm.config.yaml | get trees.root
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name } | str collect (char nl)
+open ~/.config/grm.config.yaml | get trees.repos.0 | str collect (char nl)
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | str collect (char nl)
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name }
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name } | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | each { |it| ^echo $it.name } | to md | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to md | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to nuon
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to urlrl
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to url
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csvsv
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name --raw
+open ~/.config/grm.config.yaml | get trees.repos.0 --raw | select name 
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | lines
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv | lines
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | collect
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | collect { |it| it }
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | collect { |it| echo it }
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | collect { |it| ^echo it }
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | collect
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | str collect (char nl)
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name |to csv | str collect (char nl)
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | hide name
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | dfr column name
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | dfr column
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | dfr column name
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | drop 1 | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv | drop 1 |  fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv | drop 1
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv | drop 10
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv
+to csv --help
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf
+def open-grm-repo {<\n>open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf}
+def --help
+def open-grm-repo [] {<\n>open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf}
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf 
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf | echo
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf
+open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf | echo hi
+let repo = open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf
+let $repo = open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf
+let repo = (open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf)
+echo repo
+echo $repo
+open ~/.config/grm.config.yaml | get trees.root
+let repo = (open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf)
+echo $repo
+open ~/.config/grm.config.yaml | get trees.root
+open ~/.config/grm.config.yaml | get trees.root | to csv
+open ~/.config/grm.config.yaml | get trees.root.0 | to csv
+open ~/.config/grm.config.yaml | get trees.root.0 | to csv -n
+let root = (open ~/.config/grm.config.yaml | get trees.root.0 | to csv -n)
+echo $root
+echo $root / $repo
+build-string $root / $repo
+cd (build-string $root / $repo)
+~/ghq/github.com/hashgraph/docs
+cd -
+(build-string $root / $repo) | cd
+(build-string $root / $repo) | cd $it
+(build-string $root / $repo) | cd --help
+cd (build-string $root / $repo)
+let repo = (build-string $root / $repo)
+cd $repo
+cd ^$repo
+cd (echo $repo)
+cd (^echo $repo)
+build-string $root / $repo | cd
+build-string $repo | cd
+build-string $repo | cd $in
+build-string $repo | echo $in
+build-string $repo | cd $in
+let repo = (open ~/.config/grm.config.yaml | get trees.repos.0 | select name | to csv -n | fzf)
+build-string "/home/danie/ghq/" $repo | cd $in
+build-string "/home/danie/ghq/" $repo
+build-string "/home/daniel/ghq/" $repo | cd $in
+build-string "/home/daniel/ghq/" $repo
+cd /home/daniel/ghq/github.com/hashgraph/docs
+cd -
+build-string "/home/daniel/ghq/" $repo | cd $in
+build-string "/home/daniel/ghq/" $repo | path parse
+build-string "/home/daniel/ghq/" $repo | path parse | cd
+build-string "/home/daniel/ghq/" $repo | path parse | cd $in
+build-string "/home/daniel/ghq/" $repo | path parse
+cd --help
+build-string "/home/daniel/ghq/" $repo | path parse | cd ($in)
+build-string "/home/daniel/ghq/" $repo | cd ($in)
+build-string "/home/daniel/ghq/" $repo | cd $repo
+build-string "/home/daniel/ghq/" $repo | cd $in
+echo $path
+$path
+$nu.path
+echo $env
+echo $path
+echo $nu
+echo $nu.scope
+echo $nu.scope.vars
+echo $nu.scope
+echo "/home/daniel" | cd $in
+echo "/home/daniel/.ghq" | cd $in
+echo "/home/daniel/ghq" | cd $in
+ls
+echo "/home/daniel/ghq"
+echo "/home/daniel/ghq" | cd $in
+let $dir = "/home/danie/ghq"
+cd $dir
+cd dir
+cd $dir
+let $dir = "/home/daniel/ghq"
+cd $dir
+cd ..
+echo $root
+echo $repo
+build-string "/home/daniel/ghq/" $repo
+let $dir = (build-string "/home/daniel/ghq/" $repo)
+echo $dir
+cd $dir
+cd /home/daniel/ghq/github.com/hashgraph/docs
+cd -
+let $dir = "/home/daniel/ghq"
+cd $dir
+cd -
+let $dir = (build-string "/home/daniel/ghq/" $repo)
+echo $dir
+cd $dir
+echo $nu.scope.vars
+let $dir = "/home/daniel/ghq"
+echo $nu.scope.vars
+let $dir = (build-string "/home/daniel/ghq/" $repo | into string)
+echo $nu.scope.vars
+let dir = (build-string "/home/daniel/ghq/" $repo | into string)
+echo $nu.scope.vars
+let dir = (build-string "/home/daniel/ghq/" $repo)
+echo $nu.scope.vars
+let dira = (build-string "/home/daniel/ghq/" $repo)
+echo $nu.scope.vars
+let dirab = (build-string "/home/daniel/ghq/" $repo | into string)
+echo $nu.scope.vars
+let repo = (open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf)
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf)
+echo $repo
+echo $nu.scope.vars
+let dir = "/home/daniel/ghq"
+echo $nu.scope.vars
+let dira = $dir
+echo $nu.scope.vars
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | into string)
+echo $nu.scope.vars
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | into string)
+echo $nu.scope.vars
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n)
+echo $nu.scope.vars
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf)
+echo $nu.scope.vars
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf)
+echo $repo
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf)
+let grm_config = (open ~/.config/grm.config.yaml)
+let repo = ($grm_config.trees.repos.0 | select name | to csv -n | fzf)
+let root = ($grm_config.trees.root.0 | to csv -n)
+echo $nu.scope.vars
+build-string $root / $repo
+build-string $root / $repo | cd $in
+build-string $root / $repo | echo $in
+let dir = (build-string $root / $repo)
+echo $dir
+cd $dir
+cd ($dir | into string)
+echo "/home/daniel/ghq" | cd $in
+let repo = (build-string "/home/daniel/ghq")
+echo $nu.scope.vars
+cd $repo
+let repo = (build-string "~/ghq")
+cd $repo
+cd -
+let repo = (build-string $grm_config.trees.root.0)
+echo $repo
+cd $repo
+cd -
+let root = (build-string $grm_config.trees.root.0)
+cd
+cd $root
+cd -
+let repo = ($grm_config.trees.repos.0 | select name | to csv -n | fzf)
+echo $nu.scope.vars
+let dir = (build-string $root "/" $repo)
+echo $nu.scope.vars
+cd $dir
+let root = (build-string $grm_config.trees.root.0)
+cd $root
+cd -
+let root = (build-string $grm_config.trees.root.0 "/")
+cd $root
+cd -
+let root = (build-string $grm_config.trees.root.0 "/" $repo)
+cd $root
+let root = (build-string $grm_config.trees.root.0 "/" $repo "/")
+cd $root
+echo $root
+let repo = ($grm_config.trees.repos.0 | select name | to csv -n | fzf | trim)
+let repo = ($grm_config.trees.repos.0 | select name | to csv -n | fzf)
+let repo = $repo | trim
+let grm_config = (open ~/.config/grm.config.yaml)
+let repo = ($grm_config.trees.repos.0 | select name | to csv -n | fzf)
+echo $repo
+let repo = $repo | trim
+let repo = ($repo | trim)
+let repo = ($repo | str trim)
+echo $repo
+let repo = ($grm_config.trees.repos.0 | select name | to csv -n | fzf)
+echo $repo
+let repo = ($repo | str trim)
+echo $repo
+let repo = (($grm_config.trees.repos.0 | select name | to csv -n | fzf) | str trim)
+echo $repo
+let dir = (build-string $grm_config.trees.root.0 "/" $repo)
+cd $dir
+cd -
+let repo = (build-string $grm_config.trees.root.0 "/" (($grm_config.trees.repos.0 | select name | to csv -n | fzf) | str trim))
+echo $repo
+cd (build-string $grm_config.trees.root.0 "/" (($grm_config.trees.repos.0 | select name | to csv -n | fzf) | str trim))
+nvim ~/.config/nushell/keybindings.yml
+keybinds
+keybindings
+keybindings list
+nvim ~/.config/nushell/keybindings.yml
+keybindings --helphelp
+keybindings --help
+keybindings listen
+keybindings list
+keybindings --help
+echo $nu
+pwd
+hx ~/.cache/starship/init.nu
+nvim ~/.config/nushell/keybindings.yml
+hx ~/.cache/starship/init.nu
+ls
+which nu
+which nu | select path | clip
+which nu | select path | xclip
+# Colors (Gruvbox dark)
+colors:
+  # Default colors
+  primary:
+    # hard contrast: background = '0x1d2021'
+    background: '0x282828'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
+  # Bright colors
+  bright:
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+which nu | select path | xclip
+which nu | select path | xclip $in
+which nu | select path | xclip -sel
+which nu | select path | xclip -sel c
+╭───┬────────────────────────────╮
+│ # │            path            │
+├───┼────────────────────────────┤
+│ 0 │ /home/daniel/.cargo/bin/nu │
+╰───┴────────────────────────────╯
+which nu | select path
+which nu | select path | to csv -n 
+hx ~/.config/nushell/config.nu
+open ~/.config/grm.config.yaml | get trees.root.0 | to csv -n
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf)
+echo $repo
+$repo
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | str trim | fzf)
+$repo
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim)
+$repo
+nu --version
+history
+h
+history 
+history | select command 
+history | select command | to csv | fzf
+history | select command | to csv | fzf | str trim
+alias h = (history | select command | to csv | fzf | str trim)
+h
+yadm status
+yadm commit -S -s -am "use dark theme"
+yadm push
+run-external "echo" "-n" "hello"
+alias h = (run-external (history | select command | to csv | fzf | str trim))
+h
+run-external "echo -n 'hello'"
+alias h = (history | select command | to csv | fzf | str trim)
+h
+alias h = (history | select command | to csv | fzf | str trim | xclip -sel c)
+h
+alias h = (history | select command | to csv | fzf | xclip -sel c)
+alias h = (history | select command | to csv | fzf | str trim | xclip -sel c)
+alias h = (history | select command | to csv | fzf | xclip -sel c)
+h
+alias h = (history | select command | to csv | fzf | str trim)
+h
+clear
+pwd
+ls
+ls -la
+cd
+g
+g --help
+shells
+enter ~/ghq/github.com/hashgraph/sdk/java/v2/
+shells
+ g0
+g0
+g 0
+ g1
+g 1
+g 0
+./tmux
+tmux kill-server
+sudo hx /etc/shells
+sudo nvim /etc/shells
+whic nu
+which nu
+nvim 
+nvim ~/.config/nvim/init.lua
+chsh -s /home/daniel/.cargo/bin/nu
+sudo nvim /etc/shells
+chsh -s /home/daniel/.cargo/bin/nu
+gs
+alias gs = { git status }
+gs
+alias gs = (git status)
+gs
+g
+let repo = ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim)
+let repo = (build-string (open ~/.config/grm.config.yaml).trees.root.0 "/" (open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim))
+let repo = (build-string (open ~/.config/grm.config.yaml).trees.root.0 "/" (open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim)
+let repo = (build-string ((open ~/.config/grm.config.yaml).trees.root.0) "/" ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim))
+$repo
+let repo = ((build-string ((open ~/.config/grm.config.yaml).trees.root.0) "/" ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim)) | cd)
+alias h = ((build-string ((open ~/.config/grm.config.yaml).trees.root.0) "/" ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim)) | cd)
+h
+alias h = (cd (build-string ((open ~/.config/grm.config.yaml).trees.root.0) "/" ((open ~/.config/grm.config.yaml).trees.repos.0 | select name | to csv -n | fzf | str trim)))
+h
+cd -
+hx ~/.config/nushell/config.nu
+alias h = (history | select command | to csv | fzf | str trim)
+hx ~/.config/nushell/config.nu
+g
+source ~/.cache/starship/init.nu
+g
+pwd
+ls
+h
+hx ~/.config/nushell/config.nu
+h
+ghq get git@github.com:zellij-org/zellij.git
+ls
+cargo install --force cargo-make
+cargo make run
+cargo make run -- options --simplified-ui true
+cargo make run options --simplified-ui true
+zellij options --simplified-ui true
+cargo install zellij
+zellij options --simplified-ui true
+zellij
+zellij options --simplified-ui true
+zellij
+zellij options --simplified-ui true
+pwd
+ls
+zellij
+zellij --dump-config
+zellij setup --dump-config
+zellij --help
+zellij kill-all-sessions
+zellij list-sessions
+zellij setup
+zellij kill-all-sessions
+zellij list-sessions
+zellij setup --help
+zellij --help
+zellij -s test
+zellij list-sessions
+zellij -s test1
+zellij list-sessions
+zellij -s --help
+zellij attatch --help
+zellij attach --help
+zellij attach -c "test2" "cd ~/.config"
+zellij attach -c "test2" options
+zellij attach -c --help options
+zellij attach options --help
+zellij setup --dump-config
+zellij setup --dump-config | rg test
+zellij setup --dump-config | rg t
+zellij setup --dump-config | rg test
+zellij -s test
+xset r rate 150 50
+./tmux
+ghq
+which ghq
+hx ~/.config/hedera/
+fish
+gs
+hx ~/.config/nushell/config.nu
+source ~/.config/nushell/config.nu
+gs
+g
+gs
+hx
+echo $repo
+sd
+hx
+ssh-agent
+let-env SSH_AUTH_SOCK = "/tmp/ssh-2Ol0O3eVg2Te/agent.19114"
+let-env SSH_AGENT_PID = "19116"
+ssh-add
+grm repos sync --config ~/.config/grm.yaml
+source ~/.config/nushell/config.nu
+hx
+ghq --help
+f
+cd
+./tmux
+tmux kill-server
+nvim ./tmux
+fish
