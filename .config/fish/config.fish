@@ -98,3 +98,11 @@ abbr -a kbl "kubectl logs -f (kubectl get pods | tail -n +2 | sed \"s#^\(\S\+\)\
 starship init fish | source
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+bash $HOME/.config/scripts/tmux.sh
+
+function __switch_tmux_window -d "Switch tmux window"
+    tmux list-windows -F "#{session_name}:#{window_name}" | fzf | read -l result; and tmux select-window -t "$result"
+end
+
+bind -M insert \cj '__switch_tmux_window'
