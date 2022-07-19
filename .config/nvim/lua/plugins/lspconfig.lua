@@ -44,6 +44,7 @@ M.config = function()
     lspconfig.rust_analyzer.setup(setup)
     lspconfig.jdtls.setup(setup)
     lspconfig.sourcekit.setup(setup)
+    lspconfig.bashls.setup(setup)
     lspconfig.gopls.setup(require"coq".lsp_ensure_capabilities({
         on_attach = on_attach,
         capabilities = capabilities,

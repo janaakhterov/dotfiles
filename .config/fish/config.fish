@@ -105,4 +105,16 @@ function __switch_tmux_window -d "Switch tmux window"
     tmux list-windows -F "#{session_name}:#{window_name}" | fzf | read -l result; and tmux select-window -t "$result"
 end
 
-bind -M insert \cj '__switch_tmux_window'
+# bind -M insert \cj '__switch_tmux_window'
+
+# pnpm
+set -gx PNPM_HOME "/home/danielakhterov/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
+
+# Fixes gpg signing with git
+set -gx GPG_TTY (tty)
+
+if type -q jabba
+    jabba install openjdk@1.17.0
+end
