@@ -103,27 +103,19 @@ starship init fish | source
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
-bash $HOME/.config/scripts/tmux.sh
-
-# function __switch_tmux_window -d "Switch tmux window"
-#     tmux list-windows -F "#{session_name}:#{window_name}" | fzf | read -l result; and tmux select-window -t "$result"
-# end
-# 
-# bind -M insert \cj '__switch_tmux_window'
+bash $HOME/.config/scripts/tmux.sh & disown
 
 # pnpm
 set -gx PNPM_HOME "/home/danielakhterov/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
-# Fixes gpg signing with git
-set -gx GPG_TTY (tty)
-
 if type -q jabba
     jabba install openjdk@1.17.0
 end
 
-# pnpm
-set -gx PNPM_HOME "/home/daniel/.local/share/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
-# pnpm end
+# Fixes gpg signing with git
+set -gx GPG_TTY (tty)
+
+# Fixes cargo git deps
+set -gx CARGO_NET_GIT_FETCH_WITH_CLI true

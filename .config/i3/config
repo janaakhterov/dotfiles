@@ -134,13 +134,9 @@ exec --no-startup-id feh --bg-scale $HOME/.config/i3/Wallpaper.jpg
 exec --no-startup-id firefox
 # exec --no-startup-id google-chrome-stable
 exec --no-startup-id slack
-exec --no-startup-id Discord
-exec --no-startup-id spotify
 exec --no-startup-id clockify
 exec --no-startup-id picom -b
-exec --no-startup-id lorri daemon
-exec --no-startup-id xautolock -time 30 -locker i3lock-fancy
-exec --no-startup-id i3-msg 'workspace 2; alacritty -e tmux
+exec --no-startup-id xset r rate 150 50
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
