@@ -24,13 +24,13 @@ return require"packer".startup(function()
         "tpope/vim-fugitive",
     }
 
-    -- use {
-    --     "ellisonleao/glow.nvim",
-    --     run = "GlowInstall"
-    -- }
-
     use {
-        "ms-jpq/chadtree",
+        "kyazdani42/nvim-tree.lua",
+        requires = {
+            "kyazdani42/nvim-web-devicons",
+        },
+        tag = "nightly",
+        config = function() require"nvim-tree".setup() end,
     }
 
     use {
@@ -47,12 +47,6 @@ return require"packer".startup(function()
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
     }
-
-    -- use {
-    --     "nvim-treesitter/nvim-treesitter",
-    --     event = "BufRead",
-    --     config = function() require"plugins.treesitter".config() end,
-    -- }
 
     use {
         "neovim/nvim-lspconfig",

@@ -1,4 +1,4 @@
-vim.g.coq_settings = { auto_start = true }
+vim.g.coq_settings = { auto_start = "shut-up" }
 
 vim.g.mapleader = " "
 vim.g.auto_save = false
@@ -43,14 +43,12 @@ vim.go.fileencoding = "utf-8"
 require "plugins.init"
 require "mappings"
 
+vim.cmd.colorscheme("gruvbox")
+
 vim.cmd([[
 syntax on
 syntax sync fromstart
 filetype on
 filetype indent off
 filetype plugin on
-
-colorscheme gruvbox
-
-autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 ]])
