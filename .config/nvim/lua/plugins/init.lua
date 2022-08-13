@@ -71,4 +71,8 @@ return require"packer".startup(function()
         event = "BufRead",
         config = function() require("lspkind").init() end,
     }
+
+    use {
+        "mfussenegger/nvim-jdtls"
+    }
 end)

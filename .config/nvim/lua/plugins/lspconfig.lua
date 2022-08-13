@@ -1,6 +1,6 @@
 local M = {}
 
-local function on_attach(_, bufnr)
+M.on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     local opts = { noremap = true, silent = true }
@@ -24,7 +24,7 @@ M.config = function()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     local setup = require"coq".lsp_ensure_capabilities({
-        on_attach = on_attach,
+        on_attach = M.on_attach,
         capabilities = capabilities,
         root_dir = vim.loop.cwd
     })
@@ -33,11 +33,10 @@ M.config = function()
 
     lspconfig.tsserver.setup(setup)
     lspconfig.rust_analyzer.setup(setup)
-    lspconfig.jdtls.setup(setup)
     lspconfig.sourcekit.setup(setup)
     lspconfig.bashls.setup(setup)
     lspconfig.gopls.setup(require"coq".lsp_ensure_capabilities({
-        on_attach = on_attach,
+        on_attach = M.on_attach,
         capabilities = capabilities,
         root_dir = vim.loop.cwd,
         settings = { gopls = { buildFlags = {"-tags=all"}}}
