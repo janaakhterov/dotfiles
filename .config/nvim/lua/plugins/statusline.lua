@@ -1,236 +1,154 @@
-local gl = require("galaxyline")
-local gls = gl.section
+local galaxyline = require("galaxyline")
 
-gl.short_line_list = {
-    "LuaTree", "vista", "dbui", "startify", "term", "nerdtree", "fugitive", "fugitiveblame", "plug"
+galaxyline.short_line_list = {
+    "NvimTree",
 }
 
 local colors = {
     normal = {
-        black = '0xfbf1c7',
-        red = '0x9d0006',
-        green = '0x79740e',
-        yellow = '0xb57614',
-        blue = '0x076678',
-        magenta = '0x8f3f71',
-        cyan = '0x427b58',
-        white = '0x504945'
+        black = "#282828",
+        red = "#cc241d",
+        green = "#98971a",
+        yellow = "#d79921",
+        blue = "#458588",
+        magenta = "#b16286",
+        cyan = "#689d6a",
+        white = "#a89984",
     },
     bright = {
-        black = '0xbdae93',
-        red = '0x9d0006',
-        green = '0x79740e',
-        yellow = '0xb57614',
-        blue = '0x076678',
-        magenta = '0x8f3f71',
-        cyan = '0x427b58',
-        white = '0x282828'
+        black = "#928374",
+        red = "#fb4934",
+        green = "#b8bb26",
+        yellow = "#fabd2f",
+        blue = "#83a598",
+        magenta = "#d3869b",
+        cyan = "#8ec07c",
+        white = "#ebdbb2",
     }
 }
 
-local function has_file_type() return not (not vim.bo.filetype or vim.bo.filetype == "") end
-
-local function buffer_not_empty() return vim.fn.empty(vim.fn.expand("%:t")) ~= 1 end
-
-local function trailing_whitespace() return vim.fn.search("\\s$", "nw") ~= 0 and " " or nil end
-
-local checkwidth = function() return vim.fn.winwidth(0) / 2 > 40 end
-
-gls.left[1] = {
-    FirstElement = {
-        provider = function() return " " end,
-        highlight = { colors.bright.blue, colors.bright.white }
-    }
+local mode_alias = {
+    R = "REPLACE",
+    Rv = "VIRTUAL",
+    S = "SELECT",
+    V = "VISUAL",
+    [""] = "SELECT",
+    [""] = "VISUAL",
+    ["!"] = "SHELL",
+    ["r"] = "HIT-ENTER",
+    ["r?"] = ":CONFIRM",
+    c = "COMMAND",
+    i = "INSERT",
+    n = "NORMAL",
+    rm = "--MORE",
+    s = "SELECT",
+    t = "TERMINAL",
+    v = "VISUAL"
 }
 
-gls.left[2] = {
+local mode_color = {
+    R = colors.bright.yellow,
+    Rv = colors.bright.magenta,
+    S = colors.bright.blue,
+    V = colors.bright.blue,
+    [""] = colors.bright.blue,
+    [""] = colors.bright.blue,
+    ["!"] = colors.bright.green,
+    ["r?"] = colors.bright.red,
+    c = colors.bright.red,
+    ce = colors.bright.red,
+    cv = colors.bright.red,
+    i = colors.bright.blue,
+    ic = colors.bright.yellow,
+    n = colors.bright.green,
+    no = colors.bright.magenta,
+    r = colors.bright.cyan,
+    rm = colors.bright.red,
+    s = colors.bright.blue,
+    t = colors.bright.green,
+    v = colors.bright.magenta
+}
+
+local ViMode = {
     ViMode = {
         provider = function()
-            local alias = {
-                R = "REPLACE",
-                Rv = "VIRTUAL",
-                S = "SELECT",
-                V = "VISUAL",
-                [""] = "SELECT",
-                [""] = "VISUAL",
-                ["!"] = "SHELL",
-                ["r"] = "HIT-ENTER",
-                ["r?"] = ":CONFIRM",
-                c = "COMMAND",
-                i = "INSERT",
-                n = "NORMAL",
-                rm = "--MORE",
-                s = "SELECT",
-                t = "TERMINAL",
-                v = "VISUAL"
-            }
+            local bg = mode_color[vim.fn.mode()]
+            local fg = colors.normal.black
+             vim.api.nvim_command("hi GalaxyViMode gui=bold guifg=" .. fg .. " guibg=" .. bg)
 
-            local mode_color = {
-                R = colors.bright.yellow,
-                Rv = colors.bright.magenta,
-                S = colors.bright.blue,
-                V = colors.bright.blue,
-                [""] = colors.bright.blue,
-                [""] = colors.bright.blue,
-                ["!"] = colors.bright.green,
-                ["r?"] = colors.bright.red,
-                c = colors.bright.red,
-                ce = colors.bright.red,
-                cv = colors.bright.red,
-                i = colors.bright.blue,
-                ic = colors.bright.yellow,
-                n = colors.bright.green,
-                no = colors.bright.magenta,
-                r = colors.bright.cyan,
-                rm = colors.bright.red,
-                s = colors.bright.blue,
-                t = colors.bright.green,
-                v = colors.bright.magenta
-            }
-
-            local vim_mode = vim.fn.mode()
-            vim.api.nvim_command("hi GalaxyViMode guifg=" .. mode_color[vim_mode])
-            return alias[vim_mode] .. "   "
+            -- For Some reason two spaces are needed in the beginning?
+            return "  " .. mode_alias[vim.fn.mode()] .. " "
         end,
-        highlight = { colors.bright.red, colors.bright.white, "bold" }
+        separator = " ",
+        separator_highlight = { colors.normal.black, colors.normal.black },
+        -- highlight = This function is **NOT** recomputed each time the mode changes
     }
 }
 
-gls.left[3] = {
-    FileIcon = {
-        provider = "FileIcon",
-        condition = buffer_not_empty,
-        highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bright.white }
-    }
-}
-
-gls.left[4] = {
+local FileName = {
     FileName = {
-        provider = { "FileName", "FileSize" },
-        condition = buffer_not_empty,
-        highlight = { colors.normal.black, colors.bright.white, "bold" }
+        provider = function()
+            return vim.fn.expand("%")
+        end,
+        separator = " ",
+        separator_highlight = { colors.normal.black, colors.normal.black },
+        highlight = { colors.bright.white, colors.normal.black, "bold" }
     }
 }
 
-gls.left[5] = {
-    GitIcon = {
-        provider = function() return "  " end,
-        condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = { colors.bright.blue, colors.bright.white }
-    }
-}
-
-gls.left[6] = {
+local GitBranch = {
     GitBranch = {
         provider = "GitBranch",
+        separator = " ",
+        separator_highlight = { colors.normal.black, colors.normal.black },
         condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = { "#8FBCBB", colors.bright.white, "bold" }
+        highlight = { colors.bright.yellow, colors.normal.black, "bold" }
     }
 }
 
-gls.left[7] = {
-    DiffAdd = {
-        provider = "DiffAdd",
-        condition = checkwidth,
-        icon = " ",
-        highlight = { colors.bright.green, colors.bright.white }
-    }
-}
-gls.left[8] = {
-    DiffModified = {
-        provider = "DiffModified",
-        condition = checkwidth,
-        icon = " ",
-        highlight = { colors.bright.blue, colors.bright.white }
-    }
-}
-gls.left[9] = {
-    DiffRemove = {
-        provider = "DiffRemove",
-        condition = checkwidth,
-        icon = " ",
-        highlight = { colors.bright.red, colors.bright.white }
-    }
-}
-
-gls.left[10] = {
-    LeftEnd = {
-        provider = function() return "" end,
-        separator = "",
-        separator_highlight = { colors.bright.white, colors.bright.white },
-        highlight = { colors.bright.white, colors.bright.white }
-    }
-}
-
-gls.left[11] = {
-    TrailingWhiteSpace = {
-        provider = trailing_whitespace,
-        icon = "  ",
-        highlight = { colors.bright.yellow, colors.bright.white }
-    }
-}
-
-gls.left[12] = {
-    DiagnosticError = {
-        provider = "DiagnosticError",
-        icon = "  ",
-        highlight = { colors.bright.red, colors.bright.white }
-    }
-}
-
-gls.left[13] = { Space = { provider = function() return " " end } }
-
-gls.left[14] = {
-    DiagnosticWarn = {
-        provider = "DiagnosticWarn",
-        icon = "  ",
-        highlight = { colors.bright.yellow, colors.bright.white }
-    }
-}
-
-gls.right[1] = {
+local FileFormat = {
     FileFormat = {
         provider = "FileFormat",
-        separator = " ",
-        separator_highlight = { colors.bright.white, colors.bright.white },
-        highlight = { colors.normal.black, colors.bright.white, "bold" }
-    }
-}
-
-gls.right[4] = {
-    LineInfo = {
-        provider = "LineColumn",
-        separator = " | ",
-        separator_highlight = { colors.bright.blue, colors.bright.white },
-        highlight = { colors.normal.black, colors.bright.white }
-    }
-}
-
-gls.right[5] = {
-    PerCent = {
-        provider = "LinePercent",
         separator = " ",
-        separator_highlight = { colors.bright.white, colors.bright.white },
-        highlight = { colors.bright.cyan, colors.normal.blue, "bold" }
+        separator_highlight = { colors.normal.black, colors.normal.black },
+        highlight = { colors.bright.white, colors.normal.black, "bold" }
     }
 }
 
-gls.short_line_left[1] = {
-    BufferType = {
-        provider = "FileTypeName",
-        separator = "",
-        condition = has_file_type,
-        separator_highlight = { colors.bright.magenta, colors.bright.white },
-        highlight = { colors.normal.black, colors.bright.magenta }
+local Column = {
+    Column = {
+        provider = function()
+            return vim.fn.col(".")
+        end,
+        separator = " ",
+        separator_highlight = { colors.normal.black, colors.normal.black },
+        highlight = { colors.bright.white, colors.normal.black }
     }
 }
 
-gls.short_line_right[1] = {
-    BufferIcon = {
-        provider = "BufferIcon",
-        separator = "",
-        condition = has_file_type,
-        separator_highlight = { colors.bright.magenta, colors.bright.white },
-        highlight = { colors.normal.black, colors.bright.magenta }
+local Percent = {
+    Percent = {
+        provider = function()
+          local current_line = vim.fn.line(".")
+          local total_line = vim.fn.line("$")
+          if current_line == 1 then
+                return "Top"
+          elseif current_line == vim.fn.line("$") then
+            return "Bot"
+          end
+          local result,_ = math.modf((current_line/total_line)*100)
+          return result .. "%"
+        end,
+        separator = " ",
+        separator_highlight = { colors.normal.black, colors.normal.black },
+        highlight = { colors.bright.cyan, colors.normal.black, "bold" }
     }
 }
+
+table.insert(galaxyline.section.left, ViMode)
+table.insert(galaxyline.section.left, FileName)
+table.insert(galaxyline.section.left, GitBranch)
+
+table.insert(galaxyline.section.right, FileFormat)
+table.insert(galaxyline.section.right, Column)
+table.insert(galaxyline.section.right, Percent)

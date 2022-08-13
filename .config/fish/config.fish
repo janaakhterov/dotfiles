@@ -106,7 +106,7 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 bash $HOME/.config/scripts/tmux.sh & disown
 
 # pnpm
-set -gx PNPM_HOME "/home/danielakhterov/.local/share/pnpm"
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
