@@ -36,16 +36,15 @@ vim.o.writebackup = false
 vim.opt.display = vim.opt.display + "lastline"
 vim.opt.path = vim.opt.path + ",**"
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
-vim.o.bg = "dark"
+vim.o.bg = "light"
 
 vim.go.fileencoding = "utf-8"
 
 require "plugins.init"
 require "mappings"
 
-vim.cmd.colorscheme("gruvbox")
-
 vim.cmd([[
+colorscheme gruvbox
 syntax on
 syntax sync fromstart
 filetype on

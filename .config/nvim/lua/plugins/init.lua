@@ -13,7 +13,8 @@ return require"packer".startup(function()
     }
 
     use {
-        "morhetz/gruvbox",
+        "ellisonleao/gruvbox.nvim",
+        commit = "cb7a8a867cfaa7f0e8ded57eb931da88635e7007",
     }
 
     use {
@@ -25,12 +26,17 @@ return require"packer".startup(function()
     }
 
     use {
-        "kyazdani42/nvim-tree.lua",
+        "nvim-tree/nvim-tree.lua",
         requires = {
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
         },
         tag = "nightly",
         config = function() require"nvim-tree".setup() end,
+    }
+
+    use { 
+        "nvim-treesitter/nvim-treesitter",
+        config =  function() require "plugins.treesitter".config() end,
     }
 
     use {

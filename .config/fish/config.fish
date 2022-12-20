@@ -42,9 +42,7 @@ end
 abbr -a vim "nvim"
 
 # ls
-abbr -a ls "exa"
-abbr -a la "exa -a"
-abbr -a ll "exa -l"
+abbr -a ls "exa --header --git -la"
 
 # Git
 abbr -a gs   "git status"
